@@ -1,0 +1,285 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EA091A10150A92870033C7DF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA091A0F150A92870033C7DF /* Cocoa.framework */; };
+		EA091A1A150A92870033C7DF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA091A18150A92870033C7DF /* InfoPlist.strings */; };
+		EA091A1E150A92870033C7DF /* Graviton.m in Sources */ = {isa = PBXBuildFile; fileRef = EA091A1D150A92870033C7DF /* Graviton.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		EA091A0C150A92870033C7DF /* Graviton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Graviton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA091A0F150A92870033C7DF /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		EA091A12150A92870033C7DF /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		EA091A13150A92870033C7DF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		EA091A14150A92870033C7DF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		EA091A17150A92870033C7DF /* Graviton-Info.plist */ = {isa = PBXFileReference; path = "Graviton-Info.plist"; sourceTree = "<group>"; };
+		EA091A19150A92870033C7DF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EA091A1B150A92870033C7DF /* Graviton-Prefix.pch */ = {isa = PBXFileReference; path = "Graviton-Prefix.pch"; sourceTree = "<group>"; };
+		EA091A1C150A92870033C7DF /* Graviton.h */ = {isa = PBXFileReference; path = Graviton.h; sourceTree = "<group>"; };
+		EA091A1D150A92870033C7DF /* Graviton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Graviton.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EA091A08150A92870033C7DF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA091A10150A92870033C7DF /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EA091A00150A92860033C7DF = {
+			isa = PBXGroup;
+			children = (
+				EA091A15150A92870033C7DF /* Graviton */,
+				EA091A0E150A92870033C7DF /* Frameworks */,
+				EA091A0D150A92870033C7DF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EA091A0D150A92870033C7DF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EA091A0C150A92870033C7DF /* Graviton.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EA091A0E150A92870033C7DF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EA091A0F150A92870033C7DF /* Cocoa.framework */,
+				EA091A11150A92870033C7DF /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EA091A11150A92870033C7DF /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EA091A12150A92870033C7DF /* AppKit.framework */,
+				EA091A13150A92870033C7DF /* CoreData.framework */,
+				EA091A14150A92870033C7DF /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		EA091A15150A92870033C7DF /* Graviton */ = {
+			isa = PBXGroup;
+			children = (
+				EA091A1C150A92870033C7DF /* Graviton.h */,
+				EA091A1D150A92870033C7DF /* Graviton.m */,
+				EA091A16150A92870033C7DF /* Supporting Files */,
+			);
+			path = Graviton;
+			sourceTree = "<group>";
+		};
+		EA091A16150A92870033C7DF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EA091A17150A92870033C7DF /* Graviton-Info.plist */,
+				EA091A18150A92870033C7DF /* InfoPlist.strings */,
+				EA091A1B150A92870033C7DF /* Graviton-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		EA091A09150A92870033C7DF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		EA091A0B150A92870033C7DF /* Graviton */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA091A21150A92870033C7DF /* Build configuration list for PBXNativeTarget "Graviton" */;
+			buildPhases = (
+				EA091A07150A92870033C7DF /* Sources */,
+				EA091A08150A92870033C7DF /* Frameworks */,
+				EA091A09150A92870033C7DF /* Headers */,
+				EA091A0A150A92870033C7DF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Graviton;
+			productName = Graviton;
+			productReference = EA091A0C150A92870033C7DF /* Graviton.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EA091A02150A92860033C7DF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = "Sunflower Softworks";
+			};
+			buildConfigurationList = EA091A05150A92860033C7DF /* Build configuration list for PBXProject "Graviton" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = EA091A00150A92860033C7DF;
+			productRefGroup = EA091A0D150A92870033C7DF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EA091A0B150A92870033C7DF /* Graviton */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EA091A0A150A92870033C7DF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA091A1A150A92870033C7DF /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EA091A07150A92870033C7DF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA091A1E150A92870033C7DF /* Graviton.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		EA091A18150A92870033C7DF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EA091A19150A92870033C7DF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EA091A1F150A92870033C7DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		EA091A20150A92870033C7DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		EA091A22150A92870033C7DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Graviton/Graviton-Prefix.pch";
+				INFOPLIST_FILE = "Graviton/Graviton-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		EA091A23150A92870033C7DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Graviton/Graviton-Prefix.pch";
+				INFOPLIST_FILE = "Graviton/Graviton-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EA091A05150A92860033C7DF /* Build configuration list for PBXProject "Graviton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA091A1F150A92870033C7DF /* Debug */,
+				EA091A20150A92870033C7DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA091A21150A92870033C7DF /* Build configuration list for PBXNativeTarget "Graviton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA091A22150A92870033C7DF /* Debug */,
+				EA091A23150A92870033C7DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EA091A02150A92860033C7DF /* Project object */;
+}
