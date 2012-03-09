@@ -7,22 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EA091A10150A92870033C7DF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA091A0F150A92870033C7DF /* Cocoa.framework */; };
 		EA091A1A150A92870033C7DF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA091A18150A92870033C7DF /* InfoPlist.strings */; };
 		EA091A1E150A92870033C7DF /* Graviton.m in Sources */ = {isa = PBXBuildFile; fileRef = EA091A1D150A92870033C7DF /* Graviton.m */; };
+		EA091A25150A92CA0033C7DF /* GravitonDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = EA091A24150A92CA0033C7DF /* GravitonDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EA091A26150A92CE0033C7DF /* Graviton.h in Headers */ = {isa = PBXBuildFile; fileRef = EA091A1C150A92870033C7DF /* Graviton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EA091A27150A93180033C7DF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA091A14150A92870033C7DF /* Foundation.framework */; };
+		EA091A2B150A93530033C7DF /* GXFileOperationQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = EA091A29150A93530033C7DF /* GXFileOperationQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EA091A2C150A93530033C7DF /* GXFileOperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = EA091A2A150A93530033C7DF /* GXFileOperationQueue.m */; };
+		EA091A2E150A935E0033C7DF /* GXFileOperationQueue_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = EA091A2D150A935E0033C7DF /* GXFileOperationQueue_Private.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		EA091A31150A93710033C7DF /* GXFileOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = EA091A2F150A93710033C7DF /* GXFileOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EA091A32150A93710033C7DF /* GXFileOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = EA091A30150A93710033C7DF /* GXFileOperation.m */; };
+		EA091A34150A937E0033C7DF /* GXFileOperation_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = EA091A33150A937C0033C7DF /* GXFileOperation_Private.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		EA091A36150A943A0033C7DF /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA091A35150A943A0033C7DF /* CoreServices.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		EA091A0C150A92870033C7DF /* Graviton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Graviton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EA091A0F150A92870033C7DF /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
-		EA091A12150A92870033C7DF /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
-		EA091A13150A92870033C7DF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		EA091A14150A92870033C7DF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		EA091A17150A92870033C7DF /* Graviton-Info.plist */ = {isa = PBXFileReference; path = "Graviton-Info.plist"; sourceTree = "<group>"; };
+		EA091A17150A92870033C7DF /* Graviton-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Graviton-Info.plist"; sourceTree = "<group>"; };
 		EA091A19150A92870033C7DF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		EA091A1B150A92870033C7DF /* Graviton-Prefix.pch */ = {isa = PBXFileReference; path = "Graviton-Prefix.pch"; sourceTree = "<group>"; };
-		EA091A1C150A92870033C7DF /* Graviton.h */ = {isa = PBXFileReference; path = Graviton.h; sourceTree = "<group>"; };
+		EA091A1B150A92870033C7DF /* Graviton-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Graviton-Prefix.pch"; sourceTree = "<group>"; };
+		EA091A1C150A92870033C7DF /* Graviton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Graviton.h; sourceTree = "<group>"; };
 		EA091A1D150A92870033C7DF /* Graviton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Graviton.m; sourceTree = "<group>"; };
+		EA091A24150A92CA0033C7DF /* GravitonDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GravitonDefines.h; sourceTree = "<group>"; };
+		EA091A29150A93530033C7DF /* GXFileOperationQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GXFileOperationQueue.h; sourceTree = "<group>"; };
+		EA091A2A150A93530033C7DF /* GXFileOperationQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GXFileOperationQueue.m; sourceTree = "<group>"; };
+		EA091A2D150A935E0033C7DF /* GXFileOperationQueue_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GXFileOperationQueue_Private.h; sourceTree = "<group>"; };
+		EA091A2F150A93710033C7DF /* GXFileOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GXFileOperation.h; sourceTree = "<group>"; };
+		EA091A30150A93710033C7DF /* GXFileOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GXFileOperation.m; sourceTree = "<group>"; };
+		EA091A33150A937C0033C7DF /* GXFileOperation_Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GXFileOperation_Private.h; sourceTree = "<group>"; };
+		EA091A35150A943A0033C7DF /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,7 +44,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA091A10150A92870033C7DF /* Cocoa.framework in Frameworks */,
+				EA091A27150A93180033C7DF /* Foundation.framework in Frameworks */,
+				EA091A36150A943A0033C7DF /* CoreServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,20 +72,10 @@
 		EA091A0E150A92870033C7DF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EA091A0F150A92870033C7DF /* Cocoa.framework */,
-				EA091A11150A92870033C7DF /* Other Frameworks */,
+				EA091A14150A92870033C7DF /* Foundation.framework */,
+				EA091A35150A943A0033C7DF /* CoreServices.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		EA091A11150A92870033C7DF /* Other Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				EA091A12150A92870033C7DF /* AppKit.framework */,
-				EA091A13150A92870033C7DF /* CoreData.framework */,
-				EA091A14150A92870033C7DF /* Foundation.framework */,
-			);
-			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
 		EA091A15150A92870033C7DF /* Graviton */ = {
@@ -78,6 +83,8 @@
 			children = (
 				EA091A1C150A92870033C7DF /* Graviton.h */,
 				EA091A1D150A92870033C7DF /* Graviton.m */,
+				EA091A24150A92CA0033C7DF /* GravitonDefines.h */,
+				EA091A28150A933A0033C7DF /* Files */,
 				EA091A16150A92870033C7DF /* Supporting Files */,
 			);
 			path = Graviton;
@@ -93,6 +100,19 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		EA091A28150A933A0033C7DF /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				EA091A29150A93530033C7DF /* GXFileOperationQueue.h */,
+				EA091A2D150A935E0033C7DF /* GXFileOperationQueue_Private.h */,
+				EA091A2A150A93530033C7DF /* GXFileOperationQueue.m */,
+				EA091A2F150A93710033C7DF /* GXFileOperation.h */,
+				EA091A33150A937C0033C7DF /* GXFileOperation_Private.h */,
+				EA091A30150A93710033C7DF /* GXFileOperation.m */,
+			);
+			path = Files;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -100,6 +120,12 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA091A25150A92CA0033C7DF /* GravitonDefines.h in Headers */,
+				EA091A26150A92CE0033C7DF /* Graviton.h in Headers */,
+				EA091A2B150A93530033C7DF /* GXFileOperationQueue.h in Headers */,
+				EA091A2E150A935E0033C7DF /* GXFileOperationQueue_Private.h in Headers */,
+				EA091A31150A93710033C7DF /* GXFileOperation.h in Headers */,
+				EA091A34150A937E0033C7DF /* GXFileOperation_Private.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,6 +156,7 @@
 		EA091A02150A92860033C7DF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = GX;
 				LastUpgradeCheck = 0430;
 				ORGANIZATIONNAME = "Sunflower Softworks";
 			};
@@ -167,6 +194,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA091A1E150A92870033C7DF /* Graviton.m in Sources */,
+				EA091A2C150A93530033C7DF /* GXFileOperationQueue.m in Sources */,
+				EA091A32150A93710033C7DF /* GXFileOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

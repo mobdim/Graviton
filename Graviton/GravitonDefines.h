@@ -1,12 +1,9 @@
 //
-//  Graviton.m
+//  GravitonDefines.h
 //  Graviton
 //
 //  Created by Logan Collins on 3/9/12.
 //  Copyright (c) 2012 Sunflower Softworks. All rights reserved.
 //
 
-#import "Graviton.h"
-
-
-NSString * const GXGravitonErrorDomain = @"GXGravitonErrorDomain";
+#define GRAVITON_EXTERN extern __attribute__((visibility("default")))

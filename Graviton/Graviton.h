@@ -6,8 +6,11 @@
 //  Copyright (c) 2012 Sunflower Softworks. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <Graviton/GravitonDefines.h>
 
-@interface Graviton : NSObject
 
-@end
+/*!
+ * @constant GXGravitonErrorDomain
+ * @abstract The Graviton error domain
+ */
+GRAVITON_EXTERN NSString * const GXGravitonErrorDomain;
