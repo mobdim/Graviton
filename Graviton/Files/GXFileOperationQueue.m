@@ -7,13 +7,14 @@
 //
 
 #import "GXFileOperationQueue.h"
-#import "GXFileOperation_Private.h"
+#import "GXFileOperationQueue_Private.h"
 
-#import "GXFileOperation.h"
+#import <AppKit/NSWorkspace.h>
 
 
 @implementation GXFileOperationQueue {
-    NSMutableArray *_operations;
+    NSUInteger _operationCount;
+    dispatch_queue_t _operationQueue;
 }
 
 + (GXFileOperationQueue *)defaultQueue {
@@ -28,42 +29,135 @@
 - (id)init {
     self = [super init];
     if (self) {
-        _operations = [[NSMutableArray alloc] init];
+        _operationQueue = dispatch_queue_create(NULL, DISPATCH_QUEUE_CONCURRENT);
     }
     return self;
 }
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-    if ([object isKindOfClass:[GXFileOperation class]] && [keyPath isEqualToString:@"state"]) {
-        if ([object state] == GXFileOperationStateCancelled
-            || [object state] == GXFileOperationStateFinished) {
-            [_operations removeObject:object];
+- (NSUInteger)operationCount {
+    return _operationCount;
+}
+
+- (void)incrementOperationCount {
+    @synchronized(self) {
+        _operationCount++;
+    }
+}
+
+- (void)decrementOperationCount {
+    @synchronized(self) {
+        _operationCount--;
+    }
+}
+
+
+#pragma mark -
+#pragma mark Accessors
+
+- (dispatch_queue_t)operationQueue {
+    return _operationQueue;
+}
+
+- (void)setOperationQueue:(dispatch_queue_t)operationQueue {
+    if (_operationQueue != NULL) {
+        dispatch_release(_operationQueue);
+    }
+    if (operationQueue != NULL) {
+        dispatch_retain(operationQueue);
+    }
+    _operationQueue = operationQueue;
+}
+
+
+#pragma mark -
+#pragma mark Operations
+
+- (void)moveItemAtURL:(NSURL *)srcURL toURL:(NSURL *)destURL options:(GXFileOperationOptions)options completionHandler:(void (^)(NSError *error))handler {
+    dispatch_queue_t currentQueue = dispatch_get_current_queue();
+    dispatch_async(_operationQueue, ^{
+        [self incrementOperationCount];
+        NSFileManager *fileManager = [[NSFileManager alloc] init];
+        NSError *error = nil;
+        if ([fileManager moveItemAtURL:srcURL toURL:destURL error:&error]) {
+            if (handler != nil) {
+                dispatch_async(currentQueue, ^{
+                    handler(nil);
+                });
+            }
         }
-    }
-    else [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+        else {
+            if (handler != nil) {
+                dispatch_async(currentQueue, ^{
+                    handler(error);
+                });
+            }
+        }
+        [self decrementOperationCount];
+    });
 }
 
-- (NSArray *)operations {
-    return [_operations copy];
+- (void)copyItemAtURL:(NSURL *)srcURL toURL:(NSURL *)destURL options:(GXFileOperationOptions)options completionHandler:(void (^)(NSError *))handler {
+    dispatch_queue_t currentQueue = dispatch_get_current_queue();
+    dispatch_async(_operationQueue, ^{
+        [self incrementOperationCount];
+        NSFileManager *fileManager = [[NSFileManager alloc] init];
+        NSError *error = nil;
+        if ([fileManager moveItemAtURL:srcURL toURL:destURL error:&error]) {
+            if (handler != nil) {
+                dispatch_async(currentQueue, ^{
+                    handler(nil);
+                });
+            }
+        }
+        else {
+            if (handler != nil) {
+                dispatch_async(currentQueue, ^{
+                    handler(error);
+                });
+            }
+        }
+        [self decrementOperationCount];
+    });
 }
 
-- (void)cancelAllOperations {
-    for (GXFileOperation *operation in [self operations]) {
-        [operation cancel];
-    }
+- (void)recycleItemAtURL:(NSURL *)srcURL options:(GXFileOperationOptions)options completionHandler:(void (^)(NSError *))handler {
+    dispatch_queue_t currentQueue = dispatch_get_current_queue();
+    dispatch_async(_operationQueue, ^{
+        [self incrementOperationCount];
+        NSWorkspace *workspace = [NSWorkspace sharedWorkspace];
+        [workspace recycleURLs:[NSArray arrayWithObject:srcURL] completionHandler:^(NSDictionary *newURLs, NSError *error) {
+            if (handler != nil) {
+                dispatch_async(currentQueue, ^{
+                    handler(error);
+                });
+            }
+        }];
+        [self decrementOperationCount];
+    });
 }
 
-- (void)addOperation:(GXFileOperation *)operation {
-    if (![_operations containsObject:operation]) {
-        [operation addObserver:self forKeyPath:@"state" options:(NSKeyValueObservingOptionNew) context:nil];
-        
-        NSIndexSet *changedIndexes = [NSIndexSet indexSetWithIndex:[_operations count]];
-        [self willChange:NSKeyValueChangeInsertion valuesAtIndexes:changedIndexes forKey:@"operations"];
-        [_operations addObject:operation];
-        [self didChange:NSKeyValueChangeInsertion valuesAtIndexes:changedIndexes forKey:@"operations"];
-        
-        [operation start];
-    }
+- (void)removeItemAtURL:(NSURL *)srcURL options:(GXFileOperationOptions)options completionHandler:(void (^)(NSError *))handler {
+    dispatch_queue_t currentQueue = dispatch_get_current_queue();
+    dispatch_async(_operationQueue, ^{
+        [self incrementOperationCount];
+        NSFileManager *fileManager = [[NSFileManager alloc] init];
+        NSError *error = nil;
+        if ([fileManager removeItemAtURL:srcURL error:&error]) {
+            if (handler != nil) {
+                dispatch_async(currentQueue, ^{
+                    handler(nil);
+                });
+            }
+        }
+        else {
+            if (handler != nil) {
+                dispatch_async(currentQueue, ^{
+                    handler(error);
+                });
+            }
+        }
+        [self decrementOperationCount];
+    });
 }
 
 @end

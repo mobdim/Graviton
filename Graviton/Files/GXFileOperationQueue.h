@@ -9,12 +9,24 @@
 #import <Foundation/Foundation.h>
 
 
+/*!
+ * @enum GXFileOperationOptions
+ * @abstract Bitmask values for file operation options
+ * 
+ * @constant GXFileOperationOptionOverwrite                     Overwrite destination files
+ */
+enum {
+    GXFileOperationOptionOverwrite = 0x01,
+};
+typedef NSUInteger GXFileOperationOptions;
+
+
 @class GXFileOperation;
 
 
 /*!
  * @class GXFileOperationQueue
- * @abstract Coordinates multiple asynchronous file operations
+ * @abstract Coordinates multiple queued asynchronous file operations
  */
 @interface GXFileOperationQueue : NSObject
 
@@ -28,29 +40,82 @@
 
 
 /*!
- * @property fileOperations
- * @abstract All currently active operations
+ * @property operationCount
+ * @abstract The number of currently active operations
  * 
- * @result An NSArray of SHFileOperation objects
+ * @result An NSUInteger value
  */
-@property (copy, readonly) NSArray *operations;
+@property (assign, readonly) NSUInteger operationCount;
 
 /*!
- * @method cancelAllOperations
- * @abstract Cancels all active file operations
+ * @property operationQueue
+ * @abstract The dispatch queue on which to execute operations
+ * 
+ * @result A dispatch_queue object
  */
-- (void)cancelAllOperations;
+@property (assign) dispatch_queue_t operationQueue;
+
 
 /*!
- * @method addOperation:
- * @abstract Adds an operation to the queue
+ * @method moveItemAtURL:toURL:options:completionHandler:
+ * @abstract Moves an item to a new URL
  * 
- * @discussion
- * This method calls -start on the operation.
+ * @param srcURL
+ * The source URL
  * 
- * @param operation
- * The operation to add
+ * @param destURL
+ * The destination URL
+ * 
+ * @param options
+ * The file operation options
+ * 
+ * @result An GXFileOperation object
  */
-- (void)addOperation:(GXFileOperation *)operation;
+- (void)moveItemAtURL:(NSURL *)srcURL toURL:(NSURL *)destURL options:(GXFileOperationOptions)options completionHandler:(void (^)(NSError *error))handler;
+
+/*!
+ * @method copyItemAtURL:toURL:options:completionHandler:
+ * @abstract Copies an item to a new URL
+ * 
+ * @param srcURL
+ * The source URL
+ * 
+ * @param destURL
+ * The destination URL
+ * 
+ * @param options
+ * The file operation options
+ * 
+ * @result An GXFileOperation object
+ */
+- (void)copyItemAtURL:(NSURL *)srcURL toURL:(NSURL *)destURL options:(GXFileOperationOptions)options completionHandler:(void (^)(NSError *error))handler;
+
+/*!
+ * @method recycleItemAtURL:options:completionHandler:
+ * @abstract Moves an item to the Trash
+ * 
+ * @param srcURL
+ * The source URL
+ * 
+ * @param options
+ * The file operation options
+ * 
+ * @result An GXFileOperation object
+ */
+- (void)recycleItemAtURL:(NSURL *)srcURL options:(GXFileOperationOptions)options completionHandler:(void (^)(NSError *error))handler;
+
+/*!
+ * @method removeItemAtURL:options:completionHandler:
+ * @abstract Deletes an item
+ * 
+ * @param srcURL
+ * The source URL
+ * 
+ * @param options
+ * The file operation options
+ * 
+ * @result An GXFileOperation object
+ */
+- (void)removeItemAtURL:(NSURL *)srcURL options:(GXFileOperationOptions)options completionHandler:(void (^)(NSError *error))handler;
 
 @end

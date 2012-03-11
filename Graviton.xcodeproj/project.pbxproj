@@ -15,10 +15,7 @@
 		EA091A2B150A93530033C7DF /* GXFileOperationQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = EA091A29150A93530033C7DF /* GXFileOperationQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EA091A2C150A93530033C7DF /* GXFileOperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = EA091A2A150A93530033C7DF /* GXFileOperationQueue.m */; };
 		EA091A2E150A935E0033C7DF /* GXFileOperationQueue_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = EA091A2D150A935E0033C7DF /* GXFileOperationQueue_Private.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		EA091A31150A93710033C7DF /* GXFileOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = EA091A2F150A93710033C7DF /* GXFileOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EA091A32150A93710033C7DF /* GXFileOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = EA091A30150A93710033C7DF /* GXFileOperation.m */; };
-		EA091A34150A937E0033C7DF /* GXFileOperation_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = EA091A33150A937C0033C7DF /* GXFileOperation_Private.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		EA091A36150A943A0033C7DF /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA091A35150A943A0033C7DF /* CoreServices.framework */; };
+		EAA12F56150C6FC900036E1F /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAA12F55150C6FC900036E1F /* AppKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,10 +30,7 @@
 		EA091A29150A93530033C7DF /* GXFileOperationQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GXFileOperationQueue.h; sourceTree = "<group>"; };
 		EA091A2A150A93530033C7DF /* GXFileOperationQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GXFileOperationQueue.m; sourceTree = "<group>"; };
 		EA091A2D150A935E0033C7DF /* GXFileOperationQueue_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GXFileOperationQueue_Private.h; sourceTree = "<group>"; };
-		EA091A2F150A93710033C7DF /* GXFileOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GXFileOperation.h; sourceTree = "<group>"; };
-		EA091A30150A93710033C7DF /* GXFileOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GXFileOperation.m; sourceTree = "<group>"; };
-		EA091A33150A937C0033C7DF /* GXFileOperation_Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GXFileOperation_Private.h; sourceTree = "<group>"; };
-		EA091A35150A943A0033C7DF /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
+		EAA12F55150C6FC900036E1F /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,7 +39,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA091A27150A93180033C7DF /* Foundation.framework in Frameworks */,
-				EA091A36150A943A0033C7DF /* CoreServices.framework in Frameworks */,
+				EAA12F56150C6FC900036E1F /* AppKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,7 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				EA091A14150A92870033C7DF /* Foundation.framework */,
-				EA091A35150A943A0033C7DF /* CoreServices.framework */,
+				EAA12F55150C6FC900036E1F /* AppKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -106,9 +100,6 @@
 				EA091A29150A93530033C7DF /* GXFileOperationQueue.h */,
 				EA091A2D150A935E0033C7DF /* GXFileOperationQueue_Private.h */,
 				EA091A2A150A93530033C7DF /* GXFileOperationQueue.m */,
-				EA091A2F150A93710033C7DF /* GXFileOperation.h */,
-				EA091A33150A937C0033C7DF /* GXFileOperation_Private.h */,
-				EA091A30150A93710033C7DF /* GXFileOperation.m */,
 			);
 			path = Files;
 			sourceTree = "<group>";
@@ -124,8 +115,6 @@
 				EA091A26150A92CE0033C7DF /* Graviton.h in Headers */,
 				EA091A2B150A93530033C7DF /* GXFileOperationQueue.h in Headers */,
 				EA091A2E150A935E0033C7DF /* GXFileOperationQueue_Private.h in Headers */,
-				EA091A31150A93710033C7DF /* GXFileOperation.h in Headers */,
-				EA091A34150A937E0033C7DF /* GXFileOperation_Private.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,7 +184,6 @@
 			files = (
 				EA091A1E150A92870033C7DF /* Graviton.m in Sources */,
 				EA091A2C150A93530033C7DF /* GXFileOperationQueue.m in Sources */,
-				EA091A32150A93710033C7DF /* GXFileOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +295,7 @@
 				EA091A23150A92870033C7DF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
