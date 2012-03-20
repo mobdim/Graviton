@@ -8,6 +8,15 @@
 
 #import "NSObject+GravitonAdditions.h"
 
+
 @implementation NSObject (GravitonAdditions)
+
+- (void)gx_performBlock:(void (^)(void))block {
+    block();
+}
+
+- (void)gx_performAfterDelay:(NSTimeInterval)delay block:(void (^)(void))block {
+    [self performSelector:@selector(gx_performBlock:) withObject:[block copy] afterDelay:delay];
+}
 
 @end

@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+
 @interface NSObject (GravitonAdditions)
+
+- (void)gx_performBlock:(void (^)(void))block;
+- (void)gx_performAfterDelay:(NSTimeInterval)delay block:(void (^)(void))block;
 
 @end

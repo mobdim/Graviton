@@ -10,6 +10,8 @@
 
 #import <Graviton/GXFileOperationQueue.h>
 
+#import <Graviton/NSObject+GravitonAdditions.h>
+
 
 /*!
  * @constant GXGravitonErrorDomain
