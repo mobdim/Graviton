@@ -17,6 +17,12 @@
 		EA091A2E150A935E0033C7DF /* GXFileOperationQueue_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = EA091A2D150A935E0033C7DF /* GXFileOperationQueue_Private.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		EA4424E015193D7F00EA1C1B /* NSObject+GravitonAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = EA4424DE15193D7F00EA1C1B /* NSObject+GravitonAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EA4424E115193D7F00EA1C1B /* NSObject+GravitonAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4424DF15193D7F00EA1C1B /* NSObject+GravitonAdditions.m */; };
+		EA55FA40151D35A80088F053 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA091A14150A92870033C7DF /* Foundation.framework */; };
+		EA55FA4B151D35B30088F053 /* Graviton.h in Headers */ = {isa = PBXBuildFile; fileRef = EA091A1C150A92870033C7DF /* Graviton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EA55FA4C151D35B70088F053 /* GravitonDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = EA091A24150A92CA0033C7DF /* GravitonDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EA55FA4D151D35C80088F053 /* GXFileOperationQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = EA091A29150A93530033C7DF /* GXFileOperationQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EA55FA4E151D35C80088F053 /* NSObject+GravitonAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = EA4424DE15193D7F00EA1C1B /* NSObject+GravitonAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EA55FA4F151D35CE0088F053 /* GXFileOperationQueue_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = EA091A2D150A935E0033C7DF /* GXFileOperationQueue_Private.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		EAA12F56150C6FC900036E1F /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAA12F55150C6FC900036E1F /* AppKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +40,8 @@
 		EA091A2D150A935E0033C7DF /* GXFileOperationQueue_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GXFileOperationQueue_Private.h; sourceTree = "<group>"; };
 		EA4424DE15193D7F00EA1C1B /* NSObject+GravitonAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+GravitonAdditions.h"; sourceTree = "<group>"; };
 		EA4424DF15193D7F00EA1C1B /* NSObject+GravitonAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+GravitonAdditions.m"; sourceTree = "<group>"; };
+		EA55FA3F151D35A70088F053 /* liblibGraviton.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = liblibGraviton.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA55FA43151D35A80088F053 /* libGraviton-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "libGraviton-Prefix.pch"; sourceTree = "<group>"; };
 		EAA12F55150C6FC900036E1F /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -47,6 +55,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EA55FA3C151D35A70088F053 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA55FA40151D35A80088F053 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -54,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				EA091A15150A92870033C7DF /* Graviton */,
+				EA55FA41151D35A80088F053 /* libGraviton */,
 				EA091A0E150A92870033C7DF /* Frameworks */,
 				EA091A0D150A92870033C7DF /* Products */,
 			);
@@ -63,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				EA091A0C150A92870033C7DF /* Graviton.framework */,
+				EA55FA3F151D35A70088F053 /* liblibGraviton.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -118,6 +136,22 @@
 			path = Categories;
 			sourceTree = "<group>";
 		};
+		EA55FA41151D35A80088F053 /* libGraviton */ = {
+			isa = PBXGroup;
+			children = (
+				EA55FA42151D35A80088F053 /* Supporting Files */,
+			);
+			path = libGraviton;
+			sourceTree = "<group>";
+		};
+		EA55FA42151D35A80088F053 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EA55FA43151D35A80088F053 /* libGraviton-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -130,6 +164,18 @@
 				EA091A2B150A93530033C7DF /* GXFileOperationQueue.h in Headers */,
 				EA091A2E150A935E0033C7DF /* GXFileOperationQueue_Private.h in Headers */,
 				EA4424E015193D7F00EA1C1B /* NSObject+GravitonAdditions.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA55FA3D151D35A70088F053 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA55FA4B151D35B30088F053 /* Graviton.h in Headers */,
+				EA55FA4C151D35B70088F053 /* GravitonDefines.h in Headers */,
+				EA55FA4D151D35C80088F053 /* GXFileOperationQueue.h in Headers */,
+				EA55FA4E151D35C80088F053 /* NSObject+GravitonAdditions.h in Headers */,
+				EA55FA4F151D35CE0088F053 /* GXFileOperationQueue_Private.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,6 +200,23 @@
 			productReference = EA091A0C150A92870033C7DF /* Graviton.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		EA55FA3E151D35A70088F053 /* libGraviton */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA55FA49151D35A80088F053 /* Build configuration list for PBXNativeTarget "libGraviton" */;
+			buildPhases = (
+				EA55FA3B151D35A70088F053 /* Sources */,
+				EA55FA3C151D35A70088F053 /* Frameworks */,
+				EA55FA3D151D35A70088F053 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = libGraviton;
+			productName = libGraviton;
+			productReference = EA55FA3F151D35A70088F053 /* liblibGraviton.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -177,6 +240,7 @@
 			projectRoot = "";
 			targets = (
 				EA091A0B150A92870033C7DF /* Graviton */,
+				EA55FA3E151D35A70088F053 /* libGraviton */,
 			);
 		};
 /* End PBXProject section */
@@ -200,6 +264,13 @@
 				EA091A1E150A92870033C7DF /* Graviton.m in Sources */,
 				EA091A2C150A93530033C7DF /* GXFileOperationQueue.m in Sources */,
 				EA4424E115193D7F00EA1C1B /* NSObject+GravitonAdditions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA55FA3B151D35A70088F053 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +363,37 @@
 			};
 			name = Release;
 		};
+		EA55FA47151D35A80088F053 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				DSTROOT = /tmp/libGraviton.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "libGraviton/libGraviton-Prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		EA55FA48151D35A80088F053 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				DSTROOT = /tmp/libGraviton.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "libGraviton/libGraviton-Prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -312,6 +414,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		EA55FA49151D35A80088F053 /* Build configuration list for PBXNativeTarget "libGraviton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA55FA47151D35A80088F053 /* Debug */,
+				EA55FA48151D35A80088F053 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

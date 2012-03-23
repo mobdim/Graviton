@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'libGraviton' target in the 'libGraviton' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif
