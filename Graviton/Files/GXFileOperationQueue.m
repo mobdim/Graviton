@@ -9,7 +9,9 @@
 #import "GXFileOperationQueue.h"
 #import "GXFileOperationQueue_Private.h"
 
+#if TARGET_OS_MAC
 #import <AppKit/NSWorkspace.h>
+#endif
 
 
 @implementation GXFileOperationQueue {
@@ -120,6 +122,7 @@
     });
 }
 
+#if TARGET_OS_MAC
 - (void)recycleItemAtURL:(NSURL *)srcURL options:(GXFileOperationOptions)options completionHandler:(void (^)(NSError *))handler {
     dispatch_queue_t currentQueue = dispatch_get_current_queue();
     dispatch_async(_operationQueue, ^{
@@ -135,6 +138,7 @@
         [self decrementOperationCount];
     });
 }
+#endif
 
 - (void)removeItemAtURL:(NSURL *)srcURL options:(GXFileOperationOptions)options completionHandler:(void (^)(NSError *))handler {
     dispatch_queue_t currentQueue = dispatch_get_current_queue();

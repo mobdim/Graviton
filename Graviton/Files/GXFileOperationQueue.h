@@ -90,6 +90,8 @@ typedef NSUInteger GXFileOperationOptions;
  */
 - (void)copyItemAtURL:(NSURL *)srcURL toURL:(NSURL *)destURL options:(GXFileOperationOptions)options completionHandler:(void (^)(NSError *error))handler;
 
+#if TARGET_OS_MAC
+
 /*!
  * @method recycleItemAtURL:options:completionHandler:
  * @abstract Moves an item to the Trash
@@ -103,6 +105,8 @@ typedef NSUInteger GXFileOperationOptions;
  * @result An GXFileOperation object
  */
 - (void)recycleItemAtURL:(NSURL *)srcURL options:(GXFileOperationOptions)options completionHandler:(void (^)(NSError *error))handler;
+
+#endif
 
 /*!
  * @method removeItemAtURL:options:completionHandler:
