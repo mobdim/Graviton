@@ -1,7 +1,7 @@
 # Graviton
 ### Objective-C Foundational Framework
 
-Graviton is a foundational toolkit for Mac OS X, with classes for common actions and idioms that aren't offered by the core Objective-C frameworks.
+Graviton is a foundational toolkit for Mac OS X and iOS, with classes for common actions and idioms that aren't offered by the core Objective-C frameworks.
 
 ## License
 
