@@ -9,6 +9,7 @@
 #import <Graviton/GravitonDefines.h>
 
 #import <Graviton/GXFileOperationQueue.h>
+#import <Graviton/GXKVONotificationCenter.h>
 
 #import <Graviton/NSObject+GravitonAdditions.h>
 
