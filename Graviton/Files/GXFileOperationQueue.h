@@ -90,7 +90,7 @@ typedef NSUInteger GXFileOperationOptions;
  */
 - (void)copyItemAtURL:(NSURL *)srcURL toURL:(NSURL *)destURL options:(GXFileOperationOptions)options completionHandler:(void (^)(NSError *error))handler;
 
-#if TARGET_OS_MAC
+#if !TARGET_OS_IPHONE
 
 /*!
  * @method recycleItemAtURL:options:completionHandler:

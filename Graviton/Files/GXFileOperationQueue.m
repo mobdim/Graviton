@@ -9,7 +9,7 @@
 #import "GXFileOperationQueue.h"
 #import "GXFileOperationQueue_Private.h"
 
-#if TARGET_OS_MAC
+#if !TARGET_OS_IPHONE
 #import <AppKit/NSWorkspace.h>
 #endif
 
@@ -122,7 +122,7 @@
     });
 }
 
-#if TARGET_OS_MAC
+#if !TARGET_OS_IPHONE
 
 - (void)recycleItemAtURL:(NSURL *)srcURL options:(GXFileOperationOptions)options completionHandler:(void (^)(NSError *))handler {
     dispatch_queue_t currentQueue = dispatch_get_current_queue();
