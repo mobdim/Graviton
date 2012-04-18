@@ -12,9 +12,9 @@
 @interface GXBlockKVOObservation ()
 
 - (id)initWithObject:(id)object
-			 keyPath:(NSString *)keyPath
-			 options:(NSKeyValueObservingOptions)options
-			   block:(void (^)(NSDictionary *change))block;
+             keyPath:(NSString *)keyPath
+             options:(NSKeyValueObservingOptions)options
+               block:(void (^)(NSDictionary *change))block;
 
 @property (weak, readwrite) id object;
 @property (copy, readwrite) NSString *keyPath;

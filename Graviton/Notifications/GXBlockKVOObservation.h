@@ -12,9 +12,9 @@
 @interface GXBlockKVOObservation : GXKVOObservation
 
 + (GXBlockKVOObservation *)observationWithObject:(id)object
-										 keyPath:(NSString *)keyPath
-										 options:(NSKeyValueObservingOptions)options
-										   block:(void (^)(NSDictionary *change))block;
+                                         keyPath:(NSString *)keyPath
+                                         options:(NSKeyValueObservingOptions)options
+                                           block:(void (^)(NSDictionary *change))block;
 
 @property (weak, readonly) id object;
 @property (copy, readonly) NSString *keyPath;

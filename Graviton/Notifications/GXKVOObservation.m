@@ -12,7 +12,7 @@
 @implementation GXKVOObservation
 
 - (void)unregister {
-	// no-op
+    // no-op
 }
 
 @end

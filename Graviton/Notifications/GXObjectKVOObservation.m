@@ -23,36 +23,36 @@ static NSString * const GXObjectKVOObservationContext = @"GXObjectKVOObservation
 @synthesize userInfo=_userInfo;
 
 + (GXObjectKVOObservation *)observationWithObserver:(id)observer
-										 object:(id)object
-										keyPath:(NSString *)keyPath
-									   selector:(SEL)selector
-										options:(NSKeyValueObservingOptions)options
-									   userInfo:(NSDictionary *)userInfo {
-	return [[self alloc] initWithObserver:observer object:object keyPath:keyPath selector:selector options:options userInfo:userInfo];
+                                             object:(id)object
+                                            keyPath:(NSString *)keyPath
+                                           selector:(SEL)selector
+                                            options:(NSKeyValueObservingOptions)options
+                                           userInfo:(NSDictionary *)userInfo {
+    return [[self alloc] initWithObserver:observer object:object keyPath:keyPath selector:selector options:options userInfo:userInfo];
 }
 
 - (id)initWithObserver:(id)observer
-				object:(id)object
-			   keyPath:(NSString *)keyPath
-			  selector:(SEL)selector
-			   options:(NSKeyValueObservingOptions)options
-			  userInfo:(NSDictionary *)userInfo {
-	self = [super init];
-	if (self) {
-		self.observer = observer;
-		self.object = object;
-		self.keyPath = keyPath;
-		self.selector = selector;
-		self.options = options;
-		self.userInfo = userInfo;
-		
-		[self.object addObserver:self.observer forKeyPath:self.keyPath options:self.options context:(__bridge void *)GXObjectKVOObservationContext];
-	}
-	return self;
+                object:(id)object
+               keyPath:(NSString *)keyPath
+              selector:(SEL)selector
+               options:(NSKeyValueObservingOptions)options
+              userInfo:(NSDictionary *)userInfo {
+    self = [super init];
+    if (self) {
+        self.observer = observer;
+        self.object = object;
+        self.keyPath = keyPath;
+        self.selector = selector;
+        self.options = options;
+        self.userInfo = userInfo;
+        
+        [self.object addObserver:self.observer forKeyPath:self.keyPath options:self.options context:(__bridge void *)GXObjectKVOObservationContext];
+    }
+    return self;
 }
 
 - (void)unregister {
-	[self.object removeObserver:self.observer forKeyPath:self.keyPath];
+    [self.object removeObserver:self.observer forKeyPath:self.keyPath];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
@@ -62,7 +62,7 @@ static NSString * const GXObjectKVOObservationContext = @"GXObjectKVOObservation
         [self.observer performSelector:self.selector withObject:change];
 #pragma clang diagnostic pop
     }
-	else [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+    else [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
 }
 
 @end

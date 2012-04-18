@@ -12,11 +12,11 @@
 @interface GXObjectKVOObservation ()
 
 - (id)initWithObserver:(id)observer
-				object:(id)object
-			   keyPath:(NSString *)keyPath
-			  selector:(SEL)selector
-			   options:(NSKeyValueObservingOptions)options
-			  userInfo:(NSDictionary *)userInfo;
+                object:(id)object
+               keyPath:(NSString *)keyPath
+              selector:(SEL)selector
+               options:(NSKeyValueObservingOptions)options
+              userInfo:(NSDictionary *)userInfo;
 
 @property (weak, readwrite) id observer;
 @property (weak, readwrite) id object;
