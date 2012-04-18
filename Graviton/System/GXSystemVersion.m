@@ -22,48 +22,48 @@
 
 + (NSString *)pc_normalizedSystemVersionStringWithString:(NSString *)string {
     NSArray *components = [string componentsSeparatedByString:@"."];
-	NSMutableArray *newComponents = [NSMutableArray arrayWithCapacity:[components count]];
-	
+    NSMutableArray *newComponents = [NSMutableArray arrayWithCapacity:[components count]];
+    
     for (NSString *component in components) {
         NSUInteger value = [component integerValue];
-		[newComponents addObject:[NSString stringWithFormat:@"%lu", value]];
+        [newComponents addObject:[NSString stringWithFormat:@"%lu", value]];
     }
-	
-	// Strip extra 0'd components
-	for (NSInteger i=[newComponents count]-1; i>=0; i--) {
-		NSString *component = [newComponents objectAtIndex:i];
-		if ([component isEqualToString:@"0"]) {
-			[newComponents removeObjectAtIndex:i];
-		}
-	}
-	
-	return [newComponents componentsJoinedByString:@"."];
+    
+    // Strip extra 0'd components
+    for (NSInteger i=[newComponents count]-1; i>=0; i--) {
+        NSString *component = [newComponents objectAtIndex:i];
+        if ([component isEqualToString:@"0"]) {
+            [newComponents removeObjectAtIndex:i];
+        }
+    }
+    
+    return [newComponents componentsJoinedByString:@"."];
 }
 
 + (GXSystemVersion *)currentSystemVersion {
-	static GXSystemVersion *currentSystemVersion = nil;
-	
-	if (currentSystemVersion == nil) {
-		// This is the (official internal Apple) recommended way of getting the system version in 10.##.## form.
-		// Gestalt is broken and deprecated on 10.8+.
-		// All Unix-level utilities will not give the OS X version number, only Darwin's.
-		NSFileManager *fileManager = [[NSFileManager alloc] init];
-		NSURL *systemVersionURL = [[fileManager URLForDirectory:NSLibraryDirectory inDomain:NSSystemDomainMask appropriateForURL:nil create:NO error:nil] URLByAppendingPathComponent:@"CoreServices/SystemVersion.plist"];
-		NSData *systemVersionData = [NSData dataWithContentsOfURL:systemVersionURL];
-		NSDictionary *systemInfo = [NSPropertyListSerialization propertyListWithData:systemVersionData options:0 format:NULL error:nil];
-		if (systemInfo != nil) {
-			NSString *productVersion = [systemInfo objectForKey:@"ProductVersion"];
-			if ([productVersion length] > 0) {
-				currentSystemVersion = [GXSystemVersion systemVersionWithString:productVersion];
-			}
-		}
-	}
-	
-	return currentSystemVersion;
+    static GXSystemVersion *currentSystemVersion = nil;
+    
+    if (currentSystemVersion == nil) {
+        // This is the (official internal Apple) recommended way of getting the system version in 10.##.## form.
+        // Gestalt is broken and deprecated on 10.8+.
+        // All Unix-level utilities will not give the OS X version number, only Darwin's.
+        NSFileManager *fileManager = [[NSFileManager alloc] init];
+        NSURL *systemVersionURL = [[fileManager URLForDirectory:NSLibraryDirectory inDomain:NSSystemDomainMask appropriateForURL:nil create:NO error:nil] URLByAppendingPathComponent:@"CoreServices/SystemVersion.plist"];
+        NSData *systemVersionData = [NSData dataWithContentsOfURL:systemVersionURL];
+        NSDictionary *systemInfo = [NSPropertyListSerialization propertyListWithData:systemVersionData options:0 format:NULL error:nil];
+        if (systemInfo != nil) {
+            NSString *productVersion = [systemInfo objectForKey:@"ProductVersion"];
+            if ([productVersion length] > 0) {
+                currentSystemVersion = [GXSystemVersion systemVersionWithString:productVersion];
+            }
+        }
+    }
+    
+    return currentSystemVersion;
 }
 
 + (GXSystemVersion *)systemVersionWithString:(NSString *)aString {
-	NSString *normalizedString = [self pc_normalizedSystemVersionStringWithString:aString];
+    NSString *normalizedString = [self pc_normalizedSystemVersionStringWithString:aString];
     GXSystemVersion *systemVersion = [[self alloc] init];
     systemVersion.string = normalizedString;
     return systemVersion;
@@ -81,7 +81,7 @@
 }
 
 - (id)copyWithZone:(NSZone *)zone {
-	return self;
+    return self;
 }
 
 - (NSComparisonResult)compare:(GXSystemVersion *)aVersion {
@@ -121,44 +121,44 @@
 }
 
 - (BOOL)isLessThanOrEqualToSystemVersion:(GXSystemVersion *)aVersion {
-	return ([self compare:aVersion] == NSOrderedAscending || [self compare:aVersion] == NSOrderedSame);
+    return ([self compare:aVersion] == NSOrderedAscending || [self compare:aVersion] == NSOrderedSame);
 }
 
 - (BOOL)isLessThanSystemVersion:(GXSystemVersion *)aVersion {
-	return ([self compare:aVersion] == NSOrderedAscending);
+    return ([self compare:aVersion] == NSOrderedAscending);
 }
 
 - (BOOL)isGreaterThanOrEqualToSystemVersion:(GXSystemVersion *)aVersion {
-	return ([self compare:aVersion] == NSOrderedDescending || [self compare:aVersion] == NSOrderedSame);
+    return ([self compare:aVersion] == NSOrderedDescending || [self compare:aVersion] == NSOrderedSame);
 }
 
 - (BOOL)isGreaterThanSystemVersion:(GXSystemVersion *)aVersion {
-	return ([self compare:aVersion] == NSOrderedDescending);
+    return ([self compare:aVersion] == NSOrderedDescending);
 }
 
 - (BOOL)isEqualToString:(NSString *)string {
-	GXSystemVersion *aVersion = [GXSystemVersion systemVersionWithString:string];
-	return ([self compare:aVersion] == NSOrderedSame);
+    GXSystemVersion *aVersion = [GXSystemVersion systemVersionWithString:string];
+    return ([self compare:aVersion] == NSOrderedSame);
 }
 
 - (BOOL)isLessThanOrEqualToString:(NSString *)string {
-	GXSystemVersion *aVersion = [GXSystemVersion systemVersionWithString:string];
-	return ([self compare:aVersion] == NSOrderedAscending || [self compare:aVersion] == NSOrderedSame);
+    GXSystemVersion *aVersion = [GXSystemVersion systemVersionWithString:string];
+    return ([self compare:aVersion] == NSOrderedAscending || [self compare:aVersion] == NSOrderedSame);
 }
 
 - (BOOL)isLessThanString:(NSString *)string {
-	GXSystemVersion *aVersion = [GXSystemVersion systemVersionWithString:string];
-	return ([self compare:aVersion] == NSOrderedAscending);
+    GXSystemVersion *aVersion = [GXSystemVersion systemVersionWithString:string];
+    return ([self compare:aVersion] == NSOrderedAscending);
 }
 
 - (BOOL)isGreaterThanOrEqualToString:(NSString *)string {
-	GXSystemVersion *aVersion = [GXSystemVersion systemVersionWithString:string];
-	return ([self compare:aVersion] == NSOrderedDescending || [self compare:aVersion] == NSOrderedSame);
+    GXSystemVersion *aVersion = [GXSystemVersion systemVersionWithString:string];
+    return ([self compare:aVersion] == NSOrderedDescending || [self compare:aVersion] == NSOrderedSame);
 }
 
 - (BOOL)isGreaterThanString:(NSString *)string {
-	GXSystemVersion *aVersion = [GXSystemVersion systemVersionWithString:string];
-	return ([self compare:aVersion] == NSOrderedDescending);
+    GXSystemVersion *aVersion = [GXSystemVersion systemVersionWithString:string];
+    return ([self compare:aVersion] == NSOrderedDescending);
 }
 
 @end

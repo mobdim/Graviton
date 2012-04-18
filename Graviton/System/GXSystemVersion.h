@@ -14,7 +14,7 @@
  * @abstract Object representation of a system version
  */
 @interface GXSystemVersion : NSObject <NSCopying> {
-	NSString *_string;
+    NSString *_string;
 }
 
 + (GXSystemVersion *)currentSystemVersion;
