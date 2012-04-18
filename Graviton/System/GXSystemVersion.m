@@ -20,7 +20,7 @@
 
 @synthesize string=_string;
 
-+ (NSString *)pc_normalizedSystemVersionStringWithString:(NSString *)string {
++ (NSString *)gx_normalizedSystemVersionStringWithString:(NSString *)string {
     NSArray *components = [string componentsSeparatedByString:@"."];
     NSMutableArray *newComponents = [NSMutableArray arrayWithCapacity:[components count]];
     
@@ -63,7 +63,7 @@
 }
 
 + (GXSystemVersion *)systemVersionWithString:(NSString *)aString {
-    NSString *normalizedString = [self pc_normalizedSystemVersionStringWithString:aString];
+    NSString *normalizedString = [self gx_normalizedSystemVersionStringWithString:aString];
     GXSystemVersion *systemVersion = [[self alloc] init];
     systemVersion.string = normalizedString;
     return systemVersion;
