@@ -13,9 +13,7 @@
  * @class GXSystemVersion
  * @abstract Object representation of a system version
  */
-@interface GXSystemVersion : NSObject <NSCopying> {
-    NSString *_string;
-}
+@interface GXSystemVersion : NSObject <NSCopying>
 
 + (GXSystemVersion *)currentSystemVersion;
 + (GXSystemVersion *)systemVersionWithString:(NSString *)aString;
