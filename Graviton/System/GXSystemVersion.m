@@ -9,6 +9,8 @@
 #import "GXSystemVersion.h"
 
 
+#if !TARGET_OS_IPHONE
+
 @interface GXSystemVersion ()
 
 @property (copy, readwrite) NSString *string;
@@ -162,3 +164,5 @@
 }
 
 @end
+
+#endif

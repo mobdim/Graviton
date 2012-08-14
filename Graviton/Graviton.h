@@ -10,9 +10,12 @@
 
 #import <Graviton/GXFileOperationQueue.h>
 #import <Graviton/GXKVONotificationCenter.h>
-#import <Graviton/GXSystemVersion.h>
 
 #import <Graviton/NSObject+GravitonAdditions.h>
+
+#if !TARGET_OS_IPHONE
+#import <Graviton/GXSystemVersion.h>
+#endif
 
 
 /*!
