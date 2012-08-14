@@ -37,6 +37,8 @@
 		EA091A2E150A935E0033C7DF /* GXFileOperationQueue_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = EA091A2D150A935E0033C7DF /* GXFileOperationQueue_Private.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		EA4424E015193D7F00EA1C1B /* NSObject+GravitonAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = EA4424DE15193D7F00EA1C1B /* NSObject+GravitonAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EA4424E115193D7F00EA1C1B /* NSObject+GravitonAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4424DF15193D7F00EA1C1B /* NSObject+GravitonAdditions.m */; };
+		EA4FFE0715D8C4FB00032AE1 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA4FFE0615D8C4FB00032AE1 /* CoreData.framework */; };
+		EA4FFE0915D96E4900032AE1 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA4FFE0815D96E4900032AE1 /* AppKit.framework */; };
 		EA55FA40151D35A80088F053 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA091A14150A92870033C7DF /* Foundation.framework */; };
 		EA55FA4B151D35B30088F053 /* Graviton.h in Headers */ = {isa = PBXBuildFile; fileRef = EA091A1C150A92870033C7DF /* Graviton.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EA55FA4C151D35B70088F053 /* GravitonDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = EA091A24150A92CA0033C7DF /* GravitonDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -45,7 +47,6 @@
 		EA55FA4F151D35CE0088F053 /* GXFileOperationQueue_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = EA091A2D150A935E0033C7DF /* GXFileOperationQueue_Private.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		EA6A1D45153CC87B00D08BB5 /* GXSystemVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6A1D43153CC87B00D08BB5 /* GXSystemVersion.m */; };
 		EA6A1D46153CC87B00D08BB5 /* GXSystemVersion.h in Headers */ = {isa = PBXBuildFile; fileRef = EA6A1D44153CC87B00D08BB5 /* GXSystemVersion.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EAA12F56150C6FC900036E1F /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAA12F55150C6FC900036E1F /* AppKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,11 +73,12 @@
 		EA091A2D150A935E0033C7DF /* GXFileOperationQueue_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GXFileOperationQueue_Private.h; sourceTree = "<group>"; };
 		EA4424DE15193D7F00EA1C1B /* NSObject+GravitonAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+GravitonAdditions.h"; sourceTree = "<group>"; };
 		EA4424DF15193D7F00EA1C1B /* NSObject+GravitonAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+GravitonAdditions.m"; sourceTree = "<group>"; };
+		EA4FFE0615D8C4FB00032AE1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		EA4FFE0815D96E4900032AE1 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		EA55FA3F151D35A70088F053 /* libGraviton.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGraviton.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA55FA43151D35A80088F053 /* libGraviton-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "libGraviton-Prefix.pch"; sourceTree = "<group>"; };
 		EA6A1D43153CC87B00D08BB5 /* GXSystemVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GXSystemVersion.m; sourceTree = "<group>"; usesTabs = 0; };
 		EA6A1D44153CC87B00D08BB5 /* GXSystemVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GXSystemVersion.h; sourceTree = "<group>"; };
-		EAA12F55150C6FC900036E1F /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +87,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA091A27150A93180033C7DF /* Foundation.framework in Frameworks */,
-				EAA12F56150C6FC900036E1F /* AppKit.framework in Frameworks */,
+				EA4FFE0715D8C4FB00032AE1 /* CoreData.framework in Frameworks */,
+				EA4FFE0915D96E4900032AE1 /* AppKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,7 +144,8 @@
 			isa = PBXGroup;
 			children = (
 				EA091A14150A92870033C7DF /* Foundation.framework */,
-				EAA12F55150C6FC900036E1F /* AppKit.framework */,
+				EA4FFE0615D8C4FB00032AE1 /* CoreData.framework */,
+				EA4FFE0815D96E4900032AE1 /* AppKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -155,6 +159,7 @@
 				EA6A1D41153CC83D00D08BB5 /* System */,
 				EA091A28150A933A0033C7DF /* Files */,
 				02F2A6B2152B99A000414EE4 /* Notifications */,
+				EA4FFDFF15D8C4D400032AE1 /* Objects */,
 				EA4424DC15193D6D00EA1C1B /* Categories */,
 				EA091A16150A92870033C7DF /* Supporting Files */,
 			);
@@ -188,6 +193,13 @@
 				EA4424DF15193D7F00EA1C1B /* NSObject+GravitonAdditions.m */,
 			);
 			path = Categories;
+			sourceTree = "<group>";
+		};
+		EA4FFDFF15D8C4D400032AE1 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Objects;
 			sourceTree = "<group>";
 		};
 		EA55FA41151D35A80088F053 /* libGraviton */ = {
