@@ -27,6 +27,10 @@
 		02F2A6CE152B9F8000414EE4 /* GXBlockKVOObservation.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F2A6CA152B9F8000414EE4 /* GXBlockKVOObservation.m */; };
 		02F2A6D0152B9FAB00414EE4 /* GXBlockKVOObservation_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 02F2A6CF152B9FAB00414EE4 /* GXBlockKVOObservation_Private.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		02F2A6D1152B9FAB00414EE4 /* GXBlockKVOObservation_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 02F2A6CF152B9FAB00414EE4 /* GXBlockKVOObservation_Private.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		02FC3D6A15DEB25800FD60E5 /* GXTime.h in Headers */ = {isa = PBXBuildFile; fileRef = 02FC3D6815DEB25800FD60E5 /* GXTime.h */; };
+		02FC3D6B15DEB25800FD60E5 /* GXTime.h in Headers */ = {isa = PBXBuildFile; fileRef = 02FC3D6815DEB25800FD60E5 /* GXTime.h */; };
+		02FC3D6C15DEB25800FD60E5 /* GXTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 02FC3D6915DEB25800FD60E5 /* GXTime.m */; };
+		02FC3D6D15DEB25800FD60E5 /* GXTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 02FC3D6915DEB25800FD60E5 /* GXTime.m */; };
 		EA091A1A150A92870033C7DF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA091A18150A92870033C7DF /* InfoPlist.strings */; };
 		EA091A1E150A92870033C7DF /* Graviton.m in Sources */ = {isa = PBXBuildFile; fileRef = EA091A1D150A92870033C7DF /* Graviton.m */; };
 		EA091A25150A92CA0033C7DF /* GravitonDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = EA091A24150A92CA0033C7DF /* GravitonDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -60,6 +64,8 @@
 		02F2A6C9152B9F8000414EE4 /* GXBlockKVOObservation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GXBlockKVOObservation.h; sourceTree = "<group>"; };
 		02F2A6CA152B9F8000414EE4 /* GXBlockKVOObservation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GXBlockKVOObservation.m; sourceTree = "<group>"; };
 		02F2A6CF152B9FAB00414EE4 /* GXBlockKVOObservation_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GXBlockKVOObservation_Private.h; sourceTree = "<group>"; };
+		02FC3D6815DEB25800FD60E5 /* GXTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GXTime.h; sourceTree = "<group>"; };
+		02FC3D6915DEB25800FD60E5 /* GXTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GXTime.m; sourceTree = "<group>"; };
 		EA091A0C150A92870033C7DF /* Graviton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Graviton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA091A14150A92870033C7DF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EA091A17150A92870033C7DF /* Graviton-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Graviton-Info.plist"; sourceTree = "<group>"; };
@@ -198,6 +204,8 @@
 		EA4FFDFF15D8C4D400032AE1 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
+				02FC3D6815DEB25800FD60E5 /* GXTime.h */,
+				02FC3D6915DEB25800FD60E5 /* GXTime.m */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -246,6 +254,7 @@
 				02F2A6CB152B9F8000414EE4 /* GXBlockKVOObservation.h in Headers */,
 				02F2A6D0152B9FAB00414EE4 /* GXBlockKVOObservation_Private.h in Headers */,
 				EA6A1D46153CC87B00D08BB5 /* GXSystemVersion.h in Headers */,
+				02FC3D6A15DEB25800FD60E5 /* GXTime.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +273,7 @@
 				02F2A6C7152B9F5E00414EE4 /* GXObjectKVOObservation_Private.h in Headers */,
 				02F2A6CC152B9F8000414EE4 /* GXBlockKVOObservation.h in Headers */,
 				02F2A6D1152B9FAB00414EE4 /* GXBlockKVOObservation_Private.h in Headers */,
+				02FC3D6B15DEB25800FD60E5 /* GXTime.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,6 +367,7 @@
 				02F2A6BF152B9F2B00414EE4 /* GXObjectKVOObservation.m in Sources */,
 				02F2A6CD152B9F8000414EE4 /* GXBlockKVOObservation.m in Sources */,
 				EA6A1D45153CC87B00D08BB5 /* GXSystemVersion.m in Sources */,
+				02FC3D6C15DEB25800FD60E5 /* GXTime.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,6 +379,7 @@
 				02F2A6C5152B9F5E00414EE4 /* GXKVOObservation.m in Sources */,
 				02F2A6C8152B9F5E00414EE4 /* GXObjectKVOObservation.m in Sources */,
 				02F2A6CE152B9F8000414EE4 /* GXBlockKVOObservation.m in Sources */,
+				02FC3D6D15DEB25800FD60E5 /* GXTime.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
