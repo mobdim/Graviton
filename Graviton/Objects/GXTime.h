@@ -9,7 +9,12 @@
 #import <Foundation/Foundation.h>
 
 
-@interface GXTime : NSObject <NSCopying, NSSecureCoding>
+@interface GXTime : NSObject
+#if TARGET_OS_IPHONE
+<NSCoding, NSCopying>
+#else
+<NSCopying, NSSecureCoding>
+#endif
 
 + (GXTime *)time;
 + (GXTime *)midnight;
