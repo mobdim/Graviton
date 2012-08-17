@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Graviton/GravitonDefines.h>
 
 
 /*!
@@ -15,10 +16,9 @@
  * 
  * @constant GXFileOperationOptionOverwrite                     Overwrite destination files
  */
-enum {
+typedef GRAVITON_OPTIONS(NSUInteger, GXFileOperationOptions) {
     GXFileOperationOptionOverwrite = 0x01,
 };
-typedef NSUInteger GXFileOperationOptions;
 
 
 @class GXFileOperation;
