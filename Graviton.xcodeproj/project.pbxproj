@@ -27,8 +27,8 @@
 		02F2A6CE152B9F8000414EE4 /* GXBlockKVOObservation.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F2A6CA152B9F8000414EE4 /* GXBlockKVOObservation.m */; };
 		02F2A6D0152B9FAB00414EE4 /* GXBlockKVOObservation_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 02F2A6CF152B9FAB00414EE4 /* GXBlockKVOObservation_Private.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		02F2A6D1152B9FAB00414EE4 /* GXBlockKVOObservation_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 02F2A6CF152B9FAB00414EE4 /* GXBlockKVOObservation_Private.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		02FC3D6A15DEB25800FD60E5 /* GXTime.h in Headers */ = {isa = PBXBuildFile; fileRef = 02FC3D6815DEB25800FD60E5 /* GXTime.h */; };
-		02FC3D6B15DEB25800FD60E5 /* GXTime.h in Headers */ = {isa = PBXBuildFile; fileRef = 02FC3D6815DEB25800FD60E5 /* GXTime.h */; };
+		02FC3D6A15DEB25800FD60E5 /* GXTime.h in Headers */ = {isa = PBXBuildFile; fileRef = 02FC3D6815DEB25800FD60E5 /* GXTime.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		02FC3D6B15DEB25800FD60E5 /* GXTime.h in Headers */ = {isa = PBXBuildFile; fileRef = 02FC3D6815DEB25800FD60E5 /* GXTime.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		02FC3D6C15DEB25800FD60E5 /* GXTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 02FC3D6915DEB25800FD60E5 /* GXTime.m */; };
 		02FC3D6D15DEB25800FD60E5 /* GXTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 02FC3D6915DEB25800FD60E5 /* GXTime.m */; };
 		EA091A1A150A92870033C7DF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA091A18150A92870033C7DF /* InfoPlist.strings */; };
