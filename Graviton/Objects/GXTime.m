@@ -26,7 +26,7 @@
 
 
 @implementation GXTime {
-    NSTimeInterval _timeInterval;
+    NSTimeInterval _timeInterval; // since midnight
 }
 
 + (BOOL)supportsSecureCoding {
@@ -49,27 +49,27 @@
     return [[self midnight] timeByAddingTimeInterval:seconds];
 }
 
-+ (GXTime *)timeWithHours:(NSUInteger)hours minutes:(NSUInteger)minutes seconds:(NSUInteger)seconds {
-    return [self timeWithHours:hours minutes:minutes seconds:seconds milliseconds:0];
++ (GXTime *)timeWithHour:(NSUInteger)hour minute:(NSUInteger)minute second:(NSUInteger)second {
+    return [self timeWithHour:hour minute:minute second:second microsecond:0];
 }
 
-+ (GXTime *)timeWithHours:(NSUInteger)hours minutes:(NSUInteger)minutes seconds:(NSUInteger)seconds milliseconds:(NSUInteger)milliseconds {
-    while (milliseconds > 1000) {
-        milliseconds -= 1000;
-        seconds++;
++ (GXTime *)timeWithHour:(NSUInteger)hour minute:(NSUInteger)minute second:(NSUInteger)second microsecond:(NSUInteger)microsecond {
+    while (microsecond > 1000) {
+        microsecond -= 1000;
+        second++;
     }
-    while (seconds > 60) {
-        seconds -= 60;
-        minutes++;
+    while (second > 60) {
+        second -= 60;
+        minute++;
     }
-    while (minutes > 60) {
-        minutes -= 60;
-        hours++;
+    while (minute > 60) {
+        minute -= 60;
+        hour++;
     }
-    hours = hours % 24;
+    hour = hour % 24;
     
-    CGFloat timeInterval = (CGFloat)((hours * 3600) + (minutes * 60) + seconds);
-    timeInterval += (milliseconds / 1000);
+    CGFloat timeInterval = (CGFloat)((hour * 3600) + (minute * 60) + second);
+    timeInterval += (microsecond / 1000);
     
     return [[self alloc] initWithTimeInterval:timeInterval];
 }
@@ -92,13 +92,13 @@
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super init];
     if (self) {
-        self.timeInterval = [aDecoder decodeDoubleForKey:@"GXTimeInterval"];
+        self.timeInterval = [aDecoder decodeDoubleForKey:@"timeInterval"];
     }
     return self;
 }
 
 - (void)encodeWithCoder:(NSCoder *)aCoder {
-    [aCoder encodeDouble:self.timeInterval forKey:@"GXTimeInterval"];
+    [aCoder encodeDouble:self.timeInterval forKey:@"timeInterval"];
 }
 
 - (id)copyWithZone:(NSZone *)zone {
@@ -130,6 +130,40 @@
     return NSOrderedSame;
 }
 
+- (NSString *)description {
+    return [NSString stringWithFormat:@"<%@: %p : hour=%ld, minute=%ld, second=%ld, microsecond=%ld>", [self class], self, (unsigned long)[self hour], (unsigned long)[self minute], (unsigned long)[self second], (unsigned long)[self microsecond]];
+}
+
+- (NSUInteger)hour {
+    return ((NSUInteger)floor(_timeInterval / 3600) % 24);
+}
+
+- (NSUInteger)minute {
+    return ((NSUInteger)floor(_timeInterval / 60) % 60);
+}
+
+- (NSUInteger)second {
+    return ((NSUInteger)floor(_timeInterval) % 60);
+}
+
+- (NSUInteger)microsecond {
+    return ((NSUInteger)floor(_timeInterval * 1000000) % 1000000);
+}
+
+- (NSTimeInterval)timeIntervalSinceMidnight {
+    return _timeInterval;
+}
+
+- (NSTimeInterval)timeIntervalSinceTime:(GXTime *)anotherTime {
+    NSTimeInterval anotherTimeInterval = [anotherTime timeInterval];
+    if (_timeInterval < anotherTimeInterval) {
+        return -(anotherTimeInterval - _timeInterval);
+    }
+    else {
+        return _timeInterval - anotherTimeInterval;
+    }
+}
+
 - (GXTime *)timeByAddingTimeInterval:(NSTimeInterval)seconds {
     while (seconds > 86400.0) {
         seconds -= 86400.0;
@@ -150,16 +184,6 @@
     }
     else {
         return [[GXTime alloc] initWithTimeInterval:_timeInterval + seconds];
-    }
-}
-
-- (NSTimeInterval)timeIntervalSinceTime:(GXTime *)anotherTime {
-    NSTimeInterval anotherTimeInterval = [anotherTime timeInterval];
-    if (_timeInterval < anotherTimeInterval) {
-        return -(anotherTimeInterval - _timeInterval);
-    }
-    else {
-        return _timeInterval - anotherTimeInterval;
     }
 }
 

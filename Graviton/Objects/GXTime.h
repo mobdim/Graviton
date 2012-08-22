@@ -20,14 +20,22 @@
 + (GXTime *)midnight;
 + (GXTime *)timeWithTimeIntervalSinceNow:(NSTimeInterval)seconds;
 + (GXTime *)timeWithTimeIntervalSinceMidnight:(NSTimeInterval)seconds;
-+ (GXTime *)timeWithHours:(NSUInteger)hours minutes:(NSUInteger)minutes seconds:(NSUInteger)seconds;
-+ (GXTime *)timeWithHours:(NSUInteger)hours minutes:(NSUInteger)minutes seconds:(NSUInteger)seconds milliseconds:(NSUInteger)milliseconds;
++ (GXTime *)timeWithHour:(NSUInteger)hour minute:(NSUInteger)minute second:(NSUInteger)second;
++ (GXTime *)timeWithHour:(NSUInteger)hour minute:(NSUInteger)minute second:(NSUInteger)second microsecond:(NSUInteger)microsecond;
+
+@property (readonly) NSUInteger hour;
+@property (readonly) NSUInteger minute;
+@property (readonly) NSUInteger second;
+@property (readonly) NSUInteger microsecond;
 
 - (BOOL)isEqualToTime:(GXTime *)anotherTime;
 - (NSComparisonResult)compare:(GXTime *)anotherTime;
 
-- (GXTime *)timeByAddingTimeInterval:(NSTimeInterval)seconds;
+@property (readonly) NSTimeInterval timeIntervalSinceMidnight;
+
 - (NSTimeInterval)timeIntervalSinceTime:(GXTime *)anotherTime;
+
+- (GXTime *)timeByAddingTimeInterval:(NSTimeInterval)seconds;
 
 @end
 
