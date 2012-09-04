@@ -51,6 +51,10 @@
 		EA55FA4F151D35CE0088F053 /* GXFileOperationQueue_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = EA091A2D150A935E0033C7DF /* GXFileOperationQueue_Private.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		EA6A1D45153CC87B00D08BB5 /* GXSystemVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6A1D43153CC87B00D08BB5 /* GXSystemVersion.m */; };
 		EA6A1D46153CC87B00D08BB5 /* GXSystemVersion.h in Headers */ = {isa = PBXBuildFile; fileRef = EA6A1D44153CC87B00D08BB5 /* GXSystemVersion.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EA94B8DC15F54C02004503B1 /* GXDebug.h in Headers */ = {isa = PBXBuildFile; fileRef = EA94B8DA15F54C02004503B1 /* GXDebug.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EA94B8DD15F54C02004503B1 /* GXDebug.h in Headers */ = {isa = PBXBuildFile; fileRef = EA94B8DA15F54C02004503B1 /* GXDebug.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EA94B8DE15F54C02004503B1 /* GXDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = EA94B8DB15F54C02004503B1 /* GXDebug.m */; };
+		EA94B8DF15F54C02004503B1 /* GXDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = EA94B8DB15F54C02004503B1 /* GXDebug.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +89,8 @@
 		EA55FA43151D35A80088F053 /* libGraviton-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "libGraviton-Prefix.pch"; sourceTree = "<group>"; };
 		EA6A1D43153CC87B00D08BB5 /* GXSystemVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GXSystemVersion.m; sourceTree = "<group>"; usesTabs = 0; };
 		EA6A1D44153CC87B00D08BB5 /* GXSystemVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GXSystemVersion.h; sourceTree = "<group>"; };
+		EA94B8DA15F54C02004503B1 /* GXDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GXDebug.h; sourceTree = "<group>"; };
+		EA94B8DB15F54C02004503B1 /* GXDebug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GXDebug.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +172,7 @@
 				EA091A28150A933A0033C7DF /* Files */,
 				02F2A6B2152B99A000414EE4 /* Notifications */,
 				EA4FFDFF15D8C4D400032AE1 /* Objects */,
+				EA94B8D815F54BD4004503B1 /* Logging */,
 				EA4424DC15193D6D00EA1C1B /* Categories */,
 				EA091A16150A92870033C7DF /* Supporting Files */,
 			);
@@ -235,6 +242,15 @@
 			path = System;
 			sourceTree = "<group>";
 		};
+		EA94B8D815F54BD4004503B1 /* Logging */ = {
+			isa = PBXGroup;
+			children = (
+				EA94B8DA15F54C02004503B1 /* GXDebug.h */,
+				EA94B8DB15F54C02004503B1 /* GXDebug.m */,
+			);
+			path = Logging;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -255,6 +271,7 @@
 				02F2A6D0152B9FAB00414EE4 /* GXBlockKVOObservation_Private.h in Headers */,
 				EA6A1D46153CC87B00D08BB5 /* GXSystemVersion.h in Headers */,
 				02FC3D6A15DEB25800FD60E5 /* GXTime.h in Headers */,
+				EA94B8DC15F54C02004503B1 /* GXDebug.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +291,7 @@
 				02F2A6CC152B9F8000414EE4 /* GXBlockKVOObservation.h in Headers */,
 				02F2A6D1152B9FAB00414EE4 /* GXBlockKVOObservation_Private.h in Headers */,
 				02FC3D6B15DEB25800FD60E5 /* GXTime.h in Headers */,
+				EA94B8DD15F54C02004503B1 /* GXDebug.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,6 +386,7 @@
 				02F2A6CD152B9F8000414EE4 /* GXBlockKVOObservation.m in Sources */,
 				EA6A1D45153CC87B00D08BB5 /* GXSystemVersion.m in Sources */,
 				02FC3D6C15DEB25800FD60E5 /* GXTime.m in Sources */,
+				EA94B8DE15F54C02004503B1 /* GXDebug.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,6 +399,7 @@
 				02F2A6C8152B9F5E00414EE4 /* GXObjectKVOObservation.m in Sources */,
 				02F2A6CE152B9F8000414EE4 /* GXBlockKVOObservation.m in Sources */,
 				02FC3D6D15DEB25800FD60E5 /* GXTime.m in Sources */,
+				EA94B8DF15F54C02004503B1 /* GXDebug.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
