@@ -14,7 +14,7 @@ static BOOL GXDebugLoggingEnabled = NO;
 
 BOOL GXDebugLoggingIsEnabled() {
 #if DEBUG
-	return YES;
+    return YES;
 #else
     return GXDebugLoggingEnabled;
 #endif
@@ -22,7 +22,7 @@ BOOL GXDebugLoggingIsEnabled() {
 
 void GXDebugLoggingSetEnabled(BOOL enabled) {
 #if DEBUG
-	// no-op
+    // no-op
 #else
     GXDebugLoggingEnabled = enabled;
 #endif
