@@ -11,6 +11,7 @@
 #import <Graviton/GXDebug.h>
 #import <Graviton/GXFileOperationQueue.h>
 #import <Graviton/GXKVONotificationCenter.h>
+#import <Graviton/GXSemaphore.h>
 #import <Graviton/GXTime.h>
 
 #import <Graviton/NSObject+GravitonAdditions.h>
