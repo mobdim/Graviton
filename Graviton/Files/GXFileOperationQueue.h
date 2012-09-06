@@ -45,15 +45,16 @@ typedef GRAVITON_OPTIONS(NSUInteger, GXFileOperationOptions) {
  * 
  * @result An NSUInteger value
  */
-@property (assign, readonly) NSUInteger operationCount;
+@property (readonly) NSUInteger operationCount;
 
 /*!
- * @property operationQueue
- * @abstract The dispatch queue on which to execute operations
+ * @method cancelAllOperations
+ * @abstract Cancels all queued operations
  * 
- * @result A dispatch_queue object
+ * @discussion
+ * Operations that are in progress are not cancelled.
  */
-@property (assign) dispatch_queue_t operationQueue;
+- (void)cancelAllOperations;
 
 
 /*!

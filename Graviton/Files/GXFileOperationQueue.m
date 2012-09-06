@@ -15,8 +15,7 @@
 
 
 @implementation GXFileOperationQueue {
-    NSUInteger _operationCount;
-    dispatch_queue_t _operationQueue;
+    NSOperationQueue *_operationQueue;
 }
 
 + (GXFileOperationQueue *)defaultQueue {
@@ -31,43 +30,18 @@
 - (id)init {
     self = [super init];
     if (self) {
-        _operationQueue = dispatch_queue_create(NULL, DISPATCH_QUEUE_CONCURRENT);
+        _operationQueue = [[NSOperationQueue alloc] init];
+        [_operationQueue setName:@"com.sunflowersw.graviton.file-operation-queue"];
     }
     return self;
 }
 
 - (NSUInteger)operationCount {
-    return _operationCount;
+    return [_operationQueue operationCount];
 }
 
-- (void)incrementOperationCount {
-    @synchronized(self) {
-        _operationCount++;
-    }
-}
-
-- (void)decrementOperationCount {
-    @synchronized(self) {
-        _operationCount--;
-    }
-}
-
-
-#pragma mark -
-#pragma mark Accessors
-
-- (dispatch_queue_t)operationQueue {
-    return _operationQueue;
-}
-
-- (void)setOperationQueue:(dispatch_queue_t)operationQueue {
-    if (_operationQueue != NULL) {
-        dispatch_release(_operationQueue);
-    }
-    if (operationQueue != NULL) {
-        dispatch_retain(operationQueue);
-    }
-    _operationQueue = operationQueue;
+- (void)cancelAllOperations {
+    [_operationQueue cancelAllOperations];
 }
 
 
@@ -75,95 +49,132 @@
 #pragma mark Operations
 
 - (void)moveItemAtURL:(NSURL *)srcURL toURL:(NSURL *)destURL options:(GXFileOperationOptions)options completionHandler:(void (^)(NSError *error))handler {
-    dispatch_queue_t currentQueue = dispatch_get_current_queue();
-    dispatch_async(_operationQueue, ^{
-        [self incrementOperationCount];
-        NSFileManager *fileManager = [[NSFileManager alloc] init];
-        NSError *error = nil;
-        if ([fileManager moveItemAtURL:srcURL toURL:destURL error:&error]) {
-            if (handler != nil) {
-                dispatch_async(currentQueue, ^{
-                    handler(nil);
-                });
+    NSOperationQueue *currentQueue = [NSOperationQueue currentQueue];
+    if (currentQueue == nil) {
+        currentQueue = [NSOperationQueue mainQueue];
+    }
+    
+    [_operationQueue addOperationWithBlock:^{
+        NSFileCoordinator *coordinator = [[NSFileCoordinator alloc] initWithFilePresenter:nil];
+        __block NSFileManager *fileManager = [[NSFileManager alloc] init];
+        __block NSError *error = nil;
+        
+        [coordinator coordinateWritingItemAtURL:destURL options:NSFileCoordinatorWritingForReplacing error:&error byAccessor:^(NSURL *newURL) {
+            if (options & GXFileOperationOptionOverwrite) {
+                [fileManager removeItemAtURL:newURL error:nil];
             }
-        }
-        else {
-            if (handler != nil) {
-                dispatch_async(currentQueue, ^{
-                    handler(error);
-                });
+            
+            [coordinator itemAtURL:srcURL willMoveToURL:newURL];
+            
+            if ([fileManager moveItemAtURL:srcURL toURL:newURL error:&error]) {
+                if (handler != nil) {
+                    [currentQueue addOperationWithBlock:^{
+                        handler(nil);
+                    }];
+                }
             }
-        }
-        [self decrementOperationCount];
-    });
+            else {
+                if (handler != nil) {
+                    [currentQueue addOperationWithBlock:^{
+                        handler(error);
+                    }];
+                }
+            }
+            
+            [coordinator itemAtURL:srcURL didMoveToURL:newURL];
+        }];
+    }];
 }
 
 - (void)copyItemAtURL:(NSURL *)srcURL toURL:(NSURL *)destURL options:(GXFileOperationOptions)options completionHandler:(void (^)(NSError *))handler {
-    dispatch_queue_t currentQueue = dispatch_get_current_queue();
-    dispatch_async(_operationQueue, ^{
-        [self incrementOperationCount];
+    NSOperationQueue *currentQueue = [NSOperationQueue currentQueue];
+    if (currentQueue == nil) {
+        currentQueue = [NSOperationQueue mainQueue];
+    }
+    
+    [_operationQueue addOperationWithBlock:^{
+        NSFileCoordinator *coordinator = [[NSFileCoordinator alloc] initWithFilePresenter:nil];
         NSFileManager *fileManager = [[NSFileManager alloc] init];
-        NSError *error = nil;
-        if ([fileManager moveItemAtURL:srcURL toURL:destURL error:&error]) {
-            if (handler != nil) {
-                dispatch_async(currentQueue, ^{
-                    handler(nil);
-                });
+        __block NSError *error = nil;
+        
+        [coordinator coordinateWritingItemAtURL:destURL options:NSFileCoordinatorWritingForReplacing error:&error byAccessor:^(NSURL *newURL) {
+            if (options & GXFileOperationOptionOverwrite) {
+                [fileManager removeItemAtURL:destURL error:nil];
             }
-        }
-        else {
-            if (handler != nil) {
-                dispatch_async(currentQueue, ^{
-                    handler(error);
-                });
+            
+            if ([fileManager moveItemAtURL:srcURL toURL:destURL error:&error]) {
+                if (handler != nil) {
+                    [currentQueue addOperationWithBlock:^{
+                        handler(nil);
+                    }];
+                }
             }
-        }
-        [self decrementOperationCount];
-    });
+            else {
+                if (handler != nil) {
+                    [currentQueue addOperationWithBlock:^{
+                        handler(error);
+                    }];
+                }
+            }
+        }];
+    }];
 }
 
 #if !TARGET_OS_IPHONE
 
 - (void)recycleItemAtURL:(NSURL *)srcURL options:(GXFileOperationOptions)options completionHandler:(void (^)(NSError *))handler {
-    dispatch_queue_t currentQueue = dispatch_get_current_queue();
-    dispatch_async(_operationQueue, ^{
-        [self incrementOperationCount];
-        NSWorkspace *workspace = [NSWorkspace sharedWorkspace];
-        [workspace recycleURLs:[NSArray arrayWithObject:srcURL] completionHandler:^(NSDictionary *newURLs, NSError *error) {
-            if (handler != nil) {
-                dispatch_async(currentQueue, ^{
-                    handler(error);
-                });
-            }
+    NSOperationQueue *currentQueue = [NSOperationQueue currentQueue];
+    if (currentQueue == nil) {
+        currentQueue = [NSOperationQueue mainQueue];
+    }
+    
+    [_operationQueue addOperationWithBlock:^{
+        NSFileCoordinator *coordinator = [[NSFileCoordinator alloc] initWithFilePresenter:nil];
+        __block NSError *error = nil;
+        
+        [coordinator coordinateWritingItemAtURL:srcURL options:NSFileCoordinatorWritingForDeleting error:&error byAccessor:^(NSURL *newURL) {
+            NSWorkspace *workspace = [NSWorkspace sharedWorkspace];
+            [workspace recycleURLs:[NSArray arrayWithObject:srcURL] completionHandler:^(NSDictionary *newURLs, NSError *error) {
+                if (handler != nil) {
+                    [currentQueue addOperationWithBlock:^{
+                        handler(error);
+                    }];
+                }
+            }];
         }];
-        [self decrementOperationCount];
-    });
+    }];
 }
 
 #endif
 
 - (void)removeItemAtURL:(NSURL *)srcURL options:(GXFileOperationOptions)options completionHandler:(void (^)(NSError *))handler {
-    dispatch_queue_t currentQueue = dispatch_get_current_queue();
-    dispatch_async(_operationQueue, ^{
-        [self incrementOperationCount];
+    NSOperationQueue *currentQueue = [NSOperationQueue currentQueue];
+    if (currentQueue == nil) {
+        currentQueue = [NSOperationQueue mainQueue];
+    }
+    
+    [_operationQueue addOperationWithBlock:^{
+        NSFileCoordinator *coordinator = [[NSFileCoordinator alloc] initWithFilePresenter:nil];
         NSFileManager *fileManager = [[NSFileManager alloc] init];
-        NSError *error = nil;
-        if ([fileManager removeItemAtURL:srcURL error:&error]) {
-            if (handler != nil) {
-                dispatch_async(currentQueue, ^{
-                    handler(nil);
-                });
+        __block NSError *error = nil;
+        
+        [coordinator coordinateWritingItemAtURL:srcURL options:NSFileCoordinatorWritingForDeleting error:&error byAccessor:^(NSURL *newURL) {
+            if ([fileManager removeItemAtURL:newURL error:&error]) {
+                if (handler != nil) {
+                    [currentQueue addOperationWithBlock:^{
+                        handler(nil);
+                    }];
+                }
             }
-        }
-        else {
-            if (handler != nil) {
-                dispatch_async(currentQueue, ^{
-                    handler(error);
-                });
+            else {
+                if (handler != nil) {
+                    [currentQueue addOperationWithBlock:^{
+                        handler(error);
+                    }];
+                }
             }
-        }
-        [self decrementOperationCount];
-    });
+        }];
+    }];
 }
 
 @end
