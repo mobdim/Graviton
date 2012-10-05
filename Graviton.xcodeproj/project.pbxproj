@@ -7,10 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		024C647915F950CD0064D8DF /* GXSemaphore.h in Headers */ = {isa = PBXBuildFile; fileRef = 024C647715F950CD0064D8DF /* GXSemaphore.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		024C647A15F950CD0064D8DF /* GXSemaphore.h in Headers */ = {isa = PBXBuildFile; fileRef = 024C647715F950CD0064D8DF /* GXSemaphore.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		024C647B15F950CD0064D8DF /* GXSemaphore.m in Sources */ = {isa = PBXBuildFile; fileRef = 024C647815F950CD0064D8DF /* GXSemaphore.m */; };
-		024C647C15F950CD0064D8DF /* GXSemaphore.m in Sources */ = {isa = PBXBuildFile; fileRef = 024C647815F950CD0064D8DF /* GXSemaphore.m */; };
 		02F2A6B6152B99B700414EE4 /* GXKVONotificationCenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 02F2A6B4152B99B700414EE4 /* GXKVONotificationCenter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		02F2A6B7152B99B700414EE4 /* GXKVONotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F2A6B5152B99B700414EE4 /* GXKVONotificationCenter.m */; };
 		02F2A6BA152B9E6000414EE4 /* GXKVOObservation.h in Headers */ = {isa = PBXBuildFile; fileRef = 02F2A6B8152B9E5F00414EE4 /* GXKVOObservation.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -59,11 +55,10 @@
 		EA94B8DD15F54C02004503B1 /* GXDebug.h in Headers */ = {isa = PBXBuildFile; fileRef = EA94B8DA15F54C02004503B1 /* GXDebug.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EA94B8DE15F54C02004503B1 /* GXDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = EA94B8DB15F54C02004503B1 /* GXDebug.m */; };
 		EA94B8DF15F54C02004503B1 /* GXDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = EA94B8DB15F54C02004503B1 /* GXDebug.m */; };
+		EA9DFA80161E900000EC18AD /* GXFileOperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = EA091A2A150A93530033C7DF /* GXFileOperationQueue.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		024C647715F950CD0064D8DF /* GXSemaphore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GXSemaphore.h; sourceTree = "<group>"; };
-		024C647815F950CD0064D8DF /* GXSemaphore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GXSemaphore.m; sourceTree = "<group>"; };
 		02F2A6B4152B99B700414EE4 /* GXKVONotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GXKVONotificationCenter.h; sourceTree = "<group>"; };
 		02F2A6B5152B99B700414EE4 /* GXKVONotificationCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GXKVONotificationCenter.m; sourceTree = "<group>"; };
 		02F2A6B8152B9E5F00414EE4 /* GXKVOObservation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GXKVOObservation.h; sourceTree = "<group>"; };
@@ -217,8 +212,6 @@
 		EA4FFDFF15D8C4D400032AE1 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
-				024C647715F950CD0064D8DF /* GXSemaphore.h */,
-				024C647815F950CD0064D8DF /* GXSemaphore.m */,
 				02FC3D6815DEB25800FD60E5 /* GXTime.h */,
 				02FC3D6915DEB25800FD60E5 /* GXTime.m */,
 			);
@@ -280,7 +273,6 @@
 				EA6A1D46153CC87B00D08BB5 /* GXSystemVersion.h in Headers */,
 				02FC3D6A15DEB25800FD60E5 /* GXTime.h in Headers */,
 				EA94B8DC15F54C02004503B1 /* GXDebug.h in Headers */,
-				024C647915F950CD0064D8DF /* GXSemaphore.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,7 +293,6 @@
 				02F2A6D1152B9FAB00414EE4 /* GXBlockKVOObservation_Private.h in Headers */,
 				02FC3D6B15DEB25800FD60E5 /* GXTime.h in Headers */,
 				EA94B8DD15F54C02004503B1 /* GXDebug.h in Headers */,
-				024C647A15F950CD0064D8DF /* GXSemaphore.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,7 +388,6 @@
 				EA6A1D45153CC87B00D08BB5 /* GXSystemVersion.m in Sources */,
 				02FC3D6C15DEB25800FD60E5 /* GXTime.m in Sources */,
 				EA94B8DE15F54C02004503B1 /* GXDebug.m in Sources */,
-				024C647B15F950CD0064D8DF /* GXSemaphore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,7 +401,7 @@
 				02F2A6CE152B9F8000414EE4 /* GXBlockKVOObservation.m in Sources */,
 				02FC3D6D15DEB25800FD60E5 /* GXTime.m in Sources */,
 				EA94B8DF15F54C02004503B1 /* GXDebug.m in Sources */,
-				024C647C15F950CD0064D8DF /* GXSemaphore.m in Sources */,
+				EA9DFA80161E900000EC18AD /* GXFileOperationQueue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -519,7 +509,9 @@
 				GCC_PREFIX_HEADER = "libGraviton/libGraviton-Prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "-ObjC";
+				PRIVATE_HEADERS_FOLDER_PATH = Headers/Graviton;
 				PRODUCT_NAME = Graviton;
+				PUBLIC_HEADERS_FOLDER_PATH = Headers/Graviton;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
@@ -534,7 +526,9 @@
 				GCC_PREFIX_HEADER = "libGraviton/libGraviton-Prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "-ObjC";
+				PRIVATE_HEADERS_FOLDER_PATH = Headers/Graviton;
 				PRODUCT_NAME = Graviton;
+				PUBLIC_HEADERS_FOLDER_PATH = Headers/Graviton;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				VALIDATE_PRODUCT = YES;
