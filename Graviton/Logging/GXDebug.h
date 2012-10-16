@@ -17,7 +17,7 @@ GRAVITON_EXTERN void GXDebugLoggingSetEnabled(BOOL enabled);
 #ifdef DEBUG
 
 #define GXDebugLog(...) NSLog(@"DEBUG: %@", [NSString stringWithFormat:__VA_ARGS__]);
-#define GXMethodDebugLog(...) NSLog(@"DEBUG: %@, %@", NSStringFromSelector(_cmd), [NSString stringWithFormat:__VA_ARGS__]);
+#define GXMethodDebugLog(...) NSLog(@"DEBUG: %@:%@, %@", [self class], NSStringFromSelector(_cmd), [NSString stringWithFormat:__VA_ARGS__]);
 
 #else
 
