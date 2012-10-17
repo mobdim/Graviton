@@ -39,6 +39,7 @@
 		EA091A2B150A93530033C7DF /* GXFileOperationQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = EA091A29150A93530033C7DF /* GXFileOperationQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EA091A2C150A93530033C7DF /* GXFileOperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = EA091A2A150A93530033C7DF /* GXFileOperationQueue.m */; };
 		EA091A2E150A935E0033C7DF /* GXFileOperationQueue_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = EA091A2D150A935E0033C7DF /* GXFileOperationQueue_Private.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		EA247065162E41F0006FB548 /* NSObject+GravitonAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4424DF15193D7F00EA1C1B /* NSObject+GravitonAdditions.m */; };
 		EA4424E015193D7F00EA1C1B /* NSObject+GravitonAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = EA4424DE15193D7F00EA1C1B /* NSObject+GravitonAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EA4424E115193D7F00EA1C1B /* NSObject+GravitonAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4424DF15193D7F00EA1C1B /* NSObject+GravitonAdditions.m */; };
 		EA4FFE0715D8C4FB00032AE1 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA4FFE0615D8C4FB00032AE1 /* CoreData.framework */; };
@@ -402,6 +403,7 @@
 				02FC3D6D15DEB25800FD60E5 /* GXTime.m in Sources */,
 				EA94B8DF15F54C02004503B1 /* GXDebug.m in Sources */,
 				EA9DFA80161E900000EC18AD /* GXFileOperationQueue.m in Sources */,
+				EA247065162E41F0006FB548 /* NSObject+GravitonAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
