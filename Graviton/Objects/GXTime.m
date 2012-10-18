@@ -8,6 +8,10 @@
 
 #import "GXTime.h"
 
+#if TARGET_OS_IPHONE
+#import <CoreGraphics/CoreGraphics.h>
+#endif
+
 
 @interface GXTime ()
 

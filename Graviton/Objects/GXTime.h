@@ -8,10 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-#if TARGET_OS_IPHONE
-#import <CoreGraphics/CoreGraphics.h>
-#endif
-
 
 @interface GXTime : NSObject
 #if TARGET_OS_IPHONE
