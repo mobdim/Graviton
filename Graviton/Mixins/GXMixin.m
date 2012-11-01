@@ -18,7 +18,7 @@
 
 @implementation NSObject (GXMixin)
 
-+ (void)gx_addMixinClass:(Class)mixinClass {
++ (void)gx_addMixin:(Class)mixinClass {
     if (![mixinClass isSubclassOfClass:[GXMixin class]]) {
         @throw [NSException exceptionWithName:NSInvalidArgumentException reason:@"Mixin class must be a subclass of GXMixin" userInfo:nil];
     }

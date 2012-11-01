@@ -42,12 +42,12 @@
 @interface NSObject (GXMixin)
 
 /*!
- * @method gx_addMixinClass:
+ * @method gx_addMixin:
  * @abstract Adds the method implementations from a given mixin
  * 
  * @param mixinClass
  * The mixin class (must be a subclass of GXMixin)
  */
-+ (void)gx_addMixinClass:(Class)mixinClass;
++ (void)gx_addMixin:(Class)mixinClass;
 
 @end
