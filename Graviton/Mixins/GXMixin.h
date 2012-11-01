@@ -25,7 +25,7 @@
  * 
  * 1. Define a protocol with your mixin interface, and have your parent classes conform to it.
  * 2. Create a subclass of GXMixin with your required method implementation.
- * 3. In each parent class's +initialize method, call -gx_addMixinClass:.
+ * 3. In each parent class's +initialize method, call -gx_addMixin:.
  * 
  * The protocol is to ensure that the compiler doesn't complain about missing methods
  * in the parent class. You can conform the mixin to it, but it isn't required.
