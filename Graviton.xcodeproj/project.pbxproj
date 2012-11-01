@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02942FD516431799009A0966 /* GXMixin.h in Headers */ = {isa = PBXBuildFile; fileRef = 02942FD316431799009A0966 /* GXMixin.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		02942FD616431799009A0966 /* GXMixin.h in Headers */ = {isa = PBXBuildFile; fileRef = 02942FD316431799009A0966 /* GXMixin.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		02942FD716431799009A0966 /* GXMixin.m in Sources */ = {isa = PBXBuildFile; fileRef = 02942FD416431799009A0966 /* GXMixin.m */; };
+		02942FD816431799009A0966 /* GXMixin.m in Sources */ = {isa = PBXBuildFile; fileRef = 02942FD416431799009A0966 /* GXMixin.m */; };
 		02F2A6B6152B99B700414EE4 /* GXKVONotificationCenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 02F2A6B4152B99B700414EE4 /* GXKVONotificationCenter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		02F2A6B7152B99B700414EE4 /* GXKVONotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F2A6B5152B99B700414EE4 /* GXKVONotificationCenter.m */; };
 		02F2A6BA152B9E6000414EE4 /* GXKVOObservation.h in Headers */ = {isa = PBXBuildFile; fileRef = 02F2A6B8152B9E5F00414EE4 /* GXKVOObservation.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -60,6 +64,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		02942FD316431799009A0966 /* GXMixin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GXMixin.h; sourceTree = "<group>"; };
+		02942FD416431799009A0966 /* GXMixin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GXMixin.m; sourceTree = "<group>"; };
 		02F2A6B4152B99B700414EE4 /* GXKVONotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GXKVONotificationCenter.h; sourceTree = "<group>"; };
 		02F2A6B5152B99B700414EE4 /* GXKVONotificationCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GXKVONotificationCenter.m; sourceTree = "<group>"; };
 		02F2A6B8152B9E5F00414EE4 /* GXKVOObservation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GXKVOObservation.h; sourceTree = "<group>"; };
@@ -117,6 +123,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		02942FD116431787009A0966 /* Mixins */ = {
+			isa = PBXGroup;
+			children = (
+				02942FD316431799009A0966 /* GXMixin.h */,
+				02942FD416431799009A0966 /* GXMixin.m */,
+			);
+			path = Mixins;
+			sourceTree = "<group>";
+		};
 		02F2A6B2152B99A000414EE4 /* Notifications */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,6 +189,7 @@
 				EA091A28150A933A0033C7DF /* Files */,
 				02F2A6B2152B99A000414EE4 /* Notifications */,
 				EA4FFDFF15D8C4D400032AE1 /* Objects */,
+				02942FD116431787009A0966 /* Mixins */,
 				EA94B8D815F54BD4004503B1 /* Logging */,
 				EA4424DC15193D6D00EA1C1B /* Categories */,
 				EA091A16150A92870033C7DF /* Supporting Files */,
@@ -274,6 +290,7 @@
 				EA6A1D46153CC87B00D08BB5 /* GXSystemVersion.h in Headers */,
 				02FC3D6A15DEB25800FD60E5 /* GXTime.h in Headers */,
 				EA94B8DC15F54C02004503B1 /* GXDebug.h in Headers */,
+				02942FD516431799009A0966 /* GXMixin.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +311,7 @@
 				02F2A6D1152B9FAB00414EE4 /* GXBlockKVOObservation_Private.h in Headers */,
 				02FC3D6B15DEB25800FD60E5 /* GXTime.h in Headers */,
 				EA94B8DD15F54C02004503B1 /* GXDebug.h in Headers */,
+				02942FD616431799009A0966 /* GXMixin.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,6 +407,7 @@
 				EA6A1D45153CC87B00D08BB5 /* GXSystemVersion.m in Sources */,
 				02FC3D6C15DEB25800FD60E5 /* GXTime.m in Sources */,
 				EA94B8DE15F54C02004503B1 /* GXDebug.m in Sources */,
+				02942FD716431799009A0966 /* GXMixin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,6 +423,7 @@
 				EA94B8DF15F54C02004503B1 /* GXDebug.m in Sources */,
 				EA9DFA80161E900000EC18AD /* GXFileOperationQueue.m in Sources */,
 				EA247065162E41F0006FB548 /* NSObject+GravitonAdditions.m in Sources */,
+				02942FD816431799009A0966 /* GXMixin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
