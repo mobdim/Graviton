@@ -13,6 +13,7 @@
 #import <Graviton/GXMixin.h>
 #import <Graviton/GXKVONotificationCenter.h>
 #import <Graviton/GXTime.h>
+#import <Graviton/GXUUID.h>
 
 #import <Graviton/NSObject+GravitonAdditions.h>
 
