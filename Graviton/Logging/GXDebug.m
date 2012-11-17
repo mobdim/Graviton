@@ -9,7 +9,9 @@
 #import "GXDebug.h"
 
 
+#if !DEBUG
 static BOOL GXDebugLoggingEnabled = NO;
+#endif
 
 
 BOOL GXDebugLoggingIsEnabled() {

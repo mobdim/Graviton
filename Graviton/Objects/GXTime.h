@@ -23,15 +23,15 @@
 + (GXTime *)timeWithHour:(NSUInteger)hour minute:(NSUInteger)minute second:(NSUInteger)second;
 + (GXTime *)timeWithHour:(NSUInteger)hour minute:(NSUInteger)minute second:(NSUInteger)second microsecond:(NSUInteger)microsecond;
 
-@property (readonly) NSUInteger hour;
-@property (readonly) NSUInteger minute;
-@property (readonly) NSUInteger second;
-@property (readonly) NSUInteger microsecond;
+@property (nonatomic, readonly) NSUInteger hour;
+@property (nonatomic, readonly) NSUInteger minute;
+@property (nonatomic, readonly) NSUInteger second;
+@property (nonatomic, readonly) NSUInteger microsecond;
 
 - (BOOL)isEqualToTime:(GXTime *)anotherTime;
 - (NSComparisonResult)compare:(GXTime *)anotherTime;
 
-@property (readonly) NSTimeInterval timeIntervalSinceMidnight;
+@property (nonatomic, readonly) NSTimeInterval timeIntervalSinceMidnight;
 
 - (NSTimeInterval)timeIntervalSinceTime:(GXTime *)anotherTime;
 
@@ -42,6 +42,16 @@
 
 @interface NSDate (GXTimeAdditions)
 
++ (NSDate *)dateWithGXTime:(GXTime *)time;
 - (GXTime *)GXTime;
+
+@end
+
+
+@interface NSDateFormatter (GXTimeAdditions)
+
++ (NSString *)localizedStringFromGXTime:(GXTime *)time timeStyle:(NSDateFormatterStyle)tstyle;
+- (NSString *)stringFromGXTime:(GXTime *)time;
+- (GXTime *)GXTimeFromString:(NSString *)string;
 
 @end

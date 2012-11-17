@@ -19,6 +19,8 @@
 
 @property (readwrite) NSTimeInterval timeInterval;
 
+- (NSDate *)gx_formattingDate;
+
 @end
 
 
@@ -191,10 +193,21 @@
     }
 }
 
+- (NSDate *)gx_formattingDate {
+    NSDate *date = [[NSDate date] gx_dateByRemovingTimeComponents];
+    date = [date dateByAddingTimeInterval:self.timeInterval];
+    return date;
+}
+
 @end
 
 
 @implementation NSDate (GXTimeAdditions)
+
++ (NSDate *)dateWithGXTime:(GXTime *)time {
+    NSDate *date = [[NSDate date] gx_dateByRemovingTimeComponents];
+    return [date dateByAddingTimeInterval:time.timeInterval];
+}
 
 - (GXTime *)GXTime {
     NSDate *baseDate = [self gx_dateByRemovingTimeComponents];
@@ -206,6 +219,23 @@
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDateComponents *components = [calendar components:(NSEraCalendarUnit|NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit) fromDate:self];
     return [calendar dateFromComponents:components];
+}
+
+@end
+
+
+@implementation NSDateFormatter (GXTimeAdditions)
+
++ (NSString *)localizedStringFromGXTime:(GXTime *)time timeStyle:(NSDateFormatterStyle)tstyle {
+    return [self localizedStringFromDate:[time gx_formattingDate] dateStyle:NSDateFormatterNoStyle timeStyle:tstyle];
+}
+
+- (NSString *)stringFromGXTime:(GXTime *)time {
+    return [self stringFromDate:[time gx_formattingDate]];
+}
+
+- (GXTime *)GXTimeFromString:(NSString *)string {
+    return [[self dateFromString:string] GXTime];
 }
 
 @end
