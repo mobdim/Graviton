@@ -13,6 +13,10 @@
     CFUUIDRef _UUID;
 }
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (GXUUID *)UUID {
     return [[self alloc] init];
 }

@@ -7,23 +7,15 @@
 //
 
 #import <Graviton/GravitonDefines.h>
+#import <Graviton/GravitonErrors.h>
 
 #import <Graviton/GXDebug.h>
 #import <Graviton/GXFileOperationQueue.h>
 #import <Graviton/GXMixin.h>
 #import <Graviton/GXKVONotificationCenter.h>
+#import <Graviton/GXVersion.h>
 #import <Graviton/GXTime.h>
+#import <Graviton/GXTypeIdentifier.h>
 #import <Graviton/GXUUID.h>
 
 #import <Graviton/NSObject+GravitonAdditions.h>
-
-#if !TARGET_OS_IPHONE
-#import <Graviton/GXSystemVersion.h>
-#endif
-
-
-/*!
- * @constant GXGravitonErrorDomain
- * @abstract The Graviton error domain
- */
-GRAVITON_EXTERN NSString * const GXGravitonErrorDomain;

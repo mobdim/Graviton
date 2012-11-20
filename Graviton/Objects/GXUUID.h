@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 
-@interface GXUUID : NSObject <NSCopying, NSCoding>
+@interface GXUUID : NSObject <NSCopying, NSSecureCoding>
 
 + (GXUUID *)UUID;
 

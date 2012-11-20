@@ -7,6 +7,3 @@
 //
 
 #import "Graviton.h"
-
-
-NSString * const GXGravitonErrorDomain = @"GXGravitonErrorDomain";
