@@ -13,7 +13,7 @@
 
 + (GXKVONotificationCenter *)defaultCenter;
 
-- (void)addObserver:(id)observer object:(id)object keyPath:(NSString *)keyPath selector:(SEL)selector options:(NSKeyValueObservingOptions)options userInfo:(NSDictionary *)userInfo;
+- (void)addObserver:(id)observer object:(id)object keyPath:(NSString *)keyPath selector:(SEL)selector options:(NSKeyValueObservingOptions)options;
 - (id)addObserverForObject:(id)object keyPath:(NSString *)keyPath options:(NSKeyValueObservingOptions)options block:(void (^)(NSDictionary *change))block;
 
 - (void)removeObserver:(id)observer;

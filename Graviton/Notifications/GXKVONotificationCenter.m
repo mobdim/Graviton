@@ -49,11 +49,11 @@
     return [NSString stringWithFormat:@"%p:%p:%@", observer, object, keyPath];
 }
 
-- (void)addObserver:(id)observer object:(id)object keyPath:(NSString *)keyPath selector:(SEL)selector options:(NSKeyValueObservingOptions)options userInfo:(NSDictionary *)userInfo {
+- (void)addObserver:(id)observer object:(id)object keyPath:(NSString *)keyPath selector:(SEL)selector options:(NSKeyValueObservingOptions)options {
     NSString *key = [self keyForObserver:observer object:object keyPath:keyPath];
     GXObjectKVOObservation *observation = [_observations objectForKey:key];
     if (observation == nil) {
-        observation = [GXObjectKVOObservation observationWithObserver:observer object:object keyPath:keyPath selector:selector options:options userInfo:userInfo];
+        observation = [GXObjectKVOObservation observationWithObserver:observer object:object keyPath:keyPath selector:selector options:options];
         [_observations setObject:observation forKey:key];
     }
 }

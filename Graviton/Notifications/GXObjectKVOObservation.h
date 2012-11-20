@@ -15,14 +15,18 @@
                                              object:(id)object
                                             keyPath:(NSString *)keyPath
                                            selector:(SEL)selector
-                                            options:(NSKeyValueObservingOptions)options
-                                           userInfo:(NSDictionary *)userInfo;
+                                            options:(NSKeyValueObservingOptions)options;
 
-@property (weak, readonly) id observer;
-@property (weak, readonly) id object;
-@property (copy, readonly) NSString *keyPath;
-@property (assign, readonly) SEL selector;
-@property (assign, readonly) NSKeyValueObservingOptions options;
-@property (copy, readonly) NSDictionary *userInfo;
+- (id)initWithObserver:(id)observer
+                object:(id)object
+               keyPath:(NSString *)keyPath
+              selector:(SEL)selector
+               options:(NSKeyValueObservingOptions)options;
+
+@property (weak) id observer;
+@property (weak) id object;
+@property (copy) NSString *keyPath;
+@property (unsafe_unretained) SEL selector;
+@property (assign) NSKeyValueObservingOptions options;
 
 @end

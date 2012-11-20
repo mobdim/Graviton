@@ -16,9 +16,14 @@
                                          options:(NSKeyValueObservingOptions)options
                                            block:(void (^)(NSDictionary *change))block;
 
-@property (weak, readonly) id object;
-@property (copy, readonly) NSString *keyPath;
-@property (assign, readonly) NSKeyValueObservingOptions options;
-@property (copy, readonly) void (^block)(NSDictionary *change);
+- (id)initWithObject:(id)object
+             keyPath:(NSString *)keyPath
+             options:(NSKeyValueObservingOptions)options
+               block:(void (^)(NSDictionary *change))block;
+
+@property (weak) id object;
+@property (copy) NSString *keyPath;
+@property (assign) NSKeyValueObservingOptions options;
+@property (copy) void (^block)(NSDictionary *change);
 
 @end

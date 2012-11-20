@@ -31,20 +31,16 @@
 		02F2A6BB152B9E6000414EE4 /* GXKVOObservation.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F2A6B9152B9E5F00414EE4 /* GXKVOObservation.m */; };
 		02F2A6BE152B9F2B00414EE4 /* GXObjectKVOObservation.h in Headers */ = {isa = PBXBuildFile; fileRef = 02F2A6BC152B9F2A00414EE4 /* GXObjectKVOObservation.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		02F2A6BF152B9F2B00414EE4 /* GXObjectKVOObservation.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F2A6BD152B9F2B00414EE4 /* GXObjectKVOObservation.m */; };
-		02F2A6C1152B9F5400414EE4 /* GXObjectKVOObservation_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 02F2A6C0152B9F5400414EE4 /* GXObjectKVOObservation_Private.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		02F2A6C2152B9F5E00414EE4 /* GXKVONotificationCenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 02F2A6B4152B99B700414EE4 /* GXKVONotificationCenter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		02F2A6C3152B9F5E00414EE4 /* GXKVONotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F2A6B5152B99B700414EE4 /* GXKVONotificationCenter.m */; };
 		02F2A6C4152B9F5E00414EE4 /* GXKVOObservation.h in Headers */ = {isa = PBXBuildFile; fileRef = 02F2A6B8152B9E5F00414EE4 /* GXKVOObservation.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		02F2A6C5152B9F5E00414EE4 /* GXKVOObservation.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F2A6B9152B9E5F00414EE4 /* GXKVOObservation.m */; };
 		02F2A6C6152B9F5E00414EE4 /* GXObjectKVOObservation.h in Headers */ = {isa = PBXBuildFile; fileRef = 02F2A6BC152B9F2A00414EE4 /* GXObjectKVOObservation.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		02F2A6C7152B9F5E00414EE4 /* GXObjectKVOObservation_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 02F2A6C0152B9F5400414EE4 /* GXObjectKVOObservation_Private.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		02F2A6C8152B9F5E00414EE4 /* GXObjectKVOObservation.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F2A6BD152B9F2B00414EE4 /* GXObjectKVOObservation.m */; };
 		02F2A6CB152B9F8000414EE4 /* GXBlockKVOObservation.h in Headers */ = {isa = PBXBuildFile; fileRef = 02F2A6C9152B9F8000414EE4 /* GXBlockKVOObservation.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		02F2A6CC152B9F8000414EE4 /* GXBlockKVOObservation.h in Headers */ = {isa = PBXBuildFile; fileRef = 02F2A6C9152B9F8000414EE4 /* GXBlockKVOObservation.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		02F2A6CD152B9F8000414EE4 /* GXBlockKVOObservation.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F2A6CA152B9F8000414EE4 /* GXBlockKVOObservation.m */; };
 		02F2A6CE152B9F8000414EE4 /* GXBlockKVOObservation.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F2A6CA152B9F8000414EE4 /* GXBlockKVOObservation.m */; };
-		02F2A6D0152B9FAB00414EE4 /* GXBlockKVOObservation_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 02F2A6CF152B9FAB00414EE4 /* GXBlockKVOObservation_Private.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		02F2A6D1152B9FAB00414EE4 /* GXBlockKVOObservation_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 02F2A6CF152B9FAB00414EE4 /* GXBlockKVOObservation_Private.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		02FC3D6A15DEB25800FD60E5 /* GXTime.h in Headers */ = {isa = PBXBuildFile; fileRef = 02FC3D6815DEB25800FD60E5 /* GXTime.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		02FC3D6B15DEB25800FD60E5 /* GXTime.h in Headers */ = {isa = PBXBuildFile; fileRef = 02FC3D6815DEB25800FD60E5 /* GXTime.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		02FC3D6C15DEB25800FD60E5 /* GXTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 02FC3D6915DEB25800FD60E5 /* GXTime.m */; };
@@ -56,7 +52,6 @@
 		EA091A27150A93180033C7DF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA091A14150A92870033C7DF /* Foundation.framework */; };
 		EA091A2B150A93530033C7DF /* GXFileOperationQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = EA091A29150A93530033C7DF /* GXFileOperationQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EA091A2C150A93530033C7DF /* GXFileOperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = EA091A2A150A93530033C7DF /* GXFileOperationQueue.m */; };
-		EA091A2E150A935E0033C7DF /* GXFileOperationQueue_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = EA091A2D150A935E0033C7DF /* GXFileOperationQueue_Private.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		EA247065162E41F0006FB548 /* NSObject+GravitonAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4424DF15193D7F00EA1C1B /* NSObject+GravitonAdditions.m */; };
 		EA4424E015193D7F00EA1C1B /* NSObject+GravitonAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = EA4424DE15193D7F00EA1C1B /* NSObject+GravitonAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EA4424E115193D7F00EA1C1B /* NSObject+GravitonAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4424DF15193D7F00EA1C1B /* NSObject+GravitonAdditions.m */; };
@@ -67,7 +62,6 @@
 		EA55FA4C151D35B70088F053 /* GravitonDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = EA091A24150A92CA0033C7DF /* GravitonDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EA55FA4D151D35C80088F053 /* GXFileOperationQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = EA091A29150A93530033C7DF /* GXFileOperationQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EA55FA4E151D35C80088F053 /* NSObject+GravitonAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = EA4424DE15193D7F00EA1C1B /* NSObject+GravitonAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EA55FA4F151D35CE0088F053 /* GXFileOperationQueue_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = EA091A2D150A935E0033C7DF /* GXFileOperationQueue_Private.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		EA94B8DC15F54C02004503B1 /* GXDebug.h in Headers */ = {isa = PBXBuildFile; fileRef = EA94B8DA15F54C02004503B1 /* GXDebug.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EA94B8DD15F54C02004503B1 /* GXDebug.h in Headers */ = {isa = PBXBuildFile; fileRef = EA94B8DA15F54C02004503B1 /* GXDebug.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EA94B8DE15F54C02004503B1 /* GXDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = EA94B8DB15F54C02004503B1 /* GXDebug.m */; };
@@ -95,10 +89,8 @@
 		02F2A6B9152B9E5F00414EE4 /* GXKVOObservation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GXKVOObservation.m; sourceTree = "<group>"; };
 		02F2A6BC152B9F2A00414EE4 /* GXObjectKVOObservation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GXObjectKVOObservation.h; sourceTree = "<group>"; };
 		02F2A6BD152B9F2B00414EE4 /* GXObjectKVOObservation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GXObjectKVOObservation.m; sourceTree = "<group>"; };
-		02F2A6C0152B9F5400414EE4 /* GXObjectKVOObservation_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GXObjectKVOObservation_Private.h; sourceTree = "<group>"; };
 		02F2A6C9152B9F8000414EE4 /* GXBlockKVOObservation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GXBlockKVOObservation.h; sourceTree = "<group>"; };
 		02F2A6CA152B9F8000414EE4 /* GXBlockKVOObservation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GXBlockKVOObservation.m; sourceTree = "<group>"; };
-		02F2A6CF152B9FAB00414EE4 /* GXBlockKVOObservation_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GXBlockKVOObservation_Private.h; sourceTree = "<group>"; };
 		02FC3D6815DEB25800FD60E5 /* GXTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GXTime.h; sourceTree = "<group>"; };
 		02FC3D6915DEB25800FD60E5 /* GXTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GXTime.m; sourceTree = "<group>"; };
 		EA091A0C150A92870033C7DF /* Graviton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Graviton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,7 +103,6 @@
 		EA091A24150A92CA0033C7DF /* GravitonDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GravitonDefines.h; sourceTree = "<group>"; };
 		EA091A29150A93530033C7DF /* GXFileOperationQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GXFileOperationQueue.h; sourceTree = "<group>"; };
 		EA091A2A150A93530033C7DF /* GXFileOperationQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GXFileOperationQueue.m; sourceTree = "<group>"; };
-		EA091A2D150A935E0033C7DF /* GXFileOperationQueue_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GXFileOperationQueue_Private.h; sourceTree = "<group>"; };
 		EA4424DE15193D7F00EA1C1B /* NSObject+GravitonAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+GravitonAdditions.h"; sourceTree = "<group>"; };
 		EA4424DF15193D7F00EA1C1B /* NSObject+GravitonAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+GravitonAdditions.m"; sourceTree = "<group>"; };
 		EA4FFE0615D8C4FB00032AE1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -163,10 +154,8 @@
 				02F2A6B8152B9E5F00414EE4 /* GXKVOObservation.h */,
 				02F2A6B9152B9E5F00414EE4 /* GXKVOObservation.m */,
 				02F2A6BC152B9F2A00414EE4 /* GXObjectKVOObservation.h */,
-				02F2A6C0152B9F5400414EE4 /* GXObjectKVOObservation_Private.h */,
 				02F2A6BD152B9F2B00414EE4 /* GXObjectKVOObservation.m */,
 				02F2A6C9152B9F8000414EE4 /* GXBlockKVOObservation.h */,
-				02F2A6CF152B9FAB00414EE4 /* GXBlockKVOObservation_Private.h */,
 				02F2A6CA152B9F8000414EE4 /* GXBlockKVOObservation.m */,
 			);
 			path = Notifications;
@@ -210,9 +199,9 @@
 				EA091A24150A92CA0033C7DF /* GravitonDefines.h */,
 				024B312B165AFF5E00EEED3F /* GravitonErrors.h */,
 				024B312C165AFF5E00EEED3F /* GravitonErrors.m */,
+				EA4FFDFF15D8C4D400032AE1 /* Objects */,
 				EA091A28150A933A0033C7DF /* Files */,
 				02F2A6B2152B99A000414EE4 /* Notifications */,
-				EA4FFDFF15D8C4D400032AE1 /* Objects */,
 				02942FD116431787009A0966 /* Mixins */,
 				EA94B8D815F54BD4004503B1 /* Logging */,
 				EA4424DC15193D6D00EA1C1B /* Categories */,
@@ -235,7 +224,6 @@
 			isa = PBXGroup;
 			children = (
 				EA091A29150A93530033C7DF /* GXFileOperationQueue.h */,
-				EA091A2D150A935E0033C7DF /* GXFileOperationQueue_Private.h */,
 				EA091A2A150A93530033C7DF /* GXFileOperationQueue.m */,
 			);
 			path = Files;
@@ -301,14 +289,11 @@
 				EA091A25150A92CA0033C7DF /* GravitonDefines.h in Headers */,
 				EA091A26150A92CE0033C7DF /* Graviton.h in Headers */,
 				EA091A2B150A93530033C7DF /* GXFileOperationQueue.h in Headers */,
-				EA091A2E150A935E0033C7DF /* GXFileOperationQueue_Private.h in Headers */,
 				EA4424E015193D7F00EA1C1B /* NSObject+GravitonAdditions.h in Headers */,
 				02F2A6B6152B99B700414EE4 /* GXKVONotificationCenter.h in Headers */,
 				02F2A6BA152B9E6000414EE4 /* GXKVOObservation.h in Headers */,
 				02F2A6BE152B9F2B00414EE4 /* GXObjectKVOObservation.h in Headers */,
-				02F2A6C1152B9F5400414EE4 /* GXObjectKVOObservation_Private.h in Headers */,
 				02F2A6CB152B9F8000414EE4 /* GXBlockKVOObservation.h in Headers */,
-				02F2A6D0152B9FAB00414EE4 /* GXBlockKVOObservation_Private.h in Headers */,
 				02FC3D6A15DEB25800FD60E5 /* GXTime.h in Headers */,
 				EA94B8DC15F54C02004503B1 /* GXDebug.h in Headers */,
 				02942FD516431799009A0966 /* GXMixin.h in Headers */,
@@ -328,13 +313,10 @@
 				EA55FA4C151D35B70088F053 /* GravitonDefines.h in Headers */,
 				EA55FA4D151D35C80088F053 /* GXFileOperationQueue.h in Headers */,
 				EA55FA4E151D35C80088F053 /* NSObject+GravitonAdditions.h in Headers */,
-				EA55FA4F151D35CE0088F053 /* GXFileOperationQueue_Private.h in Headers */,
 				02F2A6C2152B9F5E00414EE4 /* GXKVONotificationCenter.h in Headers */,
 				02F2A6C4152B9F5E00414EE4 /* GXKVOObservation.h in Headers */,
 				02F2A6C6152B9F5E00414EE4 /* GXObjectKVOObservation.h in Headers */,
-				02F2A6C7152B9F5E00414EE4 /* GXObjectKVOObservation_Private.h in Headers */,
 				02F2A6CC152B9F8000414EE4 /* GXBlockKVOObservation.h in Headers */,
-				02F2A6D1152B9FAB00414EE4 /* GXBlockKVOObservation_Private.h in Headers */,
 				02FC3D6B15DEB25800FD60E5 /* GXTime.h in Headers */,
 				EA94B8DD15F54C02004503B1 /* GXDebug.h in Headers */,
 				02942FD616431799009A0966 /* GXMixin.h in Headers */,

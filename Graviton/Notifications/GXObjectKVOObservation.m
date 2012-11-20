@@ -7,7 +7,6 @@
 //
 
 #import "GXObjectKVOObservation.h"
-#import "GXObjectKVOObservation_Private.h"
 
 
 static NSString * const GXObjectKVOObservationContext = @"GXObjectKVOObservationContext";
@@ -20,23 +19,20 @@ static NSString * const GXObjectKVOObservationContext = @"GXObjectKVOObservation
 @synthesize keyPath=_keyPath;
 @synthesize selector=_selector;
 @synthesize options=_options;
-@synthesize userInfo=_userInfo;
 
 + (GXObjectKVOObservation *)observationWithObserver:(id)observer
                                              object:(id)object
                                             keyPath:(NSString *)keyPath
                                            selector:(SEL)selector
-                                            options:(NSKeyValueObservingOptions)options
-                                           userInfo:(NSDictionary *)userInfo {
-    return [[self alloc] initWithObserver:observer object:object keyPath:keyPath selector:selector options:options userInfo:userInfo];
+                                            options:(NSKeyValueObservingOptions)options {
+    return [[self alloc] initWithObserver:observer object:object keyPath:keyPath selector:selector options:options];
 }
 
 - (id)initWithObserver:(id)observer
                 object:(id)object
                keyPath:(NSString *)keyPath
               selector:(SEL)selector
-               options:(NSKeyValueObservingOptions)options
-              userInfo:(NSDictionary *)userInfo {
+               options:(NSKeyValueObservingOptions)options {
     self = [super init];
     if (self) {
         self.observer = observer;
@@ -44,7 +40,6 @@ static NSString * const GXObjectKVOObservationContext = @"GXObjectKVOObservation
         self.keyPath = keyPath;
         self.selector = selector;
         self.options = options;
-        self.userInfo = userInfo;
         
         [self.object addObserver:self.observer forKeyPath:self.keyPath options:self.options context:(__bridge void *)GXObjectKVOObservationContext];
     }

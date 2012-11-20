@@ -7,7 +7,6 @@
 //
 
 #import "GXBlockKVOObservation.h"
-#import "GXBlockKVOObservation_Private.h"
 
 
 static NSString * const GXBlockKVOObservationContext = @"GXBlockKVOObservationContext";

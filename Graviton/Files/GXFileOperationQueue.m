@@ -7,7 +7,6 @@
 //
 
 #import "GXFileOperationQueue.h"
-#import "GXFileOperationQueue_Private.h"
 
 #if !TARGET_OS_IPHONE
 #import <AppKit/NSWorkspace.h>
