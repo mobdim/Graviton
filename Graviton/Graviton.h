@@ -11,11 +11,11 @@
 
 #import <Graviton/GXDebug.h>
 #import <Graviton/GXFileOperationQueue.h>
-#import <Graviton/GXMixin.h>
 #import <Graviton/GXKVONotificationCenter.h>
-#import <Graviton/GXVersion.h>
+#import <Graviton/GXMixin.h>
 #import <Graviton/GXTime.h>
 #import <Graviton/GXTypeIdentifier.h>
 #import <Graviton/GXUUID.h>
+#import <Graviton/GXVersion.h>
 
 #import <Graviton/NSObject+GravitonAdditions.h>
