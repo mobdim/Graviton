@@ -42,6 +42,14 @@ typedef GRAVITON_ENUM(NSUInteger, GXVersionReleaseType) {
  */
 + (GXVersion *)versionWithString:(NSString *)string;
 
+/*!
+ * @method systemVersion
+ * @abstract Gets the current version of OS X.
+ * 
+ * @result A GXVersion object
+ */
++ (GXVersion *)systemVersion;
+
 
 /*!
  * @property string

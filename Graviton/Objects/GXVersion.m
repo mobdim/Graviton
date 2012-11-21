@@ -24,6 +24,31 @@
 #endif
 }
 
++ (GXVersion *)systemVersion {
+    static GXVersion *systemVersion = nil;
+    
+    if (systemVersion == nil) {
+        // This is the apparent recommended way of getting the system version in 10.##.## form.
+        // Gestalt is broken and deprecated on 10.8+.
+        // All Unix-level utilities will not give the OS X version number, only Darwin's.
+        NSFileManager *fileManager = [[NSFileManager alloc] init];
+#if !__has_feature(objc_arc)
+        [fileManager autorelease];
+#endif
+        NSURL *systemVersionURL = [[fileManager URLForDirectory:NSLibraryDirectory inDomain:NSSystemDomainMask appropriateForURL:nil create:NO error:nil] URLByAppendingPathComponent:@"CoreServices/SystemVersion.plist"];
+        NSData *systemVersionData = [NSData dataWithContentsOfURL:systemVersionURL];
+        NSDictionary *systemInfo = [NSPropertyListSerialization propertyListWithData:systemVersionData options:0 format:NULL error:nil];
+        if (systemInfo != nil) {
+            NSString *productVersion = [systemInfo objectForKey:@"ProductVersion"];
+            if ([productVersion length] > 0) {
+                systemVersion = [GXVersion versionWithString:productVersion];
+            }
+        }
+    }
+    
+    return systemVersion;
+}
+
 - (id)initWithString:(NSString *)string {
     self = [super init];
     if (self) {
