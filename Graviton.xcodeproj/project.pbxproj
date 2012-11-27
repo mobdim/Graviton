@@ -25,22 +25,22 @@
 		02942FD616431799009A0966 /* GXMixin.h in Headers */ = {isa = PBXBuildFile; fileRef = 02942FD316431799009A0966 /* GXMixin.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		02942FD716431799009A0966 /* GXMixin.m in Sources */ = {isa = PBXBuildFile; fileRef = 02942FD416431799009A0966 /* GXMixin.m */; };
 		02942FD816431799009A0966 /* GXMixin.m in Sources */ = {isa = PBXBuildFile; fileRef = 02942FD416431799009A0966 /* GXMixin.m */; };
-		02F2A6B6152B99B700414EE4 /* GXKVONotificationCenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 02F2A6B4152B99B700414EE4 /* GXKVONotificationCenter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		02F2A6B7152B99B700414EE4 /* GXKVONotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F2A6B5152B99B700414EE4 /* GXKVONotificationCenter.m */; };
-		02F2A6BA152B9E6000414EE4 /* GXKVOObservation.h in Headers */ = {isa = PBXBuildFile; fileRef = 02F2A6B8152B9E5F00414EE4 /* GXKVOObservation.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		02F2A6BB152B9E6000414EE4 /* GXKVOObservation.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F2A6B9152B9E5F00414EE4 /* GXKVOObservation.m */; };
-		02F2A6BE152B9F2B00414EE4 /* GXObjectKVOObservation.h in Headers */ = {isa = PBXBuildFile; fileRef = 02F2A6BC152B9F2A00414EE4 /* GXObjectKVOObservation.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		02F2A6BF152B9F2B00414EE4 /* GXObjectKVOObservation.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F2A6BD152B9F2B00414EE4 /* GXObjectKVOObservation.m */; };
-		02F2A6C2152B9F5E00414EE4 /* GXKVONotificationCenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 02F2A6B4152B99B700414EE4 /* GXKVONotificationCenter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		02F2A6C3152B9F5E00414EE4 /* GXKVONotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F2A6B5152B99B700414EE4 /* GXKVONotificationCenter.m */; };
-		02F2A6C4152B9F5E00414EE4 /* GXKVOObservation.h in Headers */ = {isa = PBXBuildFile; fileRef = 02F2A6B8152B9E5F00414EE4 /* GXKVOObservation.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		02F2A6C5152B9F5E00414EE4 /* GXKVOObservation.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F2A6B9152B9E5F00414EE4 /* GXKVOObservation.m */; };
-		02F2A6C6152B9F5E00414EE4 /* GXObjectKVOObservation.h in Headers */ = {isa = PBXBuildFile; fileRef = 02F2A6BC152B9F2A00414EE4 /* GXObjectKVOObservation.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		02F2A6C8152B9F5E00414EE4 /* GXObjectKVOObservation.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F2A6BD152B9F2B00414EE4 /* GXObjectKVOObservation.m */; };
-		02F2A6CB152B9F8000414EE4 /* GXBlockKVOObservation.h in Headers */ = {isa = PBXBuildFile; fileRef = 02F2A6C9152B9F8000414EE4 /* GXBlockKVOObservation.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		02F2A6CC152B9F8000414EE4 /* GXBlockKVOObservation.h in Headers */ = {isa = PBXBuildFile; fileRef = 02F2A6C9152B9F8000414EE4 /* GXBlockKVOObservation.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		02F2A6CD152B9F8000414EE4 /* GXBlockKVOObservation.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F2A6CA152B9F8000414EE4 /* GXBlockKVOObservation.m */; };
-		02F2A6CE152B9F8000414EE4 /* GXBlockKVOObservation.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F2A6CA152B9F8000414EE4 /* GXBlockKVOObservation.m */; };
+		02F2A6B6152B99B700414EE4 /* GXObservationCenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 02F2A6B4152B99B700414EE4 /* GXObservationCenter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		02F2A6B7152B99B700414EE4 /* GXObservationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F2A6B5152B99B700414EE4 /* GXObservationCenter.m */; };
+		02F2A6BA152B9E6000414EE4 /* GXObservation.h in Headers */ = {isa = PBXBuildFile; fileRef = 02F2A6B8152B9E5F00414EE4 /* GXObservation.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		02F2A6BB152B9E6000414EE4 /* GXObservation.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F2A6B9152B9E5F00414EE4 /* GXObservation.m */; };
+		02F2A6BE152B9F2B00414EE4 /* GXObjectObservation.h in Headers */ = {isa = PBXBuildFile; fileRef = 02F2A6BC152B9F2A00414EE4 /* GXObjectObservation.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		02F2A6BF152B9F2B00414EE4 /* GXObjectObservation.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F2A6BD152B9F2B00414EE4 /* GXObjectObservation.m */; };
+		02F2A6C2152B9F5E00414EE4 /* GXObservationCenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 02F2A6B4152B99B700414EE4 /* GXObservationCenter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		02F2A6C3152B9F5E00414EE4 /* GXObservationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F2A6B5152B99B700414EE4 /* GXObservationCenter.m */; };
+		02F2A6C4152B9F5E00414EE4 /* GXObservation.h in Headers */ = {isa = PBXBuildFile; fileRef = 02F2A6B8152B9E5F00414EE4 /* GXObservation.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		02F2A6C5152B9F5E00414EE4 /* GXObservation.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F2A6B9152B9E5F00414EE4 /* GXObservation.m */; };
+		02F2A6C6152B9F5E00414EE4 /* GXObjectObservation.h in Headers */ = {isa = PBXBuildFile; fileRef = 02F2A6BC152B9F2A00414EE4 /* GXObjectObservation.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		02F2A6C8152B9F5E00414EE4 /* GXObjectObservation.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F2A6BD152B9F2B00414EE4 /* GXObjectObservation.m */; };
+		02F2A6CB152B9F8000414EE4 /* GXBlockObservation.h in Headers */ = {isa = PBXBuildFile; fileRef = 02F2A6C9152B9F8000414EE4 /* GXBlockObservation.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		02F2A6CC152B9F8000414EE4 /* GXBlockObservation.h in Headers */ = {isa = PBXBuildFile; fileRef = 02F2A6C9152B9F8000414EE4 /* GXBlockObservation.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		02F2A6CD152B9F8000414EE4 /* GXBlockObservation.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F2A6CA152B9F8000414EE4 /* GXBlockObservation.m */; };
+		02F2A6CE152B9F8000414EE4 /* GXBlockObservation.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F2A6CA152B9F8000414EE4 /* GXBlockObservation.m */; };
 		02FC3D6A15DEB25800FD60E5 /* GXTime.h in Headers */ = {isa = PBXBuildFile; fileRef = 02FC3D6815DEB25800FD60E5 /* GXTime.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		02FC3D6B15DEB25800FD60E5 /* GXTime.h in Headers */ = {isa = PBXBuildFile; fileRef = 02FC3D6815DEB25800FD60E5 /* GXTime.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		02FC3D6C15DEB25800FD60E5 /* GXTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 02FC3D6915DEB25800FD60E5 /* GXTime.m */; };
@@ -50,8 +50,6 @@
 		EA091A25150A92CA0033C7DF /* GravitonDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = EA091A24150A92CA0033C7DF /* GravitonDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EA091A26150A92CE0033C7DF /* Graviton.h in Headers */ = {isa = PBXBuildFile; fileRef = EA091A1C150A92870033C7DF /* Graviton.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EA091A27150A93180033C7DF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA091A14150A92870033C7DF /* Foundation.framework */; };
-		EA091A2B150A93530033C7DF /* GXFileOperationQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = EA091A29150A93530033C7DF /* GXFileOperationQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EA091A2C150A93530033C7DF /* GXFileOperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = EA091A2A150A93530033C7DF /* GXFileOperationQueue.m */; };
 		EA247065162E41F0006FB548 /* NSObject+GravitonAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4424DF15193D7F00EA1C1B /* NSObject+GravitonAdditions.m */; };
 		EA4424E015193D7F00EA1C1B /* NSObject+GravitonAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = EA4424DE15193D7F00EA1C1B /* NSObject+GravitonAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EA4424E115193D7F00EA1C1B /* NSObject+GravitonAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4424DF15193D7F00EA1C1B /* NSObject+GravitonAdditions.m */; };
@@ -60,13 +58,11 @@
 		EA55FA40151D35A80088F053 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA091A14150A92870033C7DF /* Foundation.framework */; };
 		EA55FA4B151D35B30088F053 /* Graviton.h in Headers */ = {isa = PBXBuildFile; fileRef = EA091A1C150A92870033C7DF /* Graviton.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EA55FA4C151D35B70088F053 /* GravitonDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = EA091A24150A92CA0033C7DF /* GravitonDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EA55FA4D151D35C80088F053 /* GXFileOperationQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = EA091A29150A93530033C7DF /* GXFileOperationQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EA55FA4E151D35C80088F053 /* NSObject+GravitonAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = EA4424DE15193D7F00EA1C1B /* NSObject+GravitonAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EA94B8DC15F54C02004503B1 /* GXDebug.h in Headers */ = {isa = PBXBuildFile; fileRef = EA94B8DA15F54C02004503B1 /* GXDebug.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EA94B8DD15F54C02004503B1 /* GXDebug.h in Headers */ = {isa = PBXBuildFile; fileRef = EA94B8DA15F54C02004503B1 /* GXDebug.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EA94B8DE15F54C02004503B1 /* GXDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = EA94B8DB15F54C02004503B1 /* GXDebug.m */; };
 		EA94B8DF15F54C02004503B1 /* GXDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = EA94B8DB15F54C02004503B1 /* GXDebug.m */; };
-		EA9DFA80161E900000EC18AD /* GXFileOperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = EA091A2A150A93530033C7DF /* GXFileOperationQueue.m */; };
 		EAD549CF164C7DEC008CECE4 /* GXUUID.h in Headers */ = {isa = PBXBuildFile; fileRef = EAD549CD164C7DEC008CECE4 /* GXUUID.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EAD549D0164C7DEC008CECE4 /* GXUUID.h in Headers */ = {isa = PBXBuildFile; fileRef = EAD549CD164C7DEC008CECE4 /* GXUUID.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EAD549D1164C7DEC008CECE4 /* GXUUID.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD549CE164C7DEC008CECE4 /* GXUUID.m */; };
@@ -83,14 +79,14 @@
 		024B3133165B006F00EEED3F /* GXVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GXVersion.m; sourceTree = "<group>"; };
 		02942FD316431799009A0966 /* GXMixin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GXMixin.h; sourceTree = "<group>"; };
 		02942FD416431799009A0966 /* GXMixin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GXMixin.m; sourceTree = "<group>"; };
-		02F2A6B4152B99B700414EE4 /* GXKVONotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GXKVONotificationCenter.h; sourceTree = "<group>"; };
-		02F2A6B5152B99B700414EE4 /* GXKVONotificationCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GXKVONotificationCenter.m; sourceTree = "<group>"; };
-		02F2A6B8152B9E5F00414EE4 /* GXKVOObservation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GXKVOObservation.h; sourceTree = "<group>"; };
-		02F2A6B9152B9E5F00414EE4 /* GXKVOObservation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GXKVOObservation.m; sourceTree = "<group>"; };
-		02F2A6BC152B9F2A00414EE4 /* GXObjectKVOObservation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GXObjectKVOObservation.h; sourceTree = "<group>"; };
-		02F2A6BD152B9F2B00414EE4 /* GXObjectKVOObservation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GXObjectKVOObservation.m; sourceTree = "<group>"; };
-		02F2A6C9152B9F8000414EE4 /* GXBlockKVOObservation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GXBlockKVOObservation.h; sourceTree = "<group>"; };
-		02F2A6CA152B9F8000414EE4 /* GXBlockKVOObservation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GXBlockKVOObservation.m; sourceTree = "<group>"; };
+		02F2A6B4152B99B700414EE4 /* GXObservationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GXObservationCenter.h; sourceTree = "<group>"; };
+		02F2A6B5152B99B700414EE4 /* GXObservationCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GXObservationCenter.m; sourceTree = "<group>"; };
+		02F2A6B8152B9E5F00414EE4 /* GXObservation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GXObservation.h; sourceTree = "<group>"; };
+		02F2A6B9152B9E5F00414EE4 /* GXObservation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GXObservation.m; sourceTree = "<group>"; };
+		02F2A6BC152B9F2A00414EE4 /* GXObjectObservation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GXObjectObservation.h; sourceTree = "<group>"; };
+		02F2A6BD152B9F2B00414EE4 /* GXObjectObservation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GXObjectObservation.m; sourceTree = "<group>"; };
+		02F2A6C9152B9F8000414EE4 /* GXBlockObservation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GXBlockObservation.h; sourceTree = "<group>"; };
+		02F2A6CA152B9F8000414EE4 /* GXBlockObservation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GXBlockObservation.m; sourceTree = "<group>"; };
 		02FC3D6815DEB25800FD60E5 /* GXTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GXTime.h; sourceTree = "<group>"; };
 		02FC3D6915DEB25800FD60E5 /* GXTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GXTime.m; sourceTree = "<group>"; };
 		EA091A0C150A92870033C7DF /* Graviton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Graviton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,8 +97,6 @@
 		EA091A1C150A92870033C7DF /* Graviton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Graviton.h; sourceTree = "<group>"; };
 		EA091A1D150A92870033C7DF /* Graviton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Graviton.m; sourceTree = "<group>"; };
 		EA091A24150A92CA0033C7DF /* GravitonDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GravitonDefines.h; sourceTree = "<group>"; };
-		EA091A29150A93530033C7DF /* GXFileOperationQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GXFileOperationQueue.h; sourceTree = "<group>"; };
-		EA091A2A150A93530033C7DF /* GXFileOperationQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GXFileOperationQueue.m; sourceTree = "<group>"; };
 		EA4424DE15193D7F00EA1C1B /* NSObject+GravitonAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+GravitonAdditions.h"; sourceTree = "<group>"; };
 		EA4424DF15193D7F00EA1C1B /* NSObject+GravitonAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+GravitonAdditions.m"; sourceTree = "<group>"; };
 		EA4FFE0615D8C4FB00032AE1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -146,19 +140,19 @@
 			path = Mixins;
 			sourceTree = "<group>";
 		};
-		02F2A6B2152B99A000414EE4 /* Notifications */ = {
+		02F2A6B2152B99A000414EE4 /* Observations */ = {
 			isa = PBXGroup;
 			children = (
-				02F2A6B4152B99B700414EE4 /* GXKVONotificationCenter.h */,
-				02F2A6B5152B99B700414EE4 /* GXKVONotificationCenter.m */,
-				02F2A6B8152B9E5F00414EE4 /* GXKVOObservation.h */,
-				02F2A6B9152B9E5F00414EE4 /* GXKVOObservation.m */,
-				02F2A6BC152B9F2A00414EE4 /* GXObjectKVOObservation.h */,
-				02F2A6BD152B9F2B00414EE4 /* GXObjectKVOObservation.m */,
-				02F2A6C9152B9F8000414EE4 /* GXBlockKVOObservation.h */,
-				02F2A6CA152B9F8000414EE4 /* GXBlockKVOObservation.m */,
+				02F2A6B4152B99B700414EE4 /* GXObservationCenter.h */,
+				02F2A6B5152B99B700414EE4 /* GXObservationCenter.m */,
+				02F2A6B8152B9E5F00414EE4 /* GXObservation.h */,
+				02F2A6B9152B9E5F00414EE4 /* GXObservation.m */,
+				02F2A6BC152B9F2A00414EE4 /* GXObjectObservation.h */,
+				02F2A6BD152B9F2B00414EE4 /* GXObjectObservation.m */,
+				02F2A6C9152B9F8000414EE4 /* GXBlockObservation.h */,
+				02F2A6CA152B9F8000414EE4 /* GXBlockObservation.m */,
 			);
-			path = Notifications;
+			path = Observations;
 			sourceTree = "<group>";
 		};
 		EA091A00150A92860033C7DF = {
@@ -200,8 +194,7 @@
 				024B312B165AFF5E00EEED3F /* GravitonErrors.h */,
 				024B312C165AFF5E00EEED3F /* GravitonErrors.m */,
 				EA4FFDFF15D8C4D400032AE1 /* Objects */,
-				EA091A28150A933A0033C7DF /* Files */,
-				02F2A6B2152B99A000414EE4 /* Notifications */,
+				02F2A6B2152B99A000414EE4 /* Observations */,
 				02942FD116431787009A0966 /* Mixins */,
 				EA94B8D815F54BD4004503B1 /* Logging */,
 				EA4424DC15193D6D00EA1C1B /* Categories */,
@@ -218,15 +211,6 @@
 				EA091A1B150A92870033C7DF /* Graviton-Prefix.pch */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		EA091A28150A933A0033C7DF /* Files */ = {
-			isa = PBXGroup;
-			children = (
-				EA091A29150A93530033C7DF /* GXFileOperationQueue.h */,
-				EA091A2A150A93530033C7DF /* GXFileOperationQueue.m */,
-			);
-			path = Files;
 			sourceTree = "<group>";
 		};
 		EA4424DC15193D6D00EA1C1B /* Categories */ = {
@@ -288,12 +272,11 @@
 			files = (
 				EA091A25150A92CA0033C7DF /* GravitonDefines.h in Headers */,
 				EA091A26150A92CE0033C7DF /* Graviton.h in Headers */,
-				EA091A2B150A93530033C7DF /* GXFileOperationQueue.h in Headers */,
 				EA4424E015193D7F00EA1C1B /* NSObject+GravitonAdditions.h in Headers */,
-				02F2A6B6152B99B700414EE4 /* GXKVONotificationCenter.h in Headers */,
-				02F2A6BA152B9E6000414EE4 /* GXKVOObservation.h in Headers */,
-				02F2A6BE152B9F2B00414EE4 /* GXObjectKVOObservation.h in Headers */,
-				02F2A6CB152B9F8000414EE4 /* GXBlockKVOObservation.h in Headers */,
+				02F2A6B6152B99B700414EE4 /* GXObservationCenter.h in Headers */,
+				02F2A6BA152B9E6000414EE4 /* GXObservation.h in Headers */,
+				02F2A6BE152B9F2B00414EE4 /* GXObjectObservation.h in Headers */,
+				02F2A6CB152B9F8000414EE4 /* GXBlockObservation.h in Headers */,
 				02FC3D6A15DEB25800FD60E5 /* GXTime.h in Headers */,
 				EA94B8DC15F54C02004503B1 /* GXDebug.h in Headers */,
 				02942FD516431799009A0966 /* GXMixin.h in Headers */,
@@ -311,12 +294,11 @@
 			files = (
 				EA55FA4B151D35B30088F053 /* Graviton.h in Headers */,
 				EA55FA4C151D35B70088F053 /* GravitonDefines.h in Headers */,
-				EA55FA4D151D35C80088F053 /* GXFileOperationQueue.h in Headers */,
 				EA55FA4E151D35C80088F053 /* NSObject+GravitonAdditions.h in Headers */,
-				02F2A6C2152B9F5E00414EE4 /* GXKVONotificationCenter.h in Headers */,
-				02F2A6C4152B9F5E00414EE4 /* GXKVOObservation.h in Headers */,
-				02F2A6C6152B9F5E00414EE4 /* GXObjectKVOObservation.h in Headers */,
-				02F2A6CC152B9F8000414EE4 /* GXBlockKVOObservation.h in Headers */,
+				02F2A6C2152B9F5E00414EE4 /* GXObservationCenter.h in Headers */,
+				02F2A6C4152B9F5E00414EE4 /* GXObservation.h in Headers */,
+				02F2A6C6152B9F5E00414EE4 /* GXObjectObservation.h in Headers */,
+				02F2A6CC152B9F8000414EE4 /* GXBlockObservation.h in Headers */,
 				02FC3D6B15DEB25800FD60E5 /* GXTime.h in Headers */,
 				EA94B8DD15F54C02004503B1 /* GXDebug.h in Headers */,
 				02942FD616431799009A0966 /* GXMixin.h in Headers */,
@@ -411,12 +393,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA091A1E150A92870033C7DF /* Graviton.m in Sources */,
-				EA091A2C150A93530033C7DF /* GXFileOperationQueue.m in Sources */,
 				EA4424E115193D7F00EA1C1B /* NSObject+GravitonAdditions.m in Sources */,
-				02F2A6B7152B99B700414EE4 /* GXKVONotificationCenter.m in Sources */,
-				02F2A6BB152B9E6000414EE4 /* GXKVOObservation.m in Sources */,
-				02F2A6BF152B9F2B00414EE4 /* GXObjectKVOObservation.m in Sources */,
-				02F2A6CD152B9F8000414EE4 /* GXBlockKVOObservation.m in Sources */,
+				02F2A6B7152B99B700414EE4 /* GXObservationCenter.m in Sources */,
+				02F2A6BB152B9E6000414EE4 /* GXObservation.m in Sources */,
+				02F2A6BF152B9F2B00414EE4 /* GXObjectObservation.m in Sources */,
+				02F2A6CD152B9F8000414EE4 /* GXBlockObservation.m in Sources */,
 				02FC3D6C15DEB25800FD60E5 /* GXTime.m in Sources */,
 				EA94B8DE15F54C02004503B1 /* GXDebug.m in Sources */,
 				02942FD716431799009A0966 /* GXMixin.m in Sources */,
@@ -431,13 +412,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02F2A6C3152B9F5E00414EE4 /* GXKVONotificationCenter.m in Sources */,
-				02F2A6C5152B9F5E00414EE4 /* GXKVOObservation.m in Sources */,
-				02F2A6C8152B9F5E00414EE4 /* GXObjectKVOObservation.m in Sources */,
-				02F2A6CE152B9F8000414EE4 /* GXBlockKVOObservation.m in Sources */,
+				02F2A6C3152B9F5E00414EE4 /* GXObservationCenter.m in Sources */,
+				02F2A6C5152B9F5E00414EE4 /* GXObservation.m in Sources */,
+				02F2A6C8152B9F5E00414EE4 /* GXObjectObservation.m in Sources */,
+				02F2A6CE152B9F8000414EE4 /* GXBlockObservation.m in Sources */,
 				02FC3D6D15DEB25800FD60E5 /* GXTime.m in Sources */,
 				EA94B8DF15F54C02004503B1 /* GXDebug.m in Sources */,
-				EA9DFA80161E900000EC18AD /* GXFileOperationQueue.m in Sources */,
 				EA247065162E41F0006FB548 /* NSObject+GravitonAdditions.m in Sources */,
 				02942FD816431799009A0966 /* GXMixin.m in Sources */,
 				EAD549D2164C7DEC008CECE4 /* GXUUID.m in Sources */,
