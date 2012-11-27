@@ -32,7 +32,7 @@ typedef GRAVITON_ENUM(NSUInteger, GXAssociationPolicy) {
 @interface NSObject (GravitonAdditions)
 
 /*!
- * @method gx_performAfterDelay:block:
+ * @method gx_performAfterDelay:usingBlock:
  * @abstract Invokes a block object after a delay
  * 
  * @param delay
@@ -44,7 +44,7 @@ typedef GRAVITON_ENUM(NSUInteger, GXAssociationPolicy) {
  * @discussion
  * This method is tied to the default run loop and is equivalent to -performSelector:withObject:afterDelay:.
  */
-- (void)gx_performAfterDelay:(NSTimeInterval)delay block:(void (^)(void))block;
+- (void)gx_performAfterDelay:(NSTimeInterval)delay usingBlock:(void (^)(void))block;
 
 
 /*!

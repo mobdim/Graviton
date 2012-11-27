@@ -24,7 +24,7 @@
     block();
 }
 
-- (void)gx_performAfterDelay:(NSTimeInterval)delay block:(void (^)(void))block {
+- (void)gx_performAfterDelay:(NSTimeInterval)delay usingBlock:(void (^)(void))block {
     [self performSelector:@selector(gx_performBlock:) withObject:[block copy] afterDelay:delay];
 }
 
