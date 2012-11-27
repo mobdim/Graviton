@@ -34,7 +34,7 @@
  */
 
 // AES-256
-- (NSData *)gx_encryptedAES256DataUsingKey:(id)key error:(NSError **)outError;
+- (NSData *)gx_encryptedAES256DataUsingKey:(id)key error:(NSError **)outError;  // key must be an NSString or NSData object
 - (NSData *)gx_decryptedAES256DataUsingKey:(id)key error:(NSError **)outError;
 
 @end
