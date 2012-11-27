@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 Sunflower Softworks. All rights reserved.
 //
 
-#import <Graviton/GXObservation.h>
+#import <Graviton/GXObservation_Private.h>
 
 
 @interface GXObjectObservation : GXObservation
