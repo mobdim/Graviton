@@ -11,7 +11,7 @@
 
 #import <Graviton/GXDebug.h>
 #import <Graviton/GXMixin.h>
-#import <Graviton/GXObservationCenter.h>
+#import <Graviton/GXObservation.h>
 #import <Graviton/GXTime.h>
 #import <Graviton/GXTypeIdentifier.h>
 #import <Graviton/GXUUID.h>
