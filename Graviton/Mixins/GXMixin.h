@@ -18,7 +18,7 @@
  * to multiple classes dynamically at runtime.
  *
  * Warning: Do not access or use instance variables in your mixin implementation.
- * Just like a category, no ivars are not created by the mixin and the storage will
+ * Just like a category, ivars are not created by the mixin and the storage will
  * not exist in the parent class.
  *
  * To use mixins, do the following:
