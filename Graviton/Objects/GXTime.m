@@ -205,8 +205,12 @@
 @implementation NSDate (GXTimeAdditions)
 
 + (NSDate *)dateWithGXTime:(GXTime *)time {
-    NSDate *date = [[NSDate date] gx_dateByRemovingTimeComponents];
-    return [date dateByAddingTimeInterval:time.timeInterval];
+    return [self dateWithDate:[NSDate date] GXTime:time];
+}
+
++ (NSDate *)dateWithDate:(NSDate *)date GXTime:(GXTime *)time {
+    NSDate *baseDate = [date gx_dateByRemovingTimeComponents];
+    return [baseDate dateByAddingTimeInterval:time.timeInterval];
 }
 
 - (GXTime *)GXTime {

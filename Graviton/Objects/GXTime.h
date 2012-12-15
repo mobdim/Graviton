@@ -38,6 +38,7 @@
 @interface NSDate (GXTimeAdditions)
 
 + (NSDate *)dateWithGXTime:(GXTime *)time;
++ (NSDate *)dateWithDate:(NSDate *)date GXTime:(GXTime *)time;
 - (GXTime *)GXTime;
 
 @end
