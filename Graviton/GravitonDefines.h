@@ -17,3 +17,9 @@
 #define GRAVITON_ENUM(_type, _name) _type _name; enum
 #define GRAVITON_OPTIONS(_type, _name) _type _name; enum
 #endif
+
+#if (__has_extension(attribute_deprecated_with_message))
+#define GRAVITON_DEPRECATED(desc) __attribute__((deprecated(desc)))
+#else
+#define GRAVITON_DEPRECATED(desc) __attribute__((deprecated))
+#endif
