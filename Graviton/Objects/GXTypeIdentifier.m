@@ -119,7 +119,7 @@ NSString * const GXTagClassOSType = @"com.apple.ostype";
 }
 
 - (BOOL)conformsToTypeIdentifier:(GXTypeIdentifier *)typeIdentifier {
-    return UTTypeConformsTo((__bridge CFStringRef)_string, (__bridge CFStringRef)typeIdentifier);
+    return UTTypeConformsTo((__bridge CFStringRef)_string, (__bridge CFStringRef)typeIdentifier->_string);
 }
 
 - (NSString *)preferredTagForClass:(NSString *)tagClass {
