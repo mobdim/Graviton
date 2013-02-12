@@ -65,6 +65,8 @@
 		EA55FA4B151D35B30088F053 /* Graviton.h in Headers */ = {isa = PBXBuildFile; fileRef = EA091A1C150A92870033C7DF /* Graviton.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EA55FA4C151D35B70088F053 /* GravitonDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = EA091A24150A92CA0033C7DF /* GravitonDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EA55FA4E151D35C80088F053 /* NSObject+GravitonAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = EA4424DE15193D7F00EA1C1B /* NSObject+GravitonAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EA5F782D16CA350B00F6477D /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5F782C16CA350B00F6477D /* CoreServices.framework */; };
+		EA5F782F16CA351500F6477D /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5F782E16CA351500F6477D /* MobileCoreServices.framework */; };
 		EA94B8DC15F54C02004503B1 /* GXDebug.h in Headers */ = {isa = PBXBuildFile; fileRef = EA94B8DA15F54C02004503B1 /* GXDebug.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EA94B8DD15F54C02004503B1 /* GXDebug.h in Headers */ = {isa = PBXBuildFile; fileRef = EA94B8DA15F54C02004503B1 /* GXDebug.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EA94B8DE15F54C02004503B1 /* GXDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = EA94B8DB15F54C02004503B1 /* GXDebug.m */; };
@@ -111,6 +113,8 @@
 		EA4424DF15193D7F00EA1C1B /* NSObject+GravitonAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+GravitonAdditions.m"; sourceTree = "<group>"; };
 		EA55FA3F151D35A70088F053 /* libGraviton.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGraviton.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA55FA43151D35A80088F053 /* libGraviton-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "libGraviton-Prefix.pch"; sourceTree = "<group>"; };
+		EA5F782C16CA350B00F6477D /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
+		EA5F782E16CA351500F6477D /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
 		EA94B8DA15F54C02004503B1 /* GXDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GXDebug.h; sourceTree = "<group>"; };
 		EA94B8DB15F54C02004503B1 /* GXDebug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GXDebug.m; sourceTree = "<group>"; };
 		EAD549CD164C7DEC008CECE4 /* GXUUID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GXUUID.h; sourceTree = "<group>"; };
@@ -123,6 +127,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA091A27150A93180033C7DF /* Foundation.framework in Frameworks */,
+				EA5F782D16CA350B00F6477D /* CoreServices.framework in Frameworks */,
 				02E4CD1A16A9C5460017FCF9 /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -132,6 +137,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA55FA40151D35A80088F053 /* Foundation.framework in Frameworks */,
+				EA5F782F16CA351500F6477D /* MobileCoreServices.framework in Frameworks */,
 				02E4CD1B16A9C5610017FCF9 /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -186,6 +192,8 @@
 			isa = PBXGroup;
 			children = (
 				EA091A14150A92870033C7DF /* Foundation.framework */,
+				EA5F782C16CA350B00F6477D /* CoreServices.framework */,
+				EA5F782E16CA351500F6477D /* MobileCoreServices.framework */,
 				02E4CD1916A9C5460017FCF9 /* SystemConfiguration.framework */,
 			);
 			name = Frameworks;
@@ -482,6 +490,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
@@ -510,6 +519,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
