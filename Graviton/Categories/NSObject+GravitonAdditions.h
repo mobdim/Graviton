@@ -48,6 +48,41 @@ typedef GRAVITON_ENUM(NSUInteger, GXAssociationPolicy) {
 
 
 /*!
+ * @method gx_duplicateClassMethodWithSelector:toSelector:
+ * @abstract Creates a duplicate of a class method
+ *
+ * @param selector
+ * The selector of the instance method to duplicate
+ *
+ * @param newSelector
+ * The selector of the instance method to create
+ *
+ * @discussion
+ * Using this method allows forwards-compatible addition of methods in a safe manner.
+ * If an instance method with the selector already exists, this method does nothing.
+ * If the receiver does not have a method with the selector, this method raises an exception.
+ */
++ (void)gx_duplicateClassMethodWithSelector:(SEL)selector toSelector:(SEL)newSelector;
+
+/*!
+ * @method gx_duplicateInstanceMethodWithSelector:toSelector:
+ * @abstract Creates a duplicate of an instance method
+ * 
+ * @param selector
+ * The selector of the instance method to duplicate
+ *
+ * @param newSelector
+ * The selector of the instance method to create
+ * 
+ * @discussion
+ * Using this method allows forwards-compatible addition of methods in a safe manner.
+ * If an instance method with the selector already exists, this method does nothing.
+ * If the receiver does not have a method with the selector, this method raises an exception.
+ */
++ (void)gx_duplicateInstanceMethodWithSelector:(SEL)selector toSelector:(SEL)newSelector;
+
+
+/*!
  * @method gx_associatedObjectForKey:
  * @abstract Gets an associated object on the receiver
  * 
