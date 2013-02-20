@@ -15,6 +15,8 @@
 + (GXTypeIdentifier *)typeIdentifierWithString:(NSString *)string;
 - (id)initWithString:(NSString *)string;
 
++ (GXTypeIdentifier *)typeIdentifierWithTag:(NSString *)tag tagClass:(NSString *)tagClass;
+
 @property (nonatomic, strong, readonly) NSString *string;
 
 @property (nonatomic, strong, readonly) NSBundle *bundle;

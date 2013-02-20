@@ -29,7 +29,15 @@ NSString * const GXTagClassOSType = @"com.apple.ostype";
 }
 
 + (GXTypeIdentifier *)typeIdentifierWithString:(NSString *)string {
-    return [[GXTypeIdentifier alloc] initWithString:string];
+    if (string != nil) {
+        return [[GXTypeIdentifier alloc] initWithString:string];
+    }
+    return nil;
+}
+
++ (GXTypeIdentifier *)typeIdentifierWithTag:(NSString *)tag tagClass:(NSString *)tagClass {
+    NSString *string = CFBridgingRelease(UTTypeCreatePreferredIdentifierForTag((__bridge CFStringRef)tagClass, (__bridge CFStringRef)tag, NULL));
+    return [self typeIdentifierWithString:string];
 }
 
 - (id)initWithString:(NSString *)string {
