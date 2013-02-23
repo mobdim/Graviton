@@ -14,18 +14,20 @@
  * @enum GXAssociationPolicy
  * @abstract Object association policies
  * 
- * @constant GXAssociationPolicyAssign              Assign the object without retaining it
- * @constant GXAssociationPolicyRetainNonatomic     Retain the object without atomic guards
- * @constant GXAssociationPolicyCopyNonatomic       Copy the object (with NSCopying) without atomic guards
- * @constant GXAssociationPolicyRetain              Retain the object with atomic guards
- * @abstract GXAssociationPolicyCopy                Copy the object (with NSCopying) with atomic guards
+ * @constant GXAssociationPolicyAssign              Unretained reference (equivalent to unsafe_unretained)
+ * @constant GXAssociationPolicyWeak                Zeroing-weak reference (equivalent to weak)
+ * @constant GXAssociationPolicyStrong              Strong reference to the object (equivalent to strong/retain)
+ * @constant GXAssociationPolicyCopy                Copy the object (equivalent to copy)
+ *
+ * @constant GXAssociationPolicyNonatomic           Assign without using atomic guards (equivalent to nonatomic)
  */
 typedef GRAVITON_ENUM(NSUInteger, GXAssociationPolicy) {
-    GXAssociationPolicyAssign = 0,
-    GXAssociationPolicyRetainNonatomic = 1,
-    GXAssociationPolicyCopyNonatomic = 3,
-    GXAssociationPolicyRetain = 01401,
-    GXAssociationPolicyCopy = 01403,
+    GXAssociationPolicyAssign = (1 << 0),
+    GXAssociationPolicyStrong = (1 << 1),
+    GXAssociationPolicyCopy = (1 << 2),
+    GXAssociationPolicyWeak = (1 << 3),
+    
+    GXAssociationPolicyNonatomic = (1 << 10),
 };
 
 
