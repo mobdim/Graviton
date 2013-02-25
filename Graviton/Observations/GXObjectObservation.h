@@ -26,7 +26,7 @@
 @property (weak) id observer;
 @property (weak) id object;
 @property (copy) NSString *keyPath;
-@property (unsafe_unretained) SEL selector;
+@property (assign) SEL selector;
 @property (assign) NSKeyValueObservingOptions options;
 
 @end
