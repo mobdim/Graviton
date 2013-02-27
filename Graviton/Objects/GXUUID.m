@@ -10,7 +10,7 @@
 
 
 @implementation GXUUID {
-    CFUUIDRef _UUID;
+    uuid_t _uuid;
 }
 
 + (BOOL)supportsSecureCoding {
@@ -24,7 +24,7 @@
 - (id)init {
     self = [super init];
     if (self) {
-        _UUID = CFUUIDCreate(NULL);
+        uuid_generate(_uuid);
     }
     return self;
 }
@@ -32,7 +32,17 @@
 - (id)initWithUUIDString:(NSString *)string {
     self = [super init];
     if (self) {
-        _UUID = CFUUIDCreateFromString(NULL, (__bridge CFStringRef)string);
+        if (uuid_parse([string UTF8String], _uuid) != 0) {
+            return nil;
+        }
+    }
+    return self;
+}
+
+- (id)initWithUUIDBytes:(const uuid_t)bytes {
+    self = [super init];
+    if (self) {
+        uuid_copy(_uuid, bytes);
     }
     return self;
 }
@@ -41,7 +51,7 @@
     self = [super init];
     if (self) {
         NSString *string = [aDecoder decodeObjectForKey:@"UUIDString"];
-        _UUID = CFUUIDCreateFromString(NULL, (__bridge CFStringRef)string);
+        uuid_parse([string UTF8String], _uuid);
     }
     return self;
 }
@@ -54,23 +64,25 @@
     return self;
 }
 
-- (void)dealloc {
-    CFRelease(_UUID);
-}
-
 - (NSUInteger)hash {
-    return (NSUInteger)CFHash(_UUID);
+    return [[self UUIDString] hash];
 }
 
 - (BOOL)isEqual:(id)object {
     if ([object isKindOfClass:[GXUUID class]]) {
-        return CFEqual(_UUID, ((GXUUID *)object)->_UUID);
+        return (uuid_compare(_uuid, ((GXUUID *)object)->_uuid) == 0);
     }
     return NO;
 }
 
 - (NSString *)UUIDString {
-    return CFBridgingRelease(CFUUIDCreateString(NULL, _UUID));
+    uuid_string_t string;
+    uuid_unparse(_uuid, string);
+    return [NSString stringWithCString:string encoding:NSUTF8StringEncoding];
+}
+
+- (void)getUUIDBytes:(uuid_t)uuid {
+    uuid_copy(uuid, _uuid);
 }
 
 @end

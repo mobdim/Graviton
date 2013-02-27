@@ -42,6 +42,9 @@
             NSString *productVersion = [systemInfo objectForKey:@"ProductVersion"];
             if ([productVersion length] > 0) {
                 systemVersion = [GXVersion versionWithString:productVersion];
+#if !__has_feature(objc_arc)
+                [systemVersion retain];
+#endif
             }
         }
     }
