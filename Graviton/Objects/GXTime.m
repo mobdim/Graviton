@@ -74,7 +74,7 @@
     }
     hour = hour % 24;
     
-    CGFloat timeInterval = (CGFloat)((hour * 3600) + (minute * 60) + second);
+    NSTimeInterval timeInterval = (NSTimeInterval)((hour * 3600) + (minute * 60) + second);
     timeInterval += (microsecond / 1000);
     
     return [[self alloc] initWithTimeInterval:timeInterval];
