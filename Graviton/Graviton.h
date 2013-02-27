@@ -16,7 +16,6 @@
 #import <Graviton/GXReachability.h>
 #import <Graviton/GXTime.h>
 #import <Graviton/GXTypeIdentifier.h>
-#import <Graviton/GXUUID.h>
 #import <Graviton/GXVersion.h>
 
 #import <Graviton/NSObject+GravitonAdditions.h>
