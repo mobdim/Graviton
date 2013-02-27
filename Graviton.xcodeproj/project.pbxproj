@@ -75,10 +75,6 @@
 		EA94B8DD15F54C02004503B1 /* GXDebug.h in Headers */ = {isa = PBXBuildFile; fileRef = EA94B8DA15F54C02004503B1 /* GXDebug.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EA94B8DE15F54C02004503B1 /* GXDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = EA94B8DB15F54C02004503B1 /* GXDebug.m */; };
 		EA94B8DF15F54C02004503B1 /* GXDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = EA94B8DB15F54C02004503B1 /* GXDebug.m */; };
-		EAD549CF164C7DEC008CECE4 /* GXUUID.h in Headers */ = {isa = PBXBuildFile; fileRef = EAD549CD164C7DEC008CECE4 /* GXUUID.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EAD549D0164C7DEC008CECE4 /* GXUUID.h in Headers */ = {isa = PBXBuildFile; fileRef = EAD549CD164C7DEC008CECE4 /* GXUUID.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EAD549D1164C7DEC008CECE4 /* GXUUID.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD549CE164C7DEC008CECE4 /* GXUUID.m */; };
-		EAD549D2164C7DEC008CECE4 /* GXUUID.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD549CE164C7DEC008CECE4 /* GXUUID.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -123,8 +119,6 @@
 		EA5F782E16CA351500F6477D /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
 		EA94B8DA15F54C02004503B1 /* GXDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GXDebug.h; sourceTree = "<group>"; };
 		EA94B8DB15F54C02004503B1 /* GXDebug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GXDebug.m; sourceTree = "<group>"; };
-		EAD549CD164C7DEC008CECE4 /* GXUUID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GXUUID.h; sourceTree = "<group>"; };
-		EAD549CE164C7DEC008CECE4 /* GXUUID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GXUUID.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,8 +257,6 @@
 				02FC3D6915DEB25800FD60E5 /* GXTime.m */,
 				024B3124165AF74800EEED3F /* GXTypeIdentifier.h */,
 				024B3125165AF74800EEED3F /* GXTypeIdentifier.m */,
-				EAD549CD164C7DEC008CECE4 /* GXUUID.h */,
-				EAD549CE164C7DEC008CECE4 /* GXUUID.m */,
 				024B3132165B006F00EEED3F /* GXVersion.h */,
 				024B3131165B006F00EEED3F /* GXVersion_Private.h */,
 				024B3133165B006F00EEED3F /* GXVersion.m */,
@@ -313,7 +305,6 @@
 				02FC3D6A15DEB25800FD60E5 /* GXTime.h in Headers */,
 				EA94B8DC15F54C02004503B1 /* GXDebug.h in Headers */,
 				02942FD516431799009A0966 /* GXMixin.h in Headers */,
-				EAD549CF164C7DEC008CECE4 /* GXUUID.h in Headers */,
 				024B3126165AF74800EEED3F /* GXTypeIdentifier.h in Headers */,
 				024B312D165AFF5E00EEED3F /* GravitonErrors.h in Headers */,
 				024B3134165B006F00EEED3F /* GXVersion_Private.h in Headers */,
@@ -338,7 +329,6 @@
 				02FC3D6B15DEB25800FD60E5 /* GXTime.h in Headers */,
 				EA94B8DD15F54C02004503B1 /* GXDebug.h in Headers */,
 				02942FD616431799009A0966 /* GXMixin.h in Headers */,
-				EAD549D0164C7DEC008CECE4 /* GXUUID.h in Headers */,
 				024B3127165AF74800EEED3F /* GXTypeIdentifier.h in Headers */,
 				024B312E165AFF5E00EEED3F /* GravitonErrors.h in Headers */,
 				024B3135165B006F00EEED3F /* GXVersion_Private.h in Headers */,
@@ -440,7 +430,6 @@
 				02FC3D6C15DEB25800FD60E5 /* GXTime.m in Sources */,
 				EA94B8DE15F54C02004503B1 /* GXDebug.m in Sources */,
 				02942FD716431799009A0966 /* GXMixin.m in Sources */,
-				EAD549D1164C7DEC008CECE4 /* GXUUID.m in Sources */,
 				024B3128165AF74800EEED3F /* GXTypeIdentifier.m in Sources */,
 				024B312F165AFF5E00EEED3F /* GravitonErrors.m in Sources */,
 				024B3138165B006F00EEED3F /* GXVersion.m in Sources */,
@@ -461,7 +450,6 @@
 				EA94B8DF15F54C02004503B1 /* GXDebug.m in Sources */,
 				EA247065162E41F0006FB548 /* NSObject+GravitonAdditions.m in Sources */,
 				02942FD816431799009A0966 /* GXMixin.m in Sources */,
-				EAD549D2164C7DEC008CECE4 /* GXUUID.m in Sources */,
 				024B3129165AF74800EEED3F /* GXTypeIdentifier.m in Sources */,
 				024B3130165AFF5E00EEED3F /* GravitonErrors.m in Sources */,
 				024B3139165B006F00EEED3F /* GXVersion.m in Sources */,
