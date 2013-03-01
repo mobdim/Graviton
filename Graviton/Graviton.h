@@ -19,4 +19,5 @@
 #import <Graviton/GXVersion.h>
 
 #import <Graviton/NSObject+GravitonAdditions.h>
+#import <Graviton/NSArray+GravitonAdditions.h>
 #import <Graviton/NSData+GravitonAdditions.h>
