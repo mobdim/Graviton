@@ -18,6 +18,10 @@
 #import <Graviton/GXTypeIdentifier.h>
 #import <Graviton/GXVersion.h>
 
+#if !TARGET_OS_IPHONE
+#import <Graviton/GXFileWatcher.h>
+#endif
+
 #import <Graviton/NSObject+GravitonAdditions.h>
 #import <Graviton/NSArray+GravitonAdditions.h>
 #import <Graviton/NSData+GravitonAdditions.h>

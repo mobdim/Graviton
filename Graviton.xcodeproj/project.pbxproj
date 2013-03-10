@@ -79,6 +79,8 @@
 		EA94B8DD15F54C02004503B1 /* GXDebug.h in Headers */ = {isa = PBXBuildFile; fileRef = EA94B8DA15F54C02004503B1 /* GXDebug.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EA94B8DE15F54C02004503B1 /* GXDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = EA94B8DB15F54C02004503B1 /* GXDebug.m */; };
 		EA94B8DF15F54C02004503B1 /* GXDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = EA94B8DB15F54C02004503B1 /* GXDebug.m */; };
+		EA97EB8F16EC51F80044DC14 /* GXFileWatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = EA97EB8D16EC51F80044DC14 /* GXFileWatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EA97EB9116EC51F80044DC14 /* GXFileWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = EA97EB8E16EC51F80044DC14 /* GXFileWatcher.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -125,6 +127,8 @@
 		EA5F782E16CA351500F6477D /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
 		EA94B8DA15F54C02004503B1 /* GXDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GXDebug.h; sourceTree = "<group>"; };
 		EA94B8DB15F54C02004503B1 /* GXDebug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GXDebug.m; sourceTree = "<group>"; };
+		EA97EB8D16EC51F80044DC14 /* GXFileWatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GXFileWatcher.h; sourceTree = "<group>"; };
+		EA97EB8E16EC51F80044DC14 /* GXFileWatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GXFileWatcher.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,6 +263,8 @@
 		EA4FFDFF15D8C4D400032AE1 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
+				EA97EB8D16EC51F80044DC14 /* GXFileWatcher.h */,
+				EA97EB8E16EC51F80044DC14 /* GXFileWatcher.m */,
 				02E4CD1316A9C4B60017FCF9 /* GXReachability.h */,
 				02E4CD1416A9C4B60017FCF9 /* GXReachability.m */,
 				02FC3D6815DEB25800FD60E5 /* GXTime.h */,
@@ -322,6 +328,7 @@
 				02E4CD1516A9C4B60017FCF9 /* GXReachability.h in Headers */,
 				02705DA416CD714500B84D2F /* GXOrdinalNumberFormatter.h in Headers */,
 				02CFCD2216E033AB004EC2AD /* NSArray+GravitonAdditions.h in Headers */,
+				EA97EB8F16EC51F80044DC14 /* GXFileWatcher.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,6 +454,7 @@
 				02E4CD1716A9C4B60017FCF9 /* GXReachability.m in Sources */,
 				02705DA616CD714500B84D2F /* GXOrdinalNumberFormatter.m in Sources */,
 				02CFCD2416E033AB004EC2AD /* NSArray+GravitonAdditions.m in Sources */,
+				EA97EB9116EC51F80044DC14 /* GXFileWatcher.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
