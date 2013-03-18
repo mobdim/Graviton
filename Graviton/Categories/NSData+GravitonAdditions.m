@@ -69,41 +69,41 @@ static void GXAdjustKeyLengths(CCAlgorithm algorithm, NSMutableData *keyData, NS
     
     switch (status) {
         case kCCSuccess: {
-            description = NSLocalizedString(@"Success", @"Success");
+            description = NSLocalizedString(@"Success", nil);
             break;
         }
         case kCCParamError: {
-            description = NSLocalizedString(@"Parameter Error", @"Parameter Error");
-            failureReason = NSLocalizedString(@"Illegal parameter supplied to cryptographic function", @"Illegal parameter supplied to cryptographic function");
+            description = NSLocalizedString(@"Parameter Error", nil);
+            failureReason = NSLocalizedString(@"Illegal parameter supplied to cryptographic function", nil);
             break;
         }
         case kCCBufferTooSmall: {
-            description = NSLocalizedString(@"Buffer Too Small", @"Buffer Too Small");
-            failureReason = NSLocalizedString(@"Insufficient buffer space provided for the specified operation", @"Insufficient buffer space provided for the specified operation");
+            description = NSLocalizedString(@"Buffer Too Small", nil);
+            failureReason = NSLocalizedString(@"Insufficient buffer space provided for the specified operation", nil);
             break;
         }
         case kCCMemoryFailure: {
-            description = NSLocalizedString(@"Memory Failure", @"Memory Failure");
+            description = NSLocalizedString(@"Memory Failure", nil);
             failureReason = NSLocalizedString(@"Failed to allocate enough memory", @"Memory Failure");
             break;
         }
         case kCCAlignmentError: {
-            description = NSLocalizedString(@"Alignment Error", @"Alignment Error");
-            failureReason = NSLocalizedString(@"The input size was not aligned correctly", @"The input size was not aligned correctly");
+            description = NSLocalizedString(@"Alignment Error", nil);
+            failureReason = NSLocalizedString(@"The input size was not aligned correctly", nil);
             break;
         }
         case kCCDecodeError: {
-            description = NSLocalizedString(@"Decode Error", @"Decode Error");
-            failureReason = NSLocalizedString(@"The input data did not decode or decrypt correctly", @"The input data did not decode or decrypt correctly");
+            description = NSLocalizedString(@"Decode Error", nil);
+            failureReason = NSLocalizedString(@"The input data did not decode or decrypt correctly", nil);
             break;
         }
         case kCCUnimplemented: {
-            description = NSLocalizedString(@"Unimplemented Function", @"Unimplemented Function");
-            failureReason = NSLocalizedString(@"The cryptographic function is not implemented for the current algorithm", @"The cryptographic function is not implemented for the current algorithm");
+            description = NSLocalizedString(@"Unimplemented Function", nil);
+            failureReason = NSLocalizedString(@"The cryptographic function is not implemented for the current algorithm", nil);
             break;
         }
         default: {
-            description = NSLocalizedString(@"Unknown Error", @"Unknown Error");
+            description = NSLocalizedString(@"Unknown Error", nil);
             break;
         }
     }
