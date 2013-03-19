@@ -13,7 +13,22 @@
 
 @interface GXObjectAssociationWeakProxy : NSObject
 
-@property (nonatomic, weak) id object;
+@property (weak) id object;
+
+@end
+
+
+@interface GXKeyValueObservingProxy : NSObject
+
+- (id)initWithObject:(id)object keyPath:(NSString *)keyPath options:(NSKeyValueObservingOptions)options block:(GXKeyValueObservingBlock)block;
+
+@property (weak) id object;
+@property (copy) NSString *keyPath;
+@property NSKeyValueObservingOptions options;
+@property (copy) GXKeyValueObservingBlock block;
+
+- (void)registerObservation;
+- (void)unregisterObservation;
 
 @end
 
@@ -124,23 +139,69 @@
 
 
 #pragma mark -
-#pragma mark Key-Value Observation
+#pragma mark Key Value Observation
 
-- (void)gx_addObserver:(NSObject *)observer forKeyPaths:(NSSet *)keyPaths options:(NSKeyValueObservingOptions)options context:(void *)context {
-    for (NSString *keyPath in keyPaths) {
-        [self addObserver:observer forKeyPath:keyPath options:options context:context];
+static NSString * GXObjectKVOObservationsKey = @"GXObjectKVOObservations";
+
+- (void)gx_addObserver:(id)observer forKeyPath:(NSString *)keyPath options:(NSKeyValueObservingOptions)options block:(GXKeyValueObservingBlock)block {
+    NSParameterAssert(observer != nil);
+    NSParameterAssert(keyPath != nil);
+    NSParameterAssert(block != nil);
+    
+    NSMapTable *observationsByObserver = [self gx_associatedObjectForKey:GXObjectKVOObservationsKey];
+    if (observationsByObserver == nil) {
+        observationsByObserver = [NSMapTable weakToStrongObjectsMapTable];
+        [self gx_setAssociatedObject:observationsByObserver forKey:GXObjectKVOObservationsKey policy:GXAssociationPolicyStrong];
     }
+    
+    NSMutableDictionary *observations = [observationsByObserver objectForKey:observer];
+    if (observations == nil) {
+        observations = [NSMutableDictionary dictionary];
+        [observationsByObserver setObject:observations forKey:observer];
+    }
+    
+    if ([observations objectForKey:keyPath] != nil) {
+        @throw [NSException exceptionWithName:NSInvalidArgumentException reason:[NSString stringWithFormat:@"Observer %@ is already registered for the key path \"%@\" of object %@", observer, keyPath, self] userInfo:nil];
+    }
+    
+    GXKeyValueObservingProxy *proxy = [[GXKeyValueObservingProxy alloc] initWithObject:self keyPath:keyPath options:options block:block];
+    [observations setObject:proxy forKey:keyPath];
+    
+    [proxy registerObservation];
 }
 
-- (void)gx_removeObserver:(NSObject *)observer forKeyPaths:(NSSet *)keyPaths {
-    for (NSString *keyPath in keyPaths) {
-        [self removeObserver:observer forKeyPath:keyPath];
+- (void)gx_removeObserver:(id)observer forKeyPath:(NSString *)keyPath {
+    NSParameterAssert(observer != nil);
+    
+    NSMapTable *observationsByObserver = [self gx_associatedObjectForKey:GXObjectKVOObservationsKey];
+    if (observationsByObserver == nil) {
+        observationsByObserver = [NSMapTable weakToStrongObjectsMapTable];
+        [self gx_setAssociatedObject:observationsByObserver forKey:GXObjectKVOObservationsKey policy:GXAssociationPolicyStrong];
     }
-}
-
-- (void)gx_removeObserver:(NSObject *)observer forKeyPaths:(NSSet *)keyPaths context:(void *)context {
-    for (NSString *keyPath in keyPaths) {
-        [self removeObserver:observer forKeyPath:keyPath context:context];
+    
+    NSMutableDictionary *observations = [observationsByObserver objectForKey:observer];
+    if (observations == nil) {
+        observations = [NSMutableDictionary dictionary];
+        [observationsByObserver setObject:observations forKey:observer];
+    }
+    
+    if (keyPath != nil) {
+        // Remove keypath observation
+        if ([observations objectForKey:keyPath] == nil) {
+            @throw [NSException exceptionWithName:NSInvalidArgumentException reason:[NSString stringWithFormat:@"Observer %@ is not registered for the key path \"%@\" of object %@", observer, keyPath, self] userInfo:nil];
+        }
+        
+//        GXKeyValueObservingProxy *proxy = [observations objectForKey:keyPath];
+//        [proxy unregisterObservation];
+        [observations removeObjectForKey:keyPath];
+    }
+    else {
+        // Remove all observations
+//        for (NSString *keyPath in observations) {
+//            GXKeyValueObservingProxy *proxy = [observations objectForKey:keyPath];
+//            [proxy unregisterObservation];
+//        }
+        [observations removeAllObjects];
     }
 }
 
@@ -148,5 +209,37 @@
 
 
 @implementation GXObjectAssociationWeakProxy
+
+@end
+
+
+@implementation GXKeyValueObservingProxy
+
+- (id)initWithObject:(id)object keyPath:(NSString *)keyPath options:(NSKeyValueObservingOptions)options block:(GXKeyValueObservingBlock)block {
+    self = [super init];
+    if (self) {
+        self.object = object;
+        self.keyPath = keyPath;
+        self.options = options;
+        self.block = block;
+    }
+    return self;
+}
+
+- (void)dealloc {
+    [self unregisterObservation];
+}
+
+- (void)registerObservation {
+    [self.object addObserver:self forKeyPath:self.keyPath options:self.options context:NULL];
+}
+
+- (void)unregisterObservation {
+    [self.object removeObserver:self forKeyPath:self.keyPath context:NULL];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    self.block(object, keyPath, change);
+}
 
 @end
