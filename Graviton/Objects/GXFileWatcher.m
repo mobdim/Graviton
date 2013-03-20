@@ -152,7 +152,7 @@ static void GXFileWatcherCallback(ConstFSEventStreamRef streamRef, void *clientC
             type = GXFileEventTypeItemModified;
         }
         else if (flags & kFSEventStreamEventFlagItemChangeOwner) {
-            type = GXFileEventTypeItemOwnerGXipChanged;
+            type = GXFileEventTypeItemOwnershipChanged;
         }
         else if (flags & kFSEventStreamEventFlagItemXattrMod) {
             type = GXFileEventTypeItemExtendedAttributesModified;

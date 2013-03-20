@@ -15,7 +15,7 @@ typedef GRAVITON_ENUM(NSUInteger, GXFileEventType) {
     GXFileEventTypeItemRemoved,
     GXFileEventTypeItemRenamed,
     GXFileEventTypeItemModified,
-    GXFileEventTypeItemOwnerGXipChanged,
+    GXFileEventTypeItemOwnershipChanged,
     GXFileEventTypeItemExtendedAttributesModified,
 };
 
