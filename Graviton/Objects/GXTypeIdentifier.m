@@ -24,6 +24,14 @@ NSString * const GXTagClassOSType = @"com.apple.ostype";
     NSDictionary *_declaration;
 }
 
+static NSMutableDictionary *_typeIdentifiers = nil;
+
++ (void)initialize {
+    if (self == [GXTypeIdentifier class]) {
+        _typeIdentifiers = [[NSMutableDictionary alloc] init];
+    }
+}
+
 + (BOOL)supportsSecureCoding {
     return YES;
 }
@@ -45,7 +53,16 @@ NSString * const GXTagClassOSType = @"com.apple.ostype";
     
     self = [super init];
     if (self) {
-        _declaration = CFBridgingRelease(UTTypeCopyDeclaration((__bridge CFStringRef)string));
+        NSString *lowercaseString = [string lowercaseString];
+        NSDictionary *declaration = _typeIdentifiers[lowercaseString];
+        if (declaration == nil) {
+            declaration = CFBridgingRelease(UTTypeCopyDeclaration((__bridge CFStringRef)string));
+            if (declaration != nil) {
+                _typeIdentifiers[lowercaseString] = declaration;
+            }
+        }
+        
+        _declaration = declaration;
         _string = _declaration[(__bridge NSString *)kUTTypeIdentifierKey];
         if (_string == nil) {
             return nil;
