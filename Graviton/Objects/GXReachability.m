@@ -17,7 +17,7 @@
 #import <netdb.h>
 
 
-NSString * const GXReachabilityStatusDidChangeNotification = @"CLKReachabilityStatusDidChangeNotification";
+NSString * const GXReachabilityStatusDidChangeNotification = @"GXReachabilityStatusDidChangeNotification";
 
 
 static void GXReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReachabilityFlags flags, void * info);
