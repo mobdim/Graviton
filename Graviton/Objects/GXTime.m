@@ -178,11 +178,7 @@
         seconds += 86400.0;
     }
     if (seconds < 0.0) {
-        NSTimeInterval timeInterval = (_timeInterval - seconds);
-        if (timeInterval < 0.0) {
-            timeInterval = 86400.0 - timeInterval;
-        }
-        return [[GXTime alloc] initWithTimeInterval:timeInterval];
+        return [[GXTime alloc] initWithTimeInterval:(86400.0 + seconds)];
     }
     if (_timeInterval + seconds >= 86400.0) {
         NSTimeInterval timeInterval = 86400.0 - (_timeInterval + seconds);

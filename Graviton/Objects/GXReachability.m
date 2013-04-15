@@ -30,18 +30,7 @@ static void GXReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkRea
 }
 
 + (GXReachability *)reachability {
-    struct sockaddr_in zeroAddress;
-    bzero(&zeroAddress, sizeof(zeroAddress));
-    zeroAddress.sin_len = sizeof(zeroAddress);
-    zeroAddress.sin_family = AF_INET;
-    
-    GXReachability *reachability = nil;
-    SCNetworkReachabilityRef reachabilityRef = SCNetworkReachabilityCreateWithAddress(NULL, (const struct sockaddr *)(&zeroAddress));
-    if (reachabilityRef != NULL) {
-        reachability = [[GXReachability alloc] initWithReachabilityRef:reachabilityRef];
-        CFRelease(reachabilityRef);
-    }
-    return reachability;
+    return [[self alloc] init];
 }
 
 + (GXReachability *)reachabilityWithHost:(NSString *)host {
@@ -51,6 +40,25 @@ static void GXReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkRea
         reachability = [[GXReachability alloc] initWithReachabilityRef:reachabilityRef];
         CFRelease(reachabilityRef);
     }
+    return reachability;
+}
+
+- (id)init {
+    struct sockaddr_in zeroAddress;
+    bzero(&zeroAddress, sizeof(zeroAddress));
+    zeroAddress.sin_len = sizeof(zeroAddress);
+    zeroAddress.sin_family = AF_INET;
+    
+    GXReachability *reachability = nil;
+    SCNetworkReachabilityRef reachabilityRef = SCNetworkReachabilityCreateWithAddress(NULL, (const struct sockaddr *)(&zeroAddress));
+    if (reachabilityRef != NULL) {
+        reachability = [self initWithReachabilityRef:reachabilityRef];
+        CFRelease(reachabilityRef);
+    }
+    else {
+        return nil;
+    }
+    
     return reachability;
 }
 
