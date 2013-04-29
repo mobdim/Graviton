@@ -24,15 +24,17 @@
 @end
 
 
-@interface NSDate (GXTimePrivateAdditions)
-
-- (NSDate *)gx_dateByRemovingTimeComponents;
-
-@end
+static NSCalendar *__formattingCalendar = nil;
 
 
 @implementation GXTime {
     NSTimeInterval _timeInterval; // since midnight
+}
+
++ (void)initialize {
+    if (self == [GXTime class]) {
+        __formattingCalendar = [NSCalendar autoupdatingCurrentCalendar];
+    }
 }
 
 + (BOOL)supportsSecureCoding {
@@ -82,7 +84,8 @@
 
 - (id)init {
     NSDate *date = [NSDate date];
-    NSDate *baseDate = [date gx_dateByRemovingTimeComponents];
+    NSDateComponents *components = [__formattingCalendar components:(NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit) fromDate:date];
+    NSDate *baseDate = [__formattingCalendar dateFromComponents:components];
     NSTimeInterval timeInterval = [date timeIntervalSinceDate:baseDate];
     return [self initWithTimeInterval:timeInterval];
 }
@@ -190,8 +193,9 @@
 }
 
 - (NSDate *)gx_formattingDate {
-    NSDate *date = [[NSDate date] gx_dateByRemovingTimeComponents];
-    date = [date dateByAddingTimeInterval:self.timeInterval];
+    NSDateComponents *components = [__formattingCalendar components:(NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit) fromDate:[NSDate date]];
+    NSDate *baseDate = [__formattingCalendar dateFromComponents:components];
+    NSDate *date = [baseDate dateByAddingTimeInterval:self.timeInterval];
     return date;
 }
 
@@ -205,20 +209,16 @@
 }
 
 + (NSDate *)dateWithDate:(NSDate *)date GXTime:(GXTime *)time {
-    NSDate *baseDate = [date gx_dateByRemovingTimeComponents];
+    NSDateComponents *components = [__formattingCalendar components:(NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit) fromDate:date];
+    NSDate *baseDate = [__formattingCalendar dateFromComponents:components];
     return [baseDate dateByAddingTimeInterval:time.timeInterval];
 }
 
 - (GXTime *)GXTime {
-    NSDate *baseDate = [self gx_dateByRemovingTimeComponents];
+    NSDateComponents *components = [__formattingCalendar components:(NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit) fromDate:self];
+    NSDate *baseDate = [__formattingCalendar dateFromComponents:components];
     NSTimeInterval timeInterval = [self timeIntervalSinceDate:baseDate];
     return [[GXTime alloc] initWithTimeInterval:timeInterval];
-}
-
-- (NSDate *)gx_dateByRemovingTimeComponents {
-    NSCalendar *calendar = [NSCalendar currentCalendar];
-    NSDateComponents *components = [calendar components:(NSEraCalendarUnit|NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit) fromDate:self];
-    return [calendar dateFromComponents:components];
 }
 
 @end

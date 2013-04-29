@@ -22,12 +22,12 @@ GRAVITON_EXTERN void GXDebugLoggingSetEnabled(BOOL enabled);
 #else
 
 #define GXDebugLog(...) \
-if (GXDebugLoggingEnabled()) { \
+if (GXDebugLoggingIsEnabled()) { \
 NSLog(@"DEBUG: %@", [NSString stringWithFormat:__VA_ARGS__]); \
 }
 
 #define GXMethodDebugLog(...) \
-if (GXDebugLoggingEnabled()) { \
+if (GXDebugLoggingIsEnabled()) { \
 NSLog(@"DEBUG: %@:%@, %@", [self class], NSStringFromSelector(_cmd), [NSString stringWithFormat:__VA_ARGS__]); \
 }
 
