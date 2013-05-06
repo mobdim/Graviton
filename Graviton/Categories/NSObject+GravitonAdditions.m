@@ -59,11 +59,12 @@
 #pragma mark Methods
 
 + (void)gx_duplicateClassMethodWithSelector:(SEL)selector toSelector:(SEL)newSelector {
-    Method method = class_getInstanceMethod(self, newSelector);
+    Method method = class_getClassMethod(self, newSelector);
     if (method == NULL) {
-        Method oldMethod = class_getInstanceMethod(self, selector);
+        Method oldMethod = class_getClassMethod(self, selector);
+        Class metaclass = object_getClass(self);
         if (oldMethod != NULL) {
-            class_addMethod(self, selector, method_getImplementation(oldMethod), method_getTypeEncoding(oldMethod));
+            class_addMethod(metaclass, newSelector, method_getImplementation(oldMethod), method_getTypeEncoding(oldMethod));
         }
         else {
             @throw [NSException exceptionWithName:NSInvalidArgumentException reason:[NSString stringWithFormat:@"The class \"%@\" does not have a class method with the selector \"%@\"", self, NSStringFromSelector(selector)] userInfo:nil];
@@ -72,12 +73,11 @@
 }
 
 + (void)gx_duplicateInstanceMethodWithSelector:(SEL)selector toSelector:(SEL)newSelector {
-    Class metaclass = object_getClass(self);
-    Method method = class_getClassMethod(self, newSelector);
+    Method method = class_getInstanceMethod(self, newSelector);
     if (method == NULL) {
-        Method oldMethod = class_getClassMethod(self, selector);
+        Method oldMethod = class_getInstanceMethod(self, selector);
         if (oldMethod != NULL) {
-            class_addMethod(metaclass, selector, method_getImplementation(oldMethod), method_getTypeEncoding(oldMethod));
+            class_addMethod(self, newSelector, method_getImplementation(oldMethod), method_getTypeEncoding(oldMethod));
         }
         else {
             @throw [NSException exceptionWithName:NSInvalidArgumentException reason:[NSString stringWithFormat:@"The class \"%@\" does not have an instance method with the selector \"%@\"", self, NSStringFromSelector(selector)] userInfo:nil];
