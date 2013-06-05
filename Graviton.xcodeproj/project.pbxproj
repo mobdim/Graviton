@@ -545,7 +545,6 @@
 				DSTROOT = /tmp/libGraviton.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "libGraviton/libGraviton-Prefix.pch";
-				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRIVATE_HEADERS_FOLDER_PATH = Headers/Graviton;
 				PRODUCT_NAME = Graviton;
@@ -562,7 +561,6 @@
 				DSTROOT = /tmp/libGraviton.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "libGraviton/libGraviton-Prefix.pch";
-				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRIVATE_HEADERS_FOLDER_PATH = Headers/Graviton;
 				PRODUCT_NAME = Graviton;
