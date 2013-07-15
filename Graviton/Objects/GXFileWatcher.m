@@ -137,7 +137,7 @@ static void GXFileWatcherCallback(ConstFSEventStreamRef streamRef, void *clientC
             continue;
         }
         
-        GXFileEventType type = NSUIntegerMax;
+        GXFileEventType type = kFSEventStreamEventFlagNone;
         
         if (flags & kFSEventStreamEventFlagItemCreated) {
             type = GXFileEventTypeItemCreated;
@@ -158,7 +158,7 @@ static void GXFileWatcherCallback(ConstFSEventStreamRef streamRef, void *clientC
             type = GXFileEventTypeItemExtendedAttributesModified;
         }
         
-        if (type != NSUIntegerMax) {
+        if (type != kFSEventStreamEventFlagNone) {
             GXFileEvent *event = [[GXFileEvent alloc] init];
             event.path = path;
             event.eventID = eventID;
