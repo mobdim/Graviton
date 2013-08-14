@@ -90,7 +90,7 @@
 }
 
 + (void)gx_duplicateClassMethodWithSelector:(SEL)selector toSelector:(SEL)newSelector {
-    if (![self gx_hasClassMethodWithSelector:selector]) {
+    if (![self gx_hasClassMethodWithSelector:newSelector]) {
         Method oldMethod = class_getClassMethod(self, selector);
         Class metaclass = object_getClass(self);
         if (oldMethod != NULL) {
@@ -103,7 +103,7 @@
 }
 
 + (void)gx_duplicateInstanceMethodWithSelector:(SEL)selector toSelector:(SEL)newSelector {
-    if (![self gx_hasInstanceMethodWithSelector:selector]) {
+    if (![self gx_hasInstanceMethodWithSelector:newSelector]) {
         Method oldMethod = class_getInstanceMethod(self, selector);
         if (oldMethod != NULL) {
             class_addMethod(self, newSelector, method_getImplementation(oldMethod), method_getTypeEncoding(oldMethod));
