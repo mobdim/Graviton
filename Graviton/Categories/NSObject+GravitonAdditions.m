@@ -58,9 +58,39 @@
 #pragma mark -
 #pragma mark Methods
 
++ (BOOL)gx_hasClassMethodWithSelector:(SEL)selector {
+	Class metaclass = object_getClass(self);
+	unsigned int methodCount;
+	Method *methods = class_copyMethodList(metaclass, &methodCount);
+	if (methods != nil) {
+		for (unsigned int i=0; i<methodCount; i++) {
+			Method method = methods[i];
+			if (method_getName(method) == selector) {
+				return YES;
+			}
+		}
+		free(methods);
+	}
+	return NO;
+}
+
++ (BOOL)gx_hasInstanceMethodWithSelector:(SEL)selector {
+	unsigned int methodCount;
+	Method *methods = class_copyMethodList(self, &methodCount);
+	if (methods != nil) {
+		for (unsigned int i=0; i<methodCount; i++) {
+			Method method = methods[i];
+			if (method_getName(method) == selector) {
+				return YES;
+			}
+		}
+		free(methods);
+	}
+	return NO;
+}
+
 + (void)gx_duplicateClassMethodWithSelector:(SEL)selector toSelector:(SEL)newSelector {
-    Method method = class_getClassMethod(self, newSelector);
-    if (method == NULL) {
+    if (![self gx_hasClassMethodWithSelector:selector]) {
         Method oldMethod = class_getClassMethod(self, selector);
         Class metaclass = object_getClass(self);
         if (oldMethod != NULL) {
@@ -73,8 +103,7 @@
 }
 
 + (void)gx_duplicateInstanceMethodWithSelector:(SEL)selector toSelector:(SEL)newSelector {
-    Method method = class_getInstanceMethod(self, newSelector);
-    if (method == NULL) {
+    if (![self gx_hasInstanceMethodWithSelector:selector]) {
         Method oldMethod = class_getInstanceMethod(self, selector);
         if (oldMethod != NULL) {
             class_addMethod(self, newSelector, method_getImplementation(oldMethod), method_getTypeEncoding(oldMethod));

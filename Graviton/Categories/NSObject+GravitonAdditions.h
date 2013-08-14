@@ -27,6 +27,9 @@ typedef void (^GXKeyValueObservingBlock)(id object, NSString *keyPath, NSDiction
 
 - (void)gx_performAfterDelay:(NSTimeInterval)delay usingBlock:(void (^)(void))block;
 
++ (BOOL)gx_hasClassMethodWithSelector:(SEL)selector;
++ (BOOL)gx_hasInstanceMethodWithSelector:(SEL)selector;
+
 + (void)gx_duplicateClassMethodWithSelector:(SEL)selector toSelector:(SEL)newSelector;
 + (void)gx_duplicateInstanceMethodWithSelector:(SEL)selector toSelector:(SEL)newSelector;
 
