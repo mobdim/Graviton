@@ -61,8 +61,8 @@
 		EA55FA4E151D35C80088F053 /* NSObject+GravitonAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = EA4424DE15193D7F00EA1C1B /* NSObject+GravitonAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EA5F782D16CA350B00F6477D /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5F782C16CA350B00F6477D /* CoreServices.framework */; };
 		EA5F782F16CA351500F6477D /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5F782E16CA351500F6477D /* MobileCoreServices.framework */; };
-		EA786E02179F8B1100E725C3 /* NSTimer+GravitonAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = EA786E00179F8B1100E725C3 /* NSTimer+GravitonAdditions.h */; };
-		EA786E03179F8B1100E725C3 /* NSTimer+GravitonAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = EA786E00179F8B1100E725C3 /* NSTimer+GravitonAdditions.h */; };
+		EA786E02179F8B1100E725C3 /* NSTimer+GravitonAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = EA786E00179F8B1100E725C3 /* NSTimer+GravitonAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EA786E03179F8B1100E725C3 /* NSTimer+GravitonAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = EA786E00179F8B1100E725C3 /* NSTimer+GravitonAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EA786E04179F8B1100E725C3 /* NSTimer+GravitonAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EA786E01179F8B1100E725C3 /* NSTimer+GravitonAdditions.m */; };
 		EA786E05179F8B1100E725C3 /* NSTimer+GravitonAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EA786E01179F8B1100E725C3 /* NSTimer+GravitonAdditions.m */; };
 		EA94B8DC15F54C02004503B1 /* GXDebug.h in Headers */ = {isa = PBXBuildFile; fileRef = EA94B8DA15F54C02004503B1 /* GXDebug.h */; settings = {ATTRIBUTES = (Public, ); }; };
