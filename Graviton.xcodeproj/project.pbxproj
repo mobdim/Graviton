@@ -33,6 +33,11 @@
 		02942FD616431799009A0966 /* GXMixin.h in Headers */ = {isa = PBXBuildFile; fileRef = 02942FD316431799009A0966 /* GXMixin.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		02942FD716431799009A0966 /* GXMixin.m in Sources */ = {isa = PBXBuildFile; fileRef = 02942FD416431799009A0966 /* GXMixin.m */; };
 		02942FD816431799009A0966 /* GXMixin.m in Sources */ = {isa = PBXBuildFile; fileRef = 02942FD416431799009A0966 /* GXMixin.m */; };
+		029CC46D1897251A00977C6E /* GXKeychain.h in Headers */ = {isa = PBXBuildFile; fileRef = 029CC46B1897251A00977C6E /* GXKeychain.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		029CC46E1897251A00977C6E /* GXKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 029CC46C1897251A00977C6E /* GXKeychain.m */; };
+		029CC46F189726AD00977C6E /* GXKeychain.h in Headers */ = {isa = PBXBuildFile; fileRef = 029CC46B1897251A00977C6E /* GXKeychain.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		029CC471189726D600977C6E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 029CC470189726D600977C6E /* Security.framework */; };
+		029CC472189726E200977C6E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 029CC470189726D600977C6E /* Security.framework */; };
 		02CFCD2216E033AB004EC2AD /* NSArray+GravitonAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 02CFCD2016E033AB004EC2AD /* NSArray+GravitonAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		02CFCD2316E033AB004EC2AD /* NSArray+GravitonAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 02CFCD2016E033AB004EC2AD /* NSArray+GravitonAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		02CFCD2416E033AB004EC2AD /* NSArray+GravitonAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 02CFCD2116E033AB004EC2AD /* NSArray+GravitonAdditions.m */; };
@@ -87,6 +92,9 @@
 		028EA8F016656EF800BF075B /* NSData+GravitonAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+GravitonAdditions.m"; sourceTree = "<group>"; };
 		02942FD316431799009A0966 /* GXMixin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GXMixin.h; sourceTree = "<group>"; };
 		02942FD416431799009A0966 /* GXMixin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GXMixin.m; sourceTree = "<group>"; };
+		029CC46B1897251A00977C6E /* GXKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GXKeychain.h; sourceTree = "<group>"; };
+		029CC46C1897251A00977C6E /* GXKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GXKeychain.m; sourceTree = "<group>"; };
+		029CC470189726D600977C6E /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		02CFCD2016E033AB004EC2AD /* NSArray+GravitonAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+GravitonAdditions.h"; sourceTree = "<group>"; };
 		02CFCD2116E033AB004EC2AD /* NSArray+GravitonAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+GravitonAdditions.m"; sourceTree = "<group>"; };
 		02E4CD1316A9C4B60017FCF9 /* GXReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GXReachability.h; sourceTree = "<group>"; };
@@ -123,6 +131,7 @@
 			files = (
 				EA091A27150A93180033C7DF /* Foundation.framework in Frameworks */,
 				EA5F782D16CA350B00F6477D /* CoreServices.framework in Frameworks */,
+				029CC471189726D600977C6E /* Security.framework in Frameworks */,
 				02E4CD1A16A9C5460017FCF9 /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -133,6 +142,7 @@
 			files = (
 				EA55FA40151D35A80088F053 /* Foundation.framework in Frameworks */,
 				EA5F782F16CA351500F6477D /* MobileCoreServices.framework in Frameworks */,
+				029CC472189726E200977C6E /* Security.framework in Frameworks */,
 				02E4CD1B16A9C5610017FCF9 /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -183,6 +193,7 @@
 			children = (
 				EA091A14150A92870033C7DF /* Foundation.framework */,
 				EA5F782C16CA350B00F6477D /* CoreServices.framework */,
+				029CC470189726D600977C6E /* Security.framework */,
 				EA5F782E16CA351500F6477D /* MobileCoreServices.framework */,
 				02E4CD1916A9C5460017FCF9 /* SystemConfiguration.framework */,
 			);
@@ -246,6 +257,8 @@
 				024B3132165B006F00EEED3F /* GXVersion.h */,
 				024B3131165B006F00EEED3F /* GXVersion_Private.h */,
 				024B3133165B006F00EEED3F /* GXVersion.m */,
+				029CC46B1897251A00977C6E /* GXKeychain.h */,
+				029CC46C1897251A00977C6E /* GXKeychain.m */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -295,6 +308,7 @@
 				028EA8F116656EF800BF075B /* NSData+GravitonAdditions.h in Headers */,
 				02E4CD1516A9C4B60017FCF9 /* GXReachability.h in Headers */,
 				02705DA416CD714500B84D2F /* GXOrdinalNumberFormatter.h in Headers */,
+				029CC46D1897251A00977C6E /* GXKeychain.h in Headers */,
 				02CFCD2216E033AB004EC2AD /* NSArray+GravitonAdditions.h in Headers */,
 				EA97EB8F16EC51F80044DC14 /* GXFileWatcher.h in Headers */,
 				EA786E02179F8B1100E725C3 /* NSTimer+GravitonAdditions.h in Headers */,
@@ -318,6 +332,7 @@
 				028EA8F216656EF800BF075B /* NSData+GravitonAdditions.h in Headers */,
 				02E4CD1616A9C4B60017FCF9 /* GXReachability.h in Headers */,
 				02705DA516CD714500B84D2F /* GXOrdinalNumberFormatter.h in Headers */,
+				029CC46F189726AD00977C6E /* GXKeychain.h in Headers */,
 				02CFCD2316E033AB004EC2AD /* NSArray+GravitonAdditions.h in Headers */,
 				EA786E03179F8B1100E725C3 /* NSTimer+GravitonAdditions.h in Headers */,
 			);
@@ -418,6 +433,7 @@
 				02705DA616CD714500B84D2F /* GXOrdinalNumberFormatter.m in Sources */,
 				02CFCD2416E033AB004EC2AD /* NSArray+GravitonAdditions.m in Sources */,
 				EA97EB9116EC51F80044DC14 /* GXFileWatcher.m in Sources */,
+				029CC46E1897251A00977C6E /* GXKeychain.m in Sources */,
 				EA786E04179F8B1100E725C3 /* NSTimer+GravitonAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
