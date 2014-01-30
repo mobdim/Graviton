@@ -421,8 +421,15 @@ NSString * const GXKeychainErrorDomain = @"GXKeychainErrorDomain";
     }
     [dataQuery setObject:service forKey:kSecAttrService];
     
+    NSMutableDictionary *attributesToUpdate = [NSMutableDictionary dictionaryWithDictionary:attributes];
+    [attributesToUpdate setObject:kSecClassGenericPassword forKey:kSecClass];
+    if (account != nil) {
+        [attributesToUpdate setObject:account forKey:kSecAttrAccount];
+    }
+    [attributesToUpdate setObject:service forKey:kSecAttrService];
+    
     NSData *data = [password dataUsingEncoding:NSUTF8StringEncoding];
-    return [self createOrUpdateAllItemsMatchingQuery:dataQuery data:data attributes:attributes error:outError];
+    return [self createOrUpdateAllItemsMatchingQuery:dataQuery data:data attributes:attributesToUpdate error:outError];
 }
 
 - (BOOL)removePasswordForAccount:(NSString *)account service:(NSString *)service query:(NSDictionary *)query error:(NSError **)outError {
@@ -476,8 +483,16 @@ NSString * const GXKeychainErrorDomain = @"GXKeychainErrorDomain";
     [dataQuery setObject:server forKey:kSecAttrServer];
     [dataQuery setObject:(__bridge id)protocol forKey:kSecAttrProtocol];
     
+    NSMutableDictionary *attributesToUpdate = [NSMutableDictionary dictionaryWithDictionary:attributes];
+    [attributesToUpdate setObject:kSecClassInternetPassword forKey:kSecClass];
+    if (account != nil) {
+        [attributesToUpdate setObject:account forKey:kSecAttrAccount];
+    }
+    [attributesToUpdate setObject:server forKey:kSecAttrServer];
+    [attributesToUpdate setObject:(__bridge id)protocol forKey:kSecAttrProtocol];
+    
     NSData *data = [password dataUsingEncoding:NSUTF8StringEncoding];
-    return [self createOrUpdateAllItemsMatchingQuery:dataQuery data:data attributes:attributes error:outError];
+    return [self createOrUpdateAllItemsMatchingQuery:dataQuery data:data attributes:attributesToUpdate error:outError];
 }
 
 - (BOOL)removeInternetPasswordForAccount:(NSString *)account server:(NSString *)server protocol:(CFTypeRef)protocol query:(NSDictionary *)query error:(NSError **)outError {
