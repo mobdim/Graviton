@@ -7,74 +7,63 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <Graviton/GravitonDefines.h>
+#import <Security/Security.h>
 
 
 @interface GXKeychain : NSObject
 
 + (GXKeychain *)defaultKeychain;
 
+#if !TARGET_OS_IPHONE
++ (GXKeychain *)keychainWithPath:(NSString *)path;
+- (id)initWithKeychainRef:(SecKeychainRef)keychainRef;
+#endif
+
+// Attributes
+- (NSDictionary *)attributesOfFirstItemMatchingQuery:(NSDictionary *)query error:(NSError **)outError;
+- (NSArray *)attributesOfItemsMatchingQuery:(NSDictionary *)query error:(NSError **)outError;
+
 // Data
-- (NSData *)dataForUsername:(NSString *)username
-					service:(NSString *)serviceName
-					options:(NSDictionary *)options
-					  error:(NSError **)outError;
+- (NSData *)dataForFirstItemMatchingQuery:(NSDictionary *)query error:(NSError **)outError;
+- (NSArray *)dataForItemsMatchingQuery:(NSDictionary *)query error:(NSError **)outError;
 
-- (BOOL)setData:(NSData *)data
-	forUsername:(NSString *)username
-		service:(NSString *)serviceName
-		options:(NSDictionary *)options
-		  error:(NSError **)outError;
+// Persistent references
+- (NSData *)persistentReferenceForFirstItemMatchingQuery:(NSDictionary *)query error:(NSError **)outError;
+- (NSArray *)persistentReferencesForItemsMatchingQuery:(NSDictionary *)query error:(NSError **)outError;
 
-- (BOOL)removeDataForUsername:(NSString *)username
-					  service:(NSString *)serviceName
-					  options:(NSDictionary *)options
-						error:(NSError **)outError;
+// Updating
+- (NSData *)createItemWithData:(NSData *)data attributes:(NSDictionary *)attributes error:(NSError **)outError;
 
+- (BOOL)updateItemWithPersistentReference:(NSData *)persistentReference data:(NSData *)data attributes:(NSDictionary *)attributes error:(NSError **)outError;
+- (BOOL)updateAllItemsMatchingQuery:(NSDictionary *)query data:(NSData *)data attributes:(NSDictionary *)attributes error:(NSError **)outError;
 
-// Passwords
-- (NSString *)passwordForUsername:(NSString *)username
-                          service:(NSString *)serviceName
-						  options:(NSDictionary *)options
-                            error:(NSError **)outError;
+- (BOOL)createOrUpdateAllItemsMatchingQuery:(NSDictionary *)query data:(NSData *)data attributes:(NSDictionary *)attributes error:(NSError **)outError;
 
-- (BOOL)setPassword:(NSString *)password
-        forUsername:(NSString *)username
-            service:(NSString *)serviceName
-			options:(NSDictionary *)options
-              error:(NSError **)outError;
-
-- (BOOL)removePasswordForUsername:(NSString *)username
-						  service:(NSString *)serviceName
-						  options:(NSDictionary *)options
-							error:(NSError **)outError;
-
-
-// Internet Passwords
-- (NSString *)internetPasswordForUsername:(NSString *)username
-                                   server:(NSString *)server
-                                 protocol:(CFTypeRef)protocol
-								  options:(NSDictionary *)options
-                                    error:(NSError **)outError;
-
-- (BOOL)setInternetPassword:(NSString *)password
-                forUsername:(NSString *)username
-                     server:(NSString *)server
-                   protocol:(CFTypeRef)protocol
-					options:(NSDictionary *)options
-                      error:(NSError **)outError;
-
-- (BOOL)removeInternetPasswordForUsername:(NSString *)username
-								   server:(NSString *)server
-                                 protocol:(CFTypeRef)protocol
-								  options:(NSDictionary *)options
-									error:(NSError **)outError;
+- (BOOL)removeItemWithPersistentReference:(NSData *)persistentReference error:(NSError **)outError;
+- (BOOL)removeAllItemsMatchingQuery:(NSDictionary *)query error:(NSError **)outError;
 
 @end
 
 
-GRAVITON_EXTERN NSString * const GXKeychainErrorDomain;
+// Convenience methods for kSecClassGenericPassword items
+@interface GXKeychain (GXKeychainPasswords)
 
-GRAVITON_EXTERN NSString * const GXKeychainOptionAccessGroup;       // NSString
-GRAVITON_EXTERN NSString * const GXKeychainOptionSynchronizable;    // NSNumber -> BOOL
+- (NSString *)passwordForAccount:(NSString *)account service:(NSString *)service query:(NSDictionary *)query error:(NSError **)outError;
+- (BOOL)setPassword:(NSString *)password forAccount:(NSString *)account service:(NSString *)service query:(NSDictionary *)query attributes:(NSDictionary *)attributes error:(NSError **)outError;
+- (BOOL)removePasswordForAccount:(NSString *)account service:(NSString *)service query:(NSDictionary *)query error:(NSError **)outError;
+
+@end
+
+
+// Convenience methods for kSecClassInternetPassword items
+@interface GXKeychain (GXKeychainInternetPasswords)
+
+- (NSString *)internetPasswordForAccount:(NSString *)account server:(NSString *)server protocol:(CFTypeRef)protocol query:(NSDictionary *)query error:(NSError **)outError;
+- (BOOL)setInternetPassword:(NSString *)password forAccount:(NSString *)account server:(NSString *)server protocol:(CFTypeRef)protocol query:(NSDictionary *)query attributes:(NSDictionary *)attributes error:(NSError **)outError;
+- (BOOL)removeInternetPasswordForAccount:(NSString *)account server:(NSString *)server protocol:(CFTypeRef)protocol query:(NSDictionary *)query error:(NSError **)outError;
+
+@end
+
+
+extern NSString * const GXKeychainErrorDomain;
 
