@@ -11,6 +11,8 @@
 
 @interface NSArray (GravitonAdditions)
 
+- (id)gx_firstObjectPassingTest:(BOOL (^)(id obj, NSUInteger idx, BOOL *stop))predicate;
+
 - (NSComparisonResult)gx_compareObjectsWithArray:(NSArray *)otherArray;
 - (NSComparisonResult)gx_compareObjectsWithArray:(NSArray *)otherArray comparator:(NSComparator)comparator;
 

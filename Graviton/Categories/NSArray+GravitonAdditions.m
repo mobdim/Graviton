@@ -11,6 +11,14 @@
 
 @implementation NSArray (GravitonAdditions)
 
+- (id)gx_firstObjectPassingTest:(BOOL (^)(id obj, NSUInteger idx, BOOL *stop))predicate {
+    NSUInteger idx = [self indexOfObjectPassingTest:predicate];
+    if (idx != NSNotFound) {
+        return [self objectAtIndex:idx];
+    }
+    return nil;
+}
+
 - (NSComparisonResult)gx_compareObjectsWithArray:(NSArray *)otherArray {
     return [self gx_compareObjectsWithArray:otherArray comparator:^NSComparisonResult(id obj1, id obj2) {
         return [obj1 compare:obj2];
