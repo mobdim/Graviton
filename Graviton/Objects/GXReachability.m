@@ -27,6 +27,8 @@ static void GXReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkRea
     SCNetworkReachabilityRef _reachabilityRef;
     BOOL _notificationsEnabled;
     NSUInteger _notificationCount;
+    NSLock *_notificationsLock;
+    dispatch_queue_t _notificationQueue;
 }
 
 + (GXReachability *)reachability {
@@ -63,10 +65,20 @@ static void GXReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkRea
 }
 
 - (id)initWithReachabilityRef:(SCNetworkReachabilityRef)reachabilityRef {
+    NSParameterAssert(reachabilityRef != NULL);
+    
     self = [super init];
     if (self) {
         _reachabilityRef = CFRetain(reachabilityRef);
+        
         _notificationCount = 0;
+        _notificationsLock = [[NSLock alloc] init];
+        _notificationQueue = dispatch_queue_create(NULL, DISPATCH_QUEUE_SERIAL);
+        
+        SCNetworkReachabilityContext context = {0, (__bridge void *)self, NULL, NULL, NULL};
+        SCNetworkReachabilitySetCallback(_reachabilityRef, GXReachabilityCallback, &context);
+        
+        [self enableNotifications];
     }
     return self;
 }
@@ -75,9 +87,11 @@ static void GXReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkRea
     if (_notificationsEnabled) {
         SCNetworkReachabilityUnscheduleFromRunLoop(_reachabilityRef, CFRunLoopGetCurrent(), kCFRunLoopDefaultMode);
     }
-    if (_reachabilityRef != NULL) {
-        CFRelease(_reachabilityRef);
-    }
+    CFRelease(_reachabilityRef);
+}
+
+- (NSString *)description {
+    return [NSString stringWithFormat:@"%@ { reachable=%@ }", [super description], (self.reachable ? @"YES" : @"NO")];
 }
 
 - (BOOL)isReachable {
@@ -107,24 +121,26 @@ static void GXReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkRea
 #endif
 
 - (void)enableNotifications {
+    [_notificationsLock lock];
     if (_notificationCount == 0) {
         _notificationsEnabled = YES;
-        SCNetworkReachabilityContext context = {0, (__bridge void *)self, NULL, NULL, NULL};
-        SCNetworkReachabilitySetCallback(_reachabilityRef, GXReachabilityCallback, &context);
-        SCNetworkReachabilityScheduleWithRunLoop(_reachabilityRef, CFRunLoopGetCurrent(), kCFRunLoopDefaultMode);
+        SCNetworkReachabilitySetDispatchQueue(_reachabilityRef, _notificationQueue);
     }
     _notificationCount++;
+    [_notificationsLock unlock];
 }
 
 - (void)disableNotifications {
+    [_notificationsLock lock];
     if (_notificationCount == 0) {
         return;
     }
     _notificationCount--;
     if (_notificationCount == 0) {
-        SCNetworkReachabilityUnscheduleFromRunLoop(_reachabilityRef, CFRunLoopGetCurrent(), kCFRunLoopDefaultMode);
+        SCNetworkReachabilitySetDispatchQueue(_reachabilityRef, NULL);
         _notificationsEnabled = NO;
     }
+    [_notificationsLock unlock];
 }
 
 - (void)handleReachabilityCallbackWithFlags:(SCNetworkReachabilityFlags)flags {
