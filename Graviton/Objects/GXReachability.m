@@ -91,6 +91,21 @@ static void GXReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkRea
     return reachable;
 }
 
+#if TARGET_OS_IPHONE
+
+- (BOOL)requiresCellularAccess {
+    BOOL requiresCellularAccess = NO;
+    SCNetworkReachabilityFlags flags;
+    if (SCNetworkReachabilityGetFlags(_reachabilityRef, &flags)) {
+        if (flags & kSCNetworkReachabilityFlagsIsWWAN) {
+            requiresCellularAccess = YES;
+        }
+    }
+    return requiresCellularAccess;
+}
+
+#endif
+
 - (void)enableNotifications {
     if (_notificationCount == 0) {
         _notificationsEnabled = YES;

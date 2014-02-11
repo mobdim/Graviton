@@ -16,6 +16,9 @@
 + (GXReachability *)reachabilityWithHost:(NSString *)host;
 
 @property (readonly, getter=isReachable) BOOL reachable;
+#if TARGET_OS_IPHONE
+@property (readonly) BOOL requiresCellularAccess;
+#endif
 
 - (void)enableNotifications;
 - (void)disableNotifications;
