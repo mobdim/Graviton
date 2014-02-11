@@ -36,7 +36,4 @@ typedef void (^GXKeyValueObservingBlock)(id object, NSString *keyPath, NSDiction
 - (id)gx_associatedObjectForKey:(id <NSCopying>)key;
 - (void)gx_setAssociatedObject:(id)obj forKey:(id <NSCopying>)key policy:(GXAssociationPolicy)policy;
 
-- (void)gx_addObserver:(id)observer forKeyPath:(NSString *)keyPath options:(NSKeyValueObservingOptions)options block:(GXKeyValueObservingBlock)block;
-- (void)gx_removeObserver:(id)observer forKeyPath:(NSString *)keyPath;
-
 @end

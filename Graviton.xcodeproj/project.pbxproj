@@ -240,6 +240,8 @@
 			children = (
 				EA97EB8D16EC51F80044DC14 /* GXFileWatcher.h */,
 				EA97EB8E16EC51F80044DC14 /* GXFileWatcher.m */,
+				029CC46B1897251A00977C6E /* GXKeychain.h */,
+				029CC46C1897251A00977C6E /* GXKeychain.m */,
 				02E4CD1316A9C4B60017FCF9 /* GXReachability.h */,
 				02E4CD1416A9C4B60017FCF9 /* GXReachability.m */,
 				02FC3D6815DEB25800FD60E5 /* GXTime.h */,
@@ -249,8 +251,6 @@
 				024B3132165B006F00EEED3F /* GXVersion.h */,
 				024B3131165B006F00EEED3F /* GXVersion_Private.h */,
 				024B3133165B006F00EEED3F /* GXVersion.m */,
-				029CC46B1897251A00977C6E /* GXKeychain.h */,
-				029CC46C1897251A00977C6E /* GXKeychain.m */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
