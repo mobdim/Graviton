@@ -28,16 +28,4 @@
 - (NSData *)gx_SHA384Digest;
 - (NSData *)gx_SHA512Digest;
 
-
-/*!
- * @group Cryptography
- */
-
-// AES-256
-- (NSData *)gx_encryptedAES256DataUsingKey:(id)key error:(NSError **)outError;  // key must be an NSString or NSData object
-- (NSData *)gx_decryptedAES256DataUsingKey:(id)key error:(NSError **)outError;
-
 @end
-
-
-GRAVITON_EXTERN NSString * const GXCryptographyErrorDomain;
